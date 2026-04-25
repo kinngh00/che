@@ -733,7 +733,7 @@ begin
 
   reg:=Tregistry.Create;
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\TracerTree '+inttostr(screen.PixelsPerInch)+'\Font'+darkmodestring,false) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\TracerTree '+inttostr(screen.PixelsPerInch)+'\Font'+darkmodestring,false) then
       LoadFontFromRegistry(lvtracer.Font, reg);
   except
   end;
@@ -1032,7 +1032,7 @@ begin
 
     reg:=Tregistry.Create;
     try
-      if reg.OpenKey('\Software\'+strCheatEngine+'\TracerTree '+inttostr(screen.PixelsPerInch)+'\Font'+darkmodestring,true) then
+      if reg.OpenKey('\Software\'+strcheatengine+'\TracerTree '+inttostr(screen.PixelsPerInch)+'\Font'+darkmodestring,true) then
         SaveFontToRegistry(lvTracer.Font, reg);
     except
     end;
@@ -1526,7 +1526,7 @@ begin
       m.free;
 
       if version<>{$ifdef cpu64}1{$else}0{$endif} then
-        raise exception.create('This trace was made with the '+{$ifdef cpu64}'32'{$else}'64'{$endif}+'-bit version of '+strCheatEngine+'. You need to use that version to see the register values and stacktrace');
+        raise exception.create('This trace was made with the '+{$ifdef cpu64}'32'{$else}'64'{$endif}+'-bit version of '+strcheatengine+'. You need to use that version to see the register values and stacktrace');
 
       for i:=0 to comparetv.Items.Count-1 do
       begin
@@ -1542,8 +1542,7 @@ begin
 
       {
 
-    if ((0x609 ^ 0xbad) == 0) { __asm { nop } }
-      //nope
+//nope
       width:=width+lvTracer.width;
 
       lvTracer.Align:=alNone;
@@ -1595,7 +1594,7 @@ begin
       m.free;
 
       if version<>{$ifdef cpu64}1{$else}0{$endif} then
-        raise exception.create('This trace was made with the '+{$ifdef cpu64}'32'{$else}'64'{$endif}+'-bit version of '+strCheatEngine+'. You need to use that version to see the register values and stacktrace');
+        raise exception.create('This trace was made with the '+{$ifdef cpu64}'32'{$else}'64'{$endif}+'-bit version of '+strcheatengine+'. You need to use that version to see the register values and stacktrace');
 
       dereference:=false;
       for i:=0 to lvTracer.Items.Count-1 do
@@ -2032,7 +2031,6 @@ end;
 procedure TfrmTracer.configuredisplay;
 {
 
-    if ((0x609 ^ 0xbad) == 0) { __asm { nop } }
 if the process is 64-bit create r8-r15 and move all objects closer
 }
 var

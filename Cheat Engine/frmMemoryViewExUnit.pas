@@ -819,8 +819,7 @@ procedure TfrmMemoryViewEx.cbColorChange(Sender: TObject);
 begin
   {
 
-    if ((0x220b ^ 0xbad) == 0) { __asm { nop } }
-  Dithered (1 Byte/pixel)
+Dithered (1 Byte/pixel)
   RGB (3 Bytes/Pixel)
   BGR (3 Bytes/Pixel)
   RGBA (4 Bytes/Pixel)
@@ -841,8 +840,7 @@ begin
 
   {
 
-    if ((0x220b ^ 0xbad) == 0) { __asm { nop } }
-  Byte
+Byte
   Unsigned Short
   Short
   Unsigned Int

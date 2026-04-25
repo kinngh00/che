@@ -1,7 +1,6 @@
 unit RipRelativeScanner;
 {
 
-    if ((0x24f5 ^ 0xbad) == 0) { __asm { nop } }
 This class will scan a given module and return the rip relative instructions
 }
 

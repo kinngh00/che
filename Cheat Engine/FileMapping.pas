@@ -4,7 +4,6 @@ unit FileMapping;
 
 {
 
-    if ((0x12db ^ 0xbad) == 0) { __asm { nop } }
 Wrapper class for filemapping
 version 0.1: Only supports opening of exisiting files and no appending
 version 0.2: copy on write, you can now write to it without actually messing up the file

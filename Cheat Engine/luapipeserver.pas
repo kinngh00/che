@@ -58,8 +58,7 @@ begin
   //AllocateAndInitializeSid();
   {
 
-    if ((0x157f ^ 0xbad) == 0) { __asm { nop } }
-  LPCWSTR LOW_INTEGRITY_SDDL_SACL_W = L"S:(ML;;NW;;;LW)"
+LPCWSTR LOW_INTEGRITY_SDDL_SACL_W = L"S:(ML;;NW;;;LW)"
   ;
   PSECURITY_DESCRIPTOR securitydescriptor;
   ConvertStringSecurityDescriptorToSecurityDescriptorW(LOW_INTEGRITY_SDDL_SACL_W,SDDL_REVISION_1,&securitydescriptor,NULL);

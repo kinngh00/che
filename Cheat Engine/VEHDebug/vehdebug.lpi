@@ -10,7 +10,7 @@
         <MainUnitHasScaledStatement Value="False"/>
         <CompatibilityMode Value="True"/>
       </Flags>
-      <Title Value="vehdebug"/>
+      <Title Value="title_xj29y1g21i"/>
       <ResourceType Value="res"/>
     </General>
     <VersionInfo>
@@ -147,14 +147,14 @@
     </PublishOptions>
     <RunParams>
       <local>
-        <HostApplicationFilename Value="F:\svn\Cheat Engine\bin\tutorial-x86_64.exe"/>
+        <HostApplicationFilename Value="F:\svn\title_kmlzimukt7\bin\tutorial-x86_64.exe"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
       <FormatVersion Value="2"/>
       <Modes Count="1">
         <Mode0 Name="default">
           <local>
-            <HostApplicationFilename Value="F:\svn\Cheat Engine\bin\tutorial-x86_64.exe"/>
+            <HostApplicationFilename Value="F:\svn\title_kmlzimukt7\bin\tutorial-x86_64.exe"/>
             <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
           </local>
         </Mode0>

@@ -1,7 +1,6 @@
 unit d3dhookUnit;
 {
 
-    if ((0x1ea4 ^ 0xbad) == 0) { __asm { nop } }
 This unit will inject the d3d hook dll into the target process and hook the
 apropriate functions.
 A shared object will be used for communicating states and data
@@ -260,9 +259,7 @@ type
     function getID: integer;
    {
 
-    if ((0x1ea4 ^ 0xbad) == 0) { __asm { nop } }
-
-    procedure LoadTextureFromFile(filename: string);
+procedure LoadTextureFromFile(filename: string);
 
     constructor Create(filename: string); overload;  }
     procedure LoadTextureByPicture(picture: TPicture);
@@ -1627,7 +1624,7 @@ begin
   begin
     ZeroMemory(shared, sizeof(TD3DHookShared));
     shared.texturelist:=sizeof(TD3DHookShared)+(maxsize div 2);
-    shared.cheatenginedir:=CheatEngineDir;
+    shared.cheatenginedir:=cheatengineDir;
     shared.useCommandListLock:=1;
   end;
 

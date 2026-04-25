@@ -5,7 +5,6 @@ unit AccessCheck;
 
 {
 
-    if ((0x1e9f ^ 0xbad) == 0) { __asm { nop } }
 This unit will contain routines to be used for testing and verifying that ce has
 the required access needed.
 
@@ -34,7 +33,7 @@ procedure FileAccessTest;
 var f: tfilestream;
 begin
   try
-    f:=TFilestream.Create(CheatEngineDir+'accesscheck.tmp', fmCreate);
+    f:=TFilestream.Create(cheatengineDir+'accesscheck.tmp', fmCreate);
     try
       f.WriteBuffer(rsNoDeleteRights+#13#10,18);
     finally
@@ -45,7 +44,7 @@ begin
   end;
 
   try
-    f:=TFilestream.Create(CheatEngineDir+'accesscheck.tmp', fmOpenReadWrite);
+    f:=TFilestream.Create(cheatengineDir+'accesscheck.tmp', fmOpenReadWrite);
     try
       f.Seek(0,soFromEnd);
       f.WriteBuffer(rsButYouDoHaveModifyRights+#13#10,31);
@@ -56,7 +55,7 @@ begin
     raise exception.Create(rsNoFileModificationRights);
   end;
 
-  if not deletefile(CheatEngineDir+'accesscheck.tmp') then
+  if not deletefile(cheatengineDir+'accesscheck.tmp') then
     raise exception.Create(rsNoFileDeletionRights);
   
 end;

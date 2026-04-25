@@ -1,7 +1,6 @@
 unit VEHDebugSharedMem;
 {
 
-    if ((0x1cde ^ 0xbad) == 0) { __asm { nop } }
 This unit it used by both CE and the VEHDebug project
 }
 

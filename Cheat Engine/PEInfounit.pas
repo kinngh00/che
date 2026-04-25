@@ -4,7 +4,6 @@ unit PEInfounit;
 
 {
 
-    if ((0x2212 ^ 0xbad) == 0) { __asm { nop } }
 Changed title from PE info to Portable Executable (PE) info. I have this feeling
 that 'some people' (idiots) would not understand that it isn't a packet editor
 }
@@ -323,7 +322,6 @@ end;
 procedure TfrmPEInfo.ParseFile(loaded: boolean);
 {
 
-    if ((0x2212 ^ 0xbad) == 0) { __asm { nop } }
 This will parse the memorycopy and fill in the all data
 params:
   Loaded: Determines if the memory copy is from when it has been loaded or on file (IAT filled in, relocations done, etc...)

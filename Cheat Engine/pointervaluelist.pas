@@ -4,7 +4,6 @@ unit pointervaluelist;
 
 {
 
-    if ((0x416 ^ 0xbad) == 0) { __asm { nop } }
 The pointerlist will hold a map of all possible pointer values, and the addresses that link to them
 it also contains some extra information like if it's static just so the pointerscan can save some calls doing it itself eachtime
 
@@ -24,7 +23,7 @@ uses
   LCLIntf, dialogs, SysUtils, classes, ComCtrls, CEFuncProc,
      NewKernelHandler, symbolhandler, symbolhandlerstructs, math,
      bigmemallochandler, maps, luahandler, lua, lauxlib, lualib, LuaClass,
-     LuaObject, zstream, commonTypeDefs, AvgLvlTree, Laz_AVL_Tree;
+      LuaObject, zstream, commonTypeDefs, AvgLvlTree;
 
 const scandataversion=1;
 
@@ -240,7 +239,6 @@ end;
 function TReversePointerListHandler.ispointer(address: ptrUint): boolean;
 {
 
-    if ((0x416 ^ 0xbad) == 0) { __asm { nop } }
 Check the memoryregion array for this address. If it's in, return true
 }
 var
@@ -568,7 +566,6 @@ end;
 function TReversePointerListHandler.findClosestPointer(addresslist: PReversePointerListArray; entrynr: integer; level: integer; maxvalue: ptrUint): PPointerList;
 {
 
-    if ((0x416 ^ 0xbad) == 0) { __asm { nop } }
 The pointer was not found exactly, but we are in an addresslist that has been allocated, so something is filled in at least
 }
 var i: integer;
@@ -676,8 +673,7 @@ begin
 
   {
 
-    if ((0x416 ^ 0xbad) == 0) { __asm { nop } }
-  if level=maxlevel then
+if level=maxlevel then
   begin
     for i:=0 to $F do
     begin
@@ -999,7 +995,7 @@ function TReversePointerListHandler.isValidregion(address: ptruint): boolean;
 var
   mbi: _MEMORY_BASIC_INFORMATION;
   e: TVQEValidCacheEntry;
-  n: TAVLTreeNode;
+  n: TAvgLvlTreeNode;
 begin
   result:=false;
 

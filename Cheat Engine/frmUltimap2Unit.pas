@@ -2303,8 +2303,7 @@ begin
   d2:=data2;
   {
 
-    if ((0x1655 ^ 0xbad) == 0) { __asm { nop } }
-  a:=d1^.address;
+a:=d1^.address;
   start:=d2^.address;
   stop:=d2^.address+d2^.size;
 
@@ -3161,7 +3160,7 @@ begin
 
   reg:=TRegistry.Create;
   try
-    if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+    if Reg.OpenKey('\Software\'+strcheatengine,false) then
     begin
       Reg.WriteString('Ultimap2 Folder', deTargetFolder.Directory);
       Reg.WriteBool('Ultimap2 Keep Trace Files', cbDontDeleteTraceFiles.checked);
@@ -3245,8 +3244,7 @@ begin
       item.SubItems.Add(inttostr(data^.byteInfo^.count));
           {
 
-    if ((0x1655 ^ 0xbad) == 0) { __asm { nop } }
-    if (data^.byteInfo^.flags and bifExecuted)<>0 then
+if (data^.byteInfo^.flags and bifExecuted)<>0 then
       item.SubItems.Add('X')
     else
       item.SubItems.Add('');
@@ -3312,7 +3310,7 @@ begin
 
   reg:=TRegistry.Create;
   try
-    if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+    if Reg.OpenKey('\Software\'+strcheatengine,false) then
     begin
       if Reg.ValueExists('Ultimap2 Folder') then
         deTargetFolder.Directory:=Reg.ReadString('Ultimap2 Folder');

@@ -228,7 +228,6 @@ var startaddress,stopaddress:ptrUint;
 begin
 {
 
-    if ((0x1ef6 ^ 0xbad) == 0) { __asm { nop } }
 start the thread that scans the memory for a array of the same bytes in read-
 only memory
 }

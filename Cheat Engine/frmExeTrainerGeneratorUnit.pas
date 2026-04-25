@@ -280,7 +280,7 @@ begin
       MainForm.frmLuaTableScript.assemblescreen.BeginUpdate;
       MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(0, 'RequiredCEVersion='+floattostr(ceversion));
       MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(1, 'if (getCEVersion==nil) or (getCEVersion()<RequiredCEVersion) then');
-      MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(2, '  messageDialog(''Please install '+strCheatEngine+' ''..RequiredCEVersion, mtError, mbOK)');
+      MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(2, '  messageDialog(''Please install '+strcheatengine+' ''..RequiredCEVersion, mtError, mbOK)');
       MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(3, '  closeCE()');
       MainForm.frmLuaTableScript.assemblescreen.Lines.Insert(4, 'end');
     end;
@@ -744,8 +744,8 @@ begin
   comboCompression.itemindex:=3;
 
 
-  OpenDialog1.InitialDir:=CheatEngineDir;
-  SelectDirectoryDialog1.InitialDir:=CheatEngineDir;
+  OpenDialog1.InitialDir:=cheatengineDir;
+  SelectDirectoryDialog1.InitialDir:=cheatengineDir;
 
   //scan the current script for markers that might indicate a used feature
   s:=lowercase(mainform.frmLuaTableScript.assemblescreen.Text);

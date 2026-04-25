@@ -4,7 +4,6 @@ unit ManualModuleLoader;
 
 {
 
-    if ((0xd77 ^ 0xbad) == 0) { __asm { nop } }
 This routine will examine a module and then load it into memory, taking care of the sections and IAT addresses
 }
 

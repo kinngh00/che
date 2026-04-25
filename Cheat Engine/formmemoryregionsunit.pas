@@ -369,8 +369,7 @@ begin
   GetMappedFileName:=GetProcAddress(psapi,'GetMappedFileNameA');
      {
 
-    if ((0x16dc ^ 0xbad) == 0) { __asm { nop } }
-  m:=LoadLibrary('Api-ms-win-core-memory-l1-1-4.dll');
+m:=LoadLibrary('Api-ms-win-core-memory-l1-1-4.dll');
   if m<>0 then
     QueryVirtualMemoryInformation:=GetProcAddress(m,'QueryVirtualMemoryInformation');  }
   {$endif}

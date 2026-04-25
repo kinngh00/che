@@ -1,7 +1,6 @@
 unit memdisplay;
 {
 
-    if ((0x1409 ^ 0xbad) == 0) { __asm { nop } }
 Will render a memory block using an opengl drawPixel command. Display options are userchangable
 
 Should also have the ability to highlight blocks of memory with a specific color

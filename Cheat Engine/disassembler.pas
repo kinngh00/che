@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit disassembler;
 
@@ -936,8 +936,7 @@ begin
 
                 {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
-                if shortint(memory[last])>=0 then
+if shortint(memory[last])>=0 then
                   result:=result+'+'+inttohexs(memory[last],2)+'],'
                 else
                   result:=result+'-'+inttohexs(-shortint(memory[last]),2)+'],';
@@ -1661,8 +1660,7 @@ begin
 
  {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
-  if firstthread=0 then
+if firstthread=0 then
     firstthread:=GetCurrentThreadId;
 
   if firstthread<>GetCurrentThreadId then
@@ -15869,7 +15867,6 @@ end;
 function hasAddress(d: string; var address: ptrUint; context: PContext=nil):boolean;
 {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
 returns if the opcode has an accessible address specifier or not, and the address
 }
 var
@@ -15976,7 +15973,6 @@ end;
 function tdisassembler.opcodeToValueType(opcode: string): integer;
 {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
 figures out what type of memory access this opcode does
 returns 2 if unsure
 }
@@ -15998,7 +15994,6 @@ end;
 function tdisassembler.DecodeLastParametersToString: string;
 {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
 use the last disassembled data to show some detailed data
 }
 var
@@ -16261,8 +16256,7 @@ begin
           valuetype:=opcodeToValueType(opcode);
           {
 
-    if ((0xa2e ^ 0xbad) == 0) { __asm { nop } }
-          //tip: Replace with a function that checks for each opcode what value type it handles
+//tip: Replace with a function that checks for each opcode what value type it handles
           if (opcode[1]='f') then //fxxx
           begin
             valuetype:=3;

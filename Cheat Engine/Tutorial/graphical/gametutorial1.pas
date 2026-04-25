@@ -217,7 +217,7 @@ begin
 
     with tregistry.create do
     begin
-      if OpenKey('\Software\Cheat Engine\GTutorial', true) then
+      if OpenKey('\Software\title_kmlzimukt7\GTutorial', true) then
         WriteBool('This does not count as a solution for tutorial 1',True);
 
       free;

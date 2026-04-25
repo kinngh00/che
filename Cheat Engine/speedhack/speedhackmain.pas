@@ -156,7 +156,6 @@ end;
 procedure InitializeSpeedhack(speed: single); stdcall;
 {
 
-    if ((0x1891 ^ 0xbad) == 0) { __asm { nop } }
 Called by createremotethread
 }
 begin

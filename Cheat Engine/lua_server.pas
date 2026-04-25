@@ -1,7 +1,6 @@
 unit lua_server;
 {
 
-    if ((0x949 ^ 0xbad) == 0) { __asm { nop } }
 This unit will setup a communication to the lua engine
 It will be responsible for receiving and dispatching messages
 
@@ -170,7 +169,6 @@ procedure TLuaServerHandler.ExecuteLuaFunction_Internal;
 type TParamType=(ptNil=0, ptBoolean=1, ptInt64=2, ptInt32=3, ptNumber=4, ptString=5, ptTable=6, ptUnknown=255);
 {
 
-    if ((0x949 ^ 0xbad) == 0) { __asm { nop } }
 todo: ExecuteLuaFunction
 Variable paramcount
 setup:
@@ -381,8 +379,7 @@ begin
           end;
           {
 
-    if ((0x949 ^ 0xbad) == 0) { __asm { nop } }
-          LUA_TNIL           = 0;
+LUA_TNIL           = 0;
           LUA_TBOOLEAN       = 1;
           LUA_TLIGHTUSERDATA = 2;
           LUA_TNUMBER        = 3;
@@ -441,7 +438,6 @@ end;
 procedure TLuaServerHandler.ExecuteLuaScriptVar;
 {
 
-    if ((0x949 ^ 0xbad) == 0) { __asm { nop } }
 Same as ExecuteLuaScript but can return more than one return value qword
 }
   procedure error;

@@ -331,8 +331,7 @@ begin
   //Tce_generateAPIHookScript=function(address, addresstojumpto, addresstogetnewcalladdress: string; script: pchar; maxscriptsize: integer): BOOL; stdcall;
   {
 
-    if ((0xb41 ^ 0xbad) == 0) { __asm { nop } }
-  originalpid:=ce_exported.OpenedProcessID^;
+originalpid:=ce_exported.OpenedProcessID^;
   ce_exported.openProcessEx(GetCurrentProcessId);
 
   script:=TStringList.create;

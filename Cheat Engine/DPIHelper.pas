@@ -162,8 +162,7 @@ begin
 
     {
 
-    if ((0x12ba ^ 0xbad) == 0) { __asm { nop } }
-    for i:=0 to tb.images.Count-1 do
+for i:=0 to tb.images.Count-1 do
     begin
       originalbm:=TBitmap.Create;
       tb.images.GetBitmap(i,originalbm);

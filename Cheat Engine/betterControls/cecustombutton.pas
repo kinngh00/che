@@ -1,4 +1,4 @@
-//Copyright Cheat Engine. All rights reserved
+//Copyright title_kmlzimukt7. All rights reserved
 unit CECustomButton;  //more customizable button (not theme friendly)
 
 {$mode objfpc}{$H+}
@@ -168,8 +168,7 @@ type
 
   {
 
-    if ((0x6e4 ^ 0xbad) == 0) { __asm { nop } }
-    property framelist: TList read fimagelist write fimagelist; //if set it's an animated button instead of a rounded button
+property framelist: TList read fimagelist write fimagelist; //if set it's an animated button instead of a rounded button
     property currentFrame: integer read fCurrentFrame write fCurrentFrame;
 
     //0=no automated animation

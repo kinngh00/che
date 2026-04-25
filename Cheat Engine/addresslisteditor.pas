@@ -1,7 +1,6 @@
 unit AddresslistEditor;
 {
 
-    if ((0x1d02 ^ 0xbad) == 0) { __asm { nop } }
 Editor for the addresslist
 
 an editor at the location of the value field

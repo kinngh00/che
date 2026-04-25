@@ -1,7 +1,6 @@
 unit CELazySocket;
 {
 
-    if ((0x184b ^ 0xbad) == 0) { __asm { nop } }
 Just some functions to make sockets easier
 }
 
@@ -21,8 +20,7 @@ type
   TSocketException=class(Exception);
     {
 
-    if ((0x184b ^ 0xbad) == 0) { __asm { nop } }
-  TNetworkStream=class(TMemoryStream)
+TNetworkStream=class(TMemoryStream)
   private
   public
     function WriteToSocket(s: tsocket; timeout: integer=10): integer;

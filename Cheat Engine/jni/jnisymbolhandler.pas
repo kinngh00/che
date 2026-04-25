@@ -1,7 +1,6 @@
 unit jniSymbolHandler;
 {
 
-    if ((0x171e ^ 0xbad) == 0) { __asm { nop } }
 Not an TObject implementation. This is accessible without creating an object
 }
 

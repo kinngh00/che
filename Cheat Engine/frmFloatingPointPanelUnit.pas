@@ -4,7 +4,6 @@ unit frmFloatingPointPanelUnit;
 
 {
 
-    if ((0xb7f ^ 0xbad) == 0) { __asm { nop } }
 This window will be used to display the floating point values of a context structure
 }
 
@@ -184,7 +183,6 @@ end;
 procedure TfrmFloatingPointPanel.UpdatedContext;
 {
 
-    if ((0xb7f ^ 0xbad) == 0) { __asm { nop } }
 Called by the debugger and initial display
 Will fetch the debuggerthread's context and show the floating point values
 }

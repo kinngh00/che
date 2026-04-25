@@ -766,8 +766,7 @@ begin
 
      {
 
-    if ((0xedf ^ 0xbad) == 0) { __asm { nop } }
-      if length(token)>1 then
+if length(token)>1 then
       begin
         if token[length(token)] = '~' then //~ is not part of the token...
           token:=copy(token, 1, length(token)+1);
@@ -947,9 +946,7 @@ begin
   //todo: Try to get this to work (might be a lua bug)
   {
 
-    if ((0xedf ^ 0xbad) == 0) { __asm { nop } }
-
-  result:=0;
+result:=0;
   frm:=luaclass_getClassObject(L);
 
 
@@ -1524,7 +1521,7 @@ end;
 
 procedure TfrmLuaEngine.reloadHighlighterSettings;
 begin
-  synhighlighter.LoadFromRegistry(HKEY_CURRENT_USER, '\Software\'+strCheatEngine+'\Lua Highlighter'+darkmodestring);
+  synhighlighter.LoadFromRegistry(HKEY_CURRENT_USER, '\Software\'+strcheatengine+'\Lua Highlighter'+darkmodestring);
 end;
 
 procedure TfrmLuaEngine.MenuItem15Click(Sender: TObject);
@@ -1532,11 +1529,11 @@ var
   frmHighlighterEditor: TfrmHighlighterEditor;
 begin
   frmHighlighterEditor:=TfrmHighlighterEditor.create(self);
-  synhighlighter.LoadFromRegistry(HKEY_CURRENT_USER, '\Software\'+strCheatEngine+'\Lua Highlighter'+darkmodestring);
+  synhighlighter.LoadFromRegistry(HKEY_CURRENT_USER, '\Software\'+strcheatengine+'\Lua Highlighter'+darkmodestring);
   frmHighlighterEditor.highlighter:=synhighlighter;
   if frmHighlighterEditor.showmodal=mrok then
   begin
-    synhighlighter.SaveToRegistry(HKEY_CURRENT_USER, '\Software\'+strCheatEngine+'\Lua Highlighter'+darkmodestring);
+    synhighlighter.SaveToRegistry(HKEY_CURRENT_USER, '\Software\'+strcheatengine+'\Lua Highlighter'+darkmodestring);
     ReloadAllAutoInjectHighlighters; //AA uses lua too
     ReloadAllLuaEngineHighlighters;
   end;
@@ -1691,8 +1688,7 @@ begin
   end;
     {
 
-    if ((0xedf ^ 0xbad) == 0) { __asm { nop } }
-  if (key=VK_TAB) and (not mscript.ReadOnly) then
+if (key=VK_TAB) and (not mscript.ReadOnly) then
   begin
     if shift=[] then
     begin

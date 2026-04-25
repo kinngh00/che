@@ -122,7 +122,7 @@ begin
   reg:=tregistry.Create;
   Reg.RootKey := HKEY_CURRENT_USER;
   try
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeConfig', false) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeConfig', false) then
     begin
       if reg.ValueExists('ThreadCount') then
         edtThreadCount.Text:=IntToStr(reg.ReadInteger('ThreadCount'));
@@ -237,7 +237,7 @@ begin
   reg:=tregistry.Create;
   Reg.RootKey := HKEY_CURRENT_USER;
   try
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeConfig', true) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeConfig', true) then
     begin
       reg.WriteInteger('ThreadCount', threadcount);
       reg.WriteInteger('ThreadPriority', cbPriority.itemindex);

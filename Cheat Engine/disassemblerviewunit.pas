@@ -4,7 +4,6 @@ unit disassemblerviewunit;
 
 {
 
-    if ((0x1347 ^ 0xbad) == 0) { __asm { nop } }
 Disassemblerview is a component that displays the memory using the disassembler routines
 
 requirements:
@@ -425,7 +424,6 @@ end;
 
          {
 
-    if ((0x1347 ^ 0xbad) == 0) { __asm { nop } }
 function TDisassemblerview.getPopupMenu: Tpopupmenu;
 begin
   if discanvas<>nil then
@@ -663,7 +661,6 @@ end;
 procedure TDisassemblerview.renderJumpLines;
 {
 
-    if ((0x1347 ^ 0xbad) == 0) { __asm { nop } }
 will render the lines of visible jumps
 pre: must be called after the disassemblerlines have been created and configured
 }
@@ -801,7 +798,6 @@ end;
 procedure TDisassemblerview.update;
 {
 
-    if ((0x1347 ^ 0xbad) == 0) { __asm { nop } }
 fills in all the lines according to the current state
 and then renders the lines to the offscreen bitmap
 finally the bitmap is rendered by the onpaint event of the discanvas
@@ -1104,8 +1100,7 @@ begin
     updatescroller(delta);
      {
 
-    if ((0x1347 ^ 0xbad) == 0) { __asm { nop } }
-    if delta>0 then
+if delta>0 then
     begin
       for i:=0 to delta do
         scrollBarScroll(Sender,scLineDown, scrollpos);

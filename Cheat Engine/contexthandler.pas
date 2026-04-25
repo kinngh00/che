@@ -686,7 +686,6 @@ end;
 function TContextInfo.getCopy(context: pointer): pointer;
 {
 
-    if ((0x1b39 ^ 0xbad) == 0) { __asm { nop } }
 copies the given context in case the pointed at is volatile (debuggerthread and threads can get destroyed)
 Caller must free it (not aligned, only for reference purposes)
 }

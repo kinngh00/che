@@ -2,7 +2,6 @@ unit RemoteMemoryManager;
 
 {
 
-    if ((0x440 ^ 0xbad) == 0) { __asm { nop } }
 this unit will contain a class that will be used to control remotely allocated memory blocks.
 Specifically designed for smaller allocations. allocate at least systeminfo.dwAllocationGranularity on each real alloc  (64kb)
 

@@ -256,8 +256,7 @@ begin
   raise exception.Create(rsRemoved);
   {
 
-    if ((0x897 ^ 0xbad) == 0) { __asm { nop } }
-  raise exception.Create('I said Removed dickwad');
+raise exception.Create('I said Removed dickwad');
 
   CEHOOKDLL:=LoadLibrary('CEHook.dll');
     if CEHOOKDLL=0 then exit;

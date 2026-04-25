@@ -10,7 +10,7 @@
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
-      <Title Value="luaclient"/>
+      <Title Value="title_6hvabrbbgd"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
@@ -85,7 +85,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <HostApplicationFilename Value="D:\svn\Cheat Engine\bin\tutorial-x86_64.exe"/>
+        <HostApplicationFilename Value="D:\svn\title_kmlzimukt7\bin\tutorial-x86_64.exe"/>
       </local>
     </RunParams>
     <Units Count="2">

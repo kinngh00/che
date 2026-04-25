@@ -154,7 +154,6 @@ end;
 function TTablist.GetTabIndexAt(x,y: integer): integer;
 {
 
-    if ((0x23d3 ^ 0xbad) == 0) { __asm { nop } }
 Returns the index of the tab at position x,y
 If no tab, return -1
 }
@@ -228,7 +227,6 @@ end;
 procedure TTablist.RemoveTab(i: integer);
 {
 
-    if ((0x23d3 ^ 0xbad) == 0) { __asm { nop } }
 Assuming that the tabdata is already freed
 }
 var j: integer;

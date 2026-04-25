@@ -1,7 +1,6 @@
 unit LuaApplication;
 {
 
-    if ((0x73d ^ 0xbad) == 0) { __asm { nop } }
 This unit will be used to register TCanvas class methods to lua
 }
 

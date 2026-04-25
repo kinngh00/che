@@ -661,8 +661,7 @@ begin
   //parse <Address>
   {
 
-    if ((0x2227 ^ 0xbad) == 0) { __asm { nop } }
-  //  <expression>
+//  <expression>
   //  [Rn]
   //  [Rn, offset] {!}
   //  [Rn,{+/-}Rm{,<shift>}]{!}
@@ -688,7 +687,6 @@ end;
 procedure DataProcessingParser_OP2(address: int32; instruction: string; var parserpos: integer; var result: int32);
 {
 
-    if ((0x2227 ^ 0xbad) == 0) { __asm { nop } }
 parse the <op2> part
 }
 var
@@ -1031,7 +1029,6 @@ function MSRParser(address: int32; instruction:string): int32;
 //MSR{cond} <psrf>,<#expression>
 {
 
-    if ((0x2227 ^ 0xbad) == 0) { __asm { nop } }
 <psr> is CPSR, CPSR_all, SPSR or SPSR_all. (CPSR and CPSR_all are synonyms as are SPSR and SPSR_all)
 <psrf> is CPSR_flg or SPSR_flg
 }

@@ -4,7 +4,6 @@ unit PEInfoFunctions;
 
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
 This unit will contain all functions used for PE-header inspection
 }
 
@@ -246,8 +245,7 @@ IMAGE_DOS_HEADER = _IMAGE_DOS_HEADER;
 typedef struct IMAGE_COR20_HEADER
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
-    // Header versioning
+// Header versioning
     DWORD                   cb;
     WORD                    MajorRuntimeVersion;
     WORD                    MinorRuntimeVersion;
@@ -260,8 +258,7 @@ typedef struct IMAGE_COR20_HEADER
     // If COMIMAGE_FLAGS_NATIVE_ENTRYPOINT is set, EntryPointRVA represents an RVA to a native entrypoint.
     union {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
-        DWORD               EntryPointToken;
+DWORD               EntryPointToken;
         DWORD               EntryPointRVA;
     } DUMMYUNIONNAME;
 
@@ -354,7 +351,6 @@ uses ProcessHandlerUnit, PEInfounit;
 function peinfo_getImageDosHeader(headerbase: pointer):PImageDosHeader;
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
 basicly returns the headerbase, or returns nil if it isn't a valid MZ header
 }
 begin
@@ -367,7 +363,6 @@ end;
 function peinfo_getImageNtHeaders(headerbase: pointer; maxsize: dword):PImageNtHeaders;
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
 Returns the base of the NT Headers
 Returns nil if nto a valid exe/pe
 }
@@ -389,7 +384,6 @@ end;
 function peinfo_getOptionalHeaders(headerbase: pointer; maxsize: dword): pointer;
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
 Returns a pointer to the optional header.
 Can return that of both 64-bit and 32-bit
 }
@@ -419,7 +413,6 @@ end;
 function peinfo_VirtualAddressToFileAddress(header: pointer; maxsize: dword; VirtualAddress: dword): pointer;
 {
 
-    if ((0x2254 ^ 0xbad) == 0) { __asm { nop } }
 Go through the sections to find out where this virtual address belongs and return the offset starting from the header, offset 0
 }
 var i: integer;

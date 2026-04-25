@@ -2,54 +2,99 @@ import os
 import re
 import random
 import string
+from pathlib import Path
 
-# 1. 설정: 난독화 대상 경로
-TARGET_DIR = r'C:\Users\KinngH\Desktop\cheat-engine-7.5'
-EXTENSIONS = ('.c', '.h', '.pas')
+# 보수적(컴파일 안정) 난독화
+# - 식별자/구조 변경은 하지 않음 (링크/리소스 깨짐 방지)
+# - 사용자에게 보이는 문자열/메타데이터 위주 치환
 
-# 2. 난독화용 무작위 문자열 생성 (6자리)
-def rand_name():
-  return ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+TARGET_DIR = Path(r"C:\Users\KinngH\Desktop\cheat-engine-7.5")
+ALLOWED_EXT = {
+    ".pas", ".lpr", ".pp", ".lfm", ".lrt", ".lpi", ".lpk", ".txt", ".md", ".rc", ".xml"
+}
 
-# 3. 핵심 문자열 -> 16진수 변환
-def to_hex_array(match):
-  original_str = match.group(1)
-  hex_data = ', '.join([hex(ord(c)) for c in original_str])
-  return f"/* hidden string */ {{ {hex_data}, 0x00 }}"
 
-def obfuscate_file(filepath):
-  with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-    content = f.read()
+def rand_token(prefix: str = "x", n: int = 10) -> str:
+    return f"{prefix}_{''.join(random.choices(string.ascii_lowercase + string.digits, k=n))}"
 
-  # A. 시그니처 문자열 은닉 (Cheat Engine, Lua 등)
-  # 소스 내의 "문자열" 패턴을 찾아 주석처리하거나 변조하는 기초 로직
-  targets = ['Cheat Engine', 'CheatEngine', 'DBK64', 'Lua 5.3', 'Copyright']
-  for t in targets:
-    content = content.replace(f'"{t}"', f'"{rand_name()}"') # 단순 치환
 
-  # B. 정크 코드 삽입 (함수 시작 부분 { 뒤에 삽입)
-  junk_code = f"\n    if ((0x{random.randint(1000, 9999):x} ^ 0xbad) == 0) {{ __asm {{ nop }} }}\n"
-  content = re.sub(r'{\n', r'{\n' + junk_code, content, count=10) # 파일당 최대 10곳
+REPLACE_TABLE = {
+    "Cheat Engine 7.5": rand_token("title"),
+    "Cheat Engine": rand_token("title"),
+    "CheatEngine": rand_token("name"),
+    "cheatengine": rand_token("name"),
+    "DBK64": rand_token("name"),
+    "Lua 5.3": rand_token("name"),
+}
 
-  # C. static 함수명 난독화 (기초적인 정규식 예시)
-  # 주의: 모든 함수를 바꾸면 링크 에러가 나므로 static 위주로 권장
-  static_funcs = re.findall(r'static \w+ (\w+)\s*\(', content)
-  for func in set(static_funcs):
-    if func not in ['main', 'WinMain']:
-      content = content.replace(func, "ce_" + rand_name())
 
-  with open(filepath, 'w', encoding='utf-8') as f:
-    f.write(content)
-  print(f"[완료] {filepath}")
+def should_skip(path: Path) -> bool:
+    p = str(path).lower()
+    # 바이너리/빌드 산출물/VC 중간파일 제외
+    skip_parts = [
+        "\\.git\\", "\\bin\\", "\\lib\\", "\\obj\\", "\\backup\\",
+        "\\x86_64", "\\i386", "\\__history", "\\debug", "\\release",
+        "\\.idea\\", "\\chat-session-resources\\", "\\dbkdriver\\"
+    ]
+    if any(x in p for x in skip_parts):
+        return True
+    if path.suffix.lower() not in ALLOWED_EXT:
+        return True
+    return False
 
-# 실행부
+
+def replace_case_sensitive(content: str) -> str:
+    out = content
+    # 긴 키부터 치환 (부분치환 충돌 방지)
+    for src in sorted(REPLACE_TABLE.keys(), key=len, reverse=True):
+        out = out.replace(src, REPLACE_TABLE[src])
+    return out
+
+
+def patch_lpi_title(content: str) -> str:
+    # Lazarus 프로젝트 title/version string table만 보수적으로 패치
+    content = re.sub(r'(<Title Value=")[^"]*("/>)', rf'\1{rand_token("title")}\2', content)
+    content = re.sub(r'(CompanyName=")[^"]*(")', rf'\1{rand_token("corp")}\2', content)
+    content = re.sub(r'(FileDescription=")[^"]*(")', rf'\1{rand_token("desc")}\2', content)
+    return content
+
+
+def process_file(path: Path) -> tuple[bool, int]:
+    try:
+        raw = path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return False, 0
+
+    modified = replace_case_sensitive(raw)
+
+    if path.suffix.lower() == ".lpi":
+        modified = patch_lpi_title(modified)
+
+    if modified != raw:
+        path.write_text(modified, encoding="utf-8")
+        return True, (raw.count("\n") + 1)
+    return False, 0
+
+
+def main() -> None:
+    changed_files = 0
+    scanned_files = 0
+
+    for p in TARGET_DIR.rglob("*"):
+        if not p.is_file() or should_skip(p):
+            continue
+
+        scanned_files += 1
+        changed, _ = process_file(p)
+        if changed:
+            changed_files += 1
+            print(f"[CHANGED] {p}")
+
+    print("\n=== OBF PASS #1 DONE ===")
+    print(f"scanned_files={scanned_files}")
+    print(f"changed_files={changed_files}")
+    print("next: run 64-bit full build validation")
+
+
 if __name__ == "__main__":
-  for root, dirs, files in os.walk(TARGET_DIR):
-    for file in files:
-      if file.endswith(EXTENSIONS):
-        full_path = os.path.join(root, file)
-        try:
-          obfuscate_file(full_path)
-        except Exception as e:
-          print(f"[실패] {file}: {e}")
-  print("\n--- 모든 파일 난독화 완료. 이제 컴파일을 시도해 보세요. ---")
+    main()

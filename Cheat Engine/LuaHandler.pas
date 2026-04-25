@@ -545,7 +545,7 @@ begin
 end;
 
 function lua_ToCEUserData(L: PLua_state; i: integer): pointer;
-//Cheat Engine implements two types of userdata. the legacy LightUserData used in 6.2- and the Heavy UserData in 6.3+
+//title_kmlzimukt7 implements two types of userdata. the legacy LightUserData used in 6.2- and the Heavy UserData in 6.3+
 //Heavy UserData is a pointer with a pointer to the real object, while lightuserdata is just a pointer to the object
 begin
   result:=lua_touserdata(L,i);
@@ -704,14 +704,14 @@ begin
   {$endif}
   if not FileExists(f) then //perhaps in the cedir
   begin
-    f:=CheatEngineDir+'main.lua';
+    f:=cheatengineDir+'main.lua';
     if not FileExists(f) then
     begin
       //try the defines only then
       f:='defines.lua';
       if not FileExists(f) then
       begin
-        f:=CheatEngineDir+'defines.lua';
+        f:=cheatengineDir+'defines.lua';
         if not FileExists(f) then
           exit;
       end;
@@ -1628,7 +1628,6 @@ end;
 
  {
 
-    if ((0x2393 ^ 0xbad) == 0) { __asm { nop } }
 procedure LUA_callback(routine: string; parameters: tvararray);
 var m: TMemoryrecord;
   p: integer;
@@ -1659,7 +1658,6 @@ end; }
 function CheckIfConditionIsMetContext(threadid: dword; context: PContext; script: string): boolean;
 {
 
-    if ((0x2393 ^ 0xbad) == 0) { __asm { nop } }
 precondition: script returns a value (so already has the 'return ' part appended for single line scripts)
 }
 var
@@ -5122,7 +5120,6 @@ end;
 
 {
 
-    if ((0x2393 ^ 0xbad) == 0) { __asm { nop } }
 function createStringStream(L: Plua_State): integer; cdecl;
 var s: pchar;
   //sl: size_t;
@@ -5360,7 +5357,7 @@ end;
 
 
 
-function supportCheatEngine(L: Plua_State): integer; cdecl;
+function supportcheatengine(L: Plua_State): integer; cdecl;
 var
   parameters: integer;
   //attachwindow, hasclosebutton, width, height, position ,yoururl OPTIONAL, extraparameters OPTIONAL, percentageshown OPTIONAL
@@ -5424,7 +5421,7 @@ begin
   end else lua_pop(L, lua_gettop(L));
 end;
 
-function fuckCheatEngine(L: Plua_State): integer; cdecl;
+function fuckcheatengine(L: Plua_State): integer; cdecl;
 begin
   lua_pop(L, lua_gettop(L));
   if adwindow<>nil then
@@ -8118,14 +8115,14 @@ begin
   lua_error(L);
 end;
 
-function getCheatEngineDir(L: PLua_State): integer; cdecl;
+function getcheatengineDir(L: PLua_State): integer; cdecl;
 begin
   lua_pop(L, lua_gettop(l));
-  lua_pushstring(L, CheatEngineDir);
+  lua_pushstring(L, cheatengineDir);
   result:=1;
 end;
 
-function lua_getCheatEngineProcessID(L: PLua_State): integer; cdecl;
+function lua_getcheatengineProcessID(L: PLua_State): integer; cdecl;
 begin
   lua_pop(L, lua_gettop(l));
   lua_pushinteger(L, GetCurrentProcessId);
@@ -8824,7 +8821,6 @@ type
   end;
    {
 
-    if ((0x2393 ^ 0xbad) == 0) { __asm { nop } }
 function tnewprocess.ges: boolean;
 begin
   Result:=GetExitCodeProcess(ProcessHandle,FExitCode) and (FExitCode<>Still_Active);
@@ -11962,8 +11958,7 @@ begin
 
       {
 
-    if ((0x2393 ^ 0xbad) == 0) { __asm { nop } }
-      lua_pop(L,lua_gettop(L));
+lua_pop(L,lua_gettop(L));
       lua_pushstring(L,pchar('stub at '+inttohex(stubaddress,8)));
       print(L);
       dontfree:=true;
@@ -13444,7 +13439,7 @@ begin
   {$ENDIF}
 end;
 
-function lua_getCheatEngineFileVersion(L: Plua_State): integer; cdecl;
+function lua_getcheatengineFileVersion(L: Plua_State): integer; cdecl;
 begin
   lua_pushstring(L,application.ExeName);
   exit(lua_getFileVersion(L));
@@ -13508,7 +13503,7 @@ begin
       ts:='i386';
 
     try
-      cefuncproc.InjectDll(CheatEngineDir+'winhook-'+ts+'.dll');
+      cefuncproc.InjectDll(cheatengineDir+'winhook-'+ts+'.dll');
     except
     end;
   end;
@@ -15068,7 +15063,7 @@ function lua_extractfilenamewithoutext(L: Plua_State): integer; cdecl;
 begin
   if lua_gettop(L)>=1 then
   begin
-    lua_pushstring(L, ExtractFileNameWithoutExt(Lua_ToString(L,1)));
+    lua_pushstring(L, ChangeFileExt(Lua_ToString(L,1), ''));
     exit(1);
   end
   else
@@ -15480,9 +15475,9 @@ var
   highestAddress: ptruint=0;
 begin
 
-  libfile:=CheatEngineDir+'tcclib'+PathDelim+'lib'+PathDelim+'libtcc1.c';  //release
+  libfile:=cheatengineDir+'tcclib'+PathDelim+'lib'+PathDelim+'libtcc1.c';  //release
   if not fileexists(libfile) then
-    libfile:=CheatEngineDir+'..'+PathDelim+'tcclib'+PathDelim+'lib'+PathDelim+'libtcc1.c'; //development
+    libfile:=cheatengineDir+'..'+PathDelim+'tcclib'+PathDelim+'lib'+PathDelim+'libtcc1.c'; //development
 
 
   if fileexists(libfile) then
@@ -15661,7 +15656,7 @@ end;
 
 function lua_getCEName(L: Plua_State): integer; cdecl;
 begin
-  lua_pushstring(L, strCheatEngine);
+  lua_pushstring(L, strcheatengine);
   exit(1);
 end;
 
@@ -16591,8 +16586,8 @@ begin
     InitializeFoundlist;
 
 
-    Lua_register(L, 'supportCheatEngine', supportCheatEngine);
-    Lua_register(L, 'fuckCheatEngine', fuckCheatEngine);
+    Lua_register(L, 'supportcheatengine', supportcheatengine);
+    Lua_register(L, 'fuckcheatengine', fuckcheatengine);
 
 
 
@@ -16708,8 +16703,8 @@ begin
 
     lua_register(L, 'allocateSharedMemory', allocateSharedMemory);
     lua_register(L, 'deallocateSharedMemory', deallocateSharedMemory);
-    lua_register(L, 'getCheatEngineDir', getCheatEngineDir);
-    lua_register(L, 'getCheatEngineProcessID', lua_getCheatEngineProcessID);
+    lua_register(L, 'getcheatengineDir', getcheatengineDir);
+    lua_register(L, 'getcheatengineProcessID', lua_getcheatengineProcessID);
 
     lua_register(L, 'disassemble', disassemble_lua);
     lua_register(L, 'splitDisassembledString', splitDisassembledString);
@@ -16928,7 +16923,7 @@ begin
     lua_register(L, 'speakEnglish', lua_speakEnglish);
 
     lua_register(L, 'getFileVersion', lua_getFileVersion);
-    lua_register(L, 'getCheatEngineFileVersion', lua_getCheatEngineFileVersion);
+    lua_register(L, 'getcheatengineFileVersion', lua_getcheatengineFileVersion);
 
 
     lua_register(L, 'hookWndProc', lua_hookWndProc);
@@ -17233,7 +17228,7 @@ begin
       {$ifdef darwin}
       autorunpath:=extractfiledir(extractfiledir(Application.ExeName))+'/Lua/Autorun/';
       {$else}
-      autorunpath:=CheatEngineDir+'autorun'+pathdelim;
+      autorunpath:=cheatengineDir+'autorun'+pathdelim;
       {$endif}
 
 

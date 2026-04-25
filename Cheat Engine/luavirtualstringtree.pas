@@ -892,7 +892,7 @@ end;
 
 
 initialization
-   luaclass_register(TVirtualStringTree,  virtualstringtree_addMetaData);
+  luaclass_register(TLazVirtualStringTree,  virtualstringtree_addMetaData);
    luaclass_register(TVirtualTreeColumns, VirtualTreeColumns_addMetaData);
    luaclass_register(TVirtualTreeColumn,  VirtualTreeColumn_addMetaData);
    luaclass_register(TVTHeader,  VTHeader_addMetaData);

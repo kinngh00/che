@@ -122,8 +122,7 @@ type
 
    {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
-    firsttime: boolean; //For workers. This causes the first update to go without a wait
+firsttime: boolean; //For workers. This causes the first update to go without a wait
 
     broadcastcount: integer;
     lastBroadcast: dword;     }
@@ -250,8 +249,7 @@ type
 
     {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
-    workers: array of record //if server, this will contain a list of connected workers
+workers: array of record //if server, this will contain a list of connected workers
       s: THandle;
       id: integer;
       threadcount: integer;
@@ -1143,7 +1141,6 @@ end;
 procedure TPointerscanController.getQueueStatistics;
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 This function will traverse the paths and get the smallest and biggest queue element from it
 }
 var
@@ -1448,7 +1445,6 @@ end;
 procedure TPointerscanController.appendDynamicPathQueueToOverflowQueue(paths: TDynPathQueue);
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 Add the paths in this array to the and of the overflow queue, and then add them to the main queue if there is room
 }
 var oldstart: integer;
@@ -1472,7 +1468,6 @@ end;
 
      {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 procedure TPointerscanController.LoadPathQueueElementFromMemory(element: PPathQueueElement; var p: pbytearray); //returns the next position
 var pos: integer;
 begin
@@ -1527,7 +1522,6 @@ end;       }
 procedure TPointerscanController.WritePathQueueElementToStream(s: Tstream; element: PPathQueueElement);
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 Writes the given element to the stream
 }
 var
@@ -1546,7 +1540,6 @@ end;
 procedure TPointerscanController.LoadPathQueueElementFromStream(s: Tstream; element: PPathQueueElement);
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 Reads an element from the stream
 }
 var
@@ -1574,7 +1567,6 @@ end;
 function TPointerscanController.getPathQueueElementSize: integer;
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 Calculates the size of a single path element when transfered over a stream
 
 definition:
@@ -1866,7 +1858,6 @@ end;
 procedure TPointerscanController.reversescan;
 {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
 Do a reverse pointer scan
 }
 var
@@ -2512,8 +2503,7 @@ begin
   begin
     {
 
-    if ((0x10a9 ^ 0xbad) == 0) { __asm { nop } }
-    nothing to do. The controller does not accept incomming connections and there
+nothing to do. The controller does not accept incomming connections and there
     are no childnodes connected.
     Only the user can change this by manually adding a new child, or activing the
     listening ability

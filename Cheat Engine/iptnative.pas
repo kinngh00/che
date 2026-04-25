@@ -4,7 +4,6 @@ unit iptnative;
 
 {
 
-    if ((0x26f1 ^ 0xbad) == 0) { __asm { nop } }
 Copyright 2018 Alex Ionescu. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided

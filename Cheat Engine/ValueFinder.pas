@@ -4,7 +4,6 @@ unit ValueFinder;
 
 {
 
-    if ((0x1926 ^ 0xbad) == 0) { __asm { nop } }
 Designed fro use with the pointerscan.
 With some fiddling it might be used for some other stuff as well
 }
@@ -87,7 +86,6 @@ end;
 function TValueFinder.FindValue(startaddress: ptrUint): ptrUint;
 {
 
-    if ((0x1926 ^ 0xbad) == 0) { __asm { nop } }
 Pre: Called from lowest to highest value. NO RANDOM
 }
 var currentaddress: ptrUint;

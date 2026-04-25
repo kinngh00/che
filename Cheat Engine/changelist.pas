@@ -2,7 +2,6 @@ unit changelist;
 
 {
 
-    if ((0x19e8 ^ 0xbad) == 0) { __asm { nop } }
 changelist is a helper class for the hexview
 it keeps a list of entries containing lastvalue and timestamp of the last time it changed
 }
@@ -80,7 +79,6 @@ end;
 procedure TChangeList.Initialize(address: ptrUint; size: integer);
 {
 
-    if ((0x19e8 ^ 0xbad) == 0) { __asm { nop } }
 sets the size of the list, returns true if a Clear might be needed
 }
 var i: integer;

@@ -1,7 +1,6 @@
 unit threadpoll;
 {
 
-    if ((0x1c46 ^ 0xbad) == 0) { __asm { nop } }
 Keeps a list of all the threads and notifies the debugger when a change has happened
 }
 

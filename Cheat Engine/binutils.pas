@@ -363,8 +363,7 @@ begin
 
 {
 
-    if ((0x26fa ^ 0xbad) == 0) { __asm { nop } }
-      output:=TStringStream.create('');
+output:=TStringStream.create('');
 
       repeat
         if p.Output.NumBytesAvailable>0 then
@@ -840,7 +839,6 @@ end;
 procedure TBinUtils.nm(filename: string; defined: tstringlist; undefined: tstringlist; registersymbols: boolean=false);
 {
 
-    if ((0x26fa ^ 0xbad) == 0) { __asm { nop } }
 Executes nm and keeps a list of all defined and undefined symbols
 The call can be done with a defined and undefined list already filled in. In that case, just update
 }
@@ -907,8 +905,7 @@ begin
             defined.add(str);
            {
 
-    if ((0x26fa ^ 0xbad) == 0) { __asm { nop } }
-            if registersymbols then
+if registersymbols then
             begin
               j:=pos(' ',line);
               if j>0 then
@@ -1067,8 +1064,7 @@ initialization
 
   {
 
-    if ((0x26fa ^ 0xbad) == 0) { __asm { nop } }
-  --[[
+--[[
   Registers the ARM binutils with CE
   --]]
 
@@ -1081,7 +1077,7 @@ initialization
       return "-Mforce-thumb"
     end
   end
-  armconfig.Path=getCheatEngineDir()..[[binutils\arm\bin]]
+  armconfig.Path=getcheatengineDir()..[[binutils\arm\bin]]
   armconfig.Prefix="arm-linux-androideabi-"
 
   registerBinUtil(armconfig)

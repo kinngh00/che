@@ -4,13 +4,11 @@ unit savedscanhandler;
 
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 12 december 2010: Firsthandler should be renamed to "previousscanhandler" as it's being used for saved scans as well now
 }
 
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 First scan handler is a class that will help with scanning the results of the
 first scan.
 It'll read the results of the first scan and provides an inteface for the
@@ -19,7 +17,6 @@ scanroutines for quick lookup of the previous value of a specific address
 
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 Current problem:
 The saved scan can be used by other threads and keep the files in use possibly making deletion impossible.
 
@@ -34,7 +31,6 @@ All file handles released
 
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 function BinSearchEntry(Strings: TStrings; address: dword; var Pivot: integer): integer;
 var
   First: Integer;
@@ -177,7 +173,6 @@ type TArrMemoryRegion= array [0..0] of TMemoryRegion;
 function TSavedScanHandler.loadIfNotLoadedRegion(p: pointer): pointer;
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 Will load in a section from the memory file
 p is a pointer in the memory buffer as if it was completely loaded
 This will effectivly decrease reads to the file. Of course, there is still
@@ -190,8 +185,7 @@ begin
 
   {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
-  adding a multireadexclusivewrite or not...
+adding a multireadexclusivewrite or not...
   might result in memory being written multiple times to exactly the same value
   but besides that no real problem.
   decision: no need to block other threads. Besides, the way threadjobs are made
@@ -231,7 +225,6 @@ end;
 procedure TSavedScanHandler.LoadMemoryForCurrentChunk(valuetype: TVariableType; ct: TCustomType);
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 Loads the savedscanmemory block for the current adddresslist block
 }
 var addressliststart: qword;
@@ -281,7 +274,6 @@ end;
 procedure TSavedScanHandler.LoadNextChunk(valuetype: TVariableType);
 {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
 For the addresslist specific type: Loads in the next region based on the addresslist
 }
 begin
@@ -293,8 +285,7 @@ begin
     currentaddresslistcount:=min(maxaddresslistcount, (savedscanaddressfs.size-savedscanaddressfs.Position) div sizeof(ptruint)); //limit to the addresslist file size
          {
 
-    if ((0x1e08 ^ 0xbad) == 0) { __asm { nop } }
-         //for some reason setting a breakpoint on the above line will break gdb...
+//for some reason setting a breakpoint on the above line will break gdb...
     if currentaddresslistcount=0 then
     begin
       beep;

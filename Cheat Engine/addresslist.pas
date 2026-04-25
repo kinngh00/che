@@ -575,7 +575,6 @@ end;
 function TAddresslist.CheatTableNodeHasOnlyAutoAssemblerScripts(CheatTable: TDOMNode): boolean;
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
 private
 checks if the given xml document contains cheatentries that aren't aa scripts
 }
@@ -636,7 +635,6 @@ end;
 procedure TAddresslist.CheatTableNodeCheckForRelativeAddress(CheatTable: TDOMNode; var hasRelative, allRelative: boolean);
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
 private
 checks if the given xml document contains cheatentries without relative Address
 }
@@ -1216,7 +1214,6 @@ end;
 procedure TAddresslist.valuedblclick(node: TTreenode);
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
 Doubeclcik on the value
 This results in showing the value editor mode
 }
@@ -1444,8 +1441,7 @@ begin
       TMemoryRecord(node.data).Active:=not TMemoryRecord(node.data).Active;
      {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
-      if oldstate then
+if oldstate then
         DeActivateSelected
       else
         ActivateSelected;}
@@ -1472,8 +1468,7 @@ begin
     //todo: Add setting to enable/disable this
     {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
-    if (button=mbLeft) and (inrange(x,header.Sections[4].Left,header.Sections[4].right)) then
+if (button=mbLeft) and (inrange(x,header.Sections[4].Left,header.Sections[4].right)) then
     begin
       //check if text of the value is clicked
 
@@ -1502,7 +1497,6 @@ end;
 
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
 procedure TAddresslist.TreeviewKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   if key=VK_DELETE then
@@ -1514,8 +1508,7 @@ end;   }
 procedure TAddresslist.sort(firstnode: ttreenode; compareRoutine: TTreeNodeCompare; direction: boolean );
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
-  sort from the first node till there is no more sibling
+sort from the first node till there is no more sibling
 }
 var
   currentnode: ttreenode;
@@ -1957,9 +1950,7 @@ begin
 
    {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
-
-  if treeview.TopItem<>nil then
+if treeview.TopItem<>nil then
     start:=treeview.TopItem.Index
   else
     start:=0;
@@ -2168,8 +2159,7 @@ begin
 
    {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
-        //default: this is good
+//default: this is good
         sender.canvas.Line(checkbox.left+1,checkbox.Top+1, checkbox.Right-1,checkbox.bottom-1);
         sender.canvas.line(checkbox.left+1,checkbox.bottom-2, checkbox.right-1,checkbox.top);  }
 
@@ -2377,7 +2367,6 @@ end;
 procedure TAddresslist.getAddressList(list: Tstrings);
 {
 
-    if ((0x130b ^ 0xbad) == 0) { __asm { nop } }
 Gets the addresslist in lines formatted :  address=description
 main usage: pointerscan and scandata.addresslist files
 }

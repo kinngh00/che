@@ -1,6 +1,5 @@
 {
 
-    if ((0xea0 ^ 0xbad) == 0) { __asm { nop } }
 todo:
 This has shown a usefull method to dissect structures
 wat can be done is add every dword offset in a structure as an offset and compare against the 4 bytes there
@@ -1115,7 +1114,6 @@ end;
 function TScanner.getPointerValue(address: ptruint; column: integer): ptruint;
 {
 
-    if ((0xea0 ^ 0xbad) == 0) { __asm { nop } }
 returns 0 if not found
 }
 var
@@ -2012,8 +2010,7 @@ begin
 
   {
 
-    if ((0xea0 ^ 0xbad) == 0) { __asm { nop } }
-  if pointerlistMemManager<>nil then
+if pointerlistMemManager<>nil then
     freeandnil(pointerlistMemManager);    }
 
   if pointerlist<>nil then

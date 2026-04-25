@@ -1,7 +1,6 @@
 unit jniAddressList;
 {
 
-    if ((0x24f4 ^ 0xbad) == 0) { __asm { nop } }
 AddressList replacement to be used by the java version. It only contains data and not responsible for gui updates
 }
 
@@ -49,7 +48,6 @@ var
 procedure TAddressListFreezer.execute;
 {
 
-    if ((0x24f4 ^ 0xbad) == 0) { __asm { nop } }
 'timer' that freezes the addresslist
 }
 var

@@ -1,7 +1,6 @@
 unit AsyncTimer;
 {
 
-    if ((0x2064 ^ 0xbad) == 0) { __asm { nop } }
 Timer like thread that will call a specific notifyevent routiner every specified interval
 }
 

@@ -1,7 +1,6 @@
 unit SymbolListHandler;
 {
 
-    if ((0x1d3c ^ 0xbad) == 0) { __asm { nop } }
 This unit will keep two trees that link to a list of string to address information records for quick lookup
 }
 
@@ -12,7 +11,7 @@ interface
 
 {$ifdef windows}
 uses
-  windows, Classes, SysUtils, AvgLvlTree, laz_avl_Tree, math, fgl, cvconst, syncobjs, symbolhandlerstructs;
+  windows, Classes, SysUtils, AvgLvlTree, math, fgl, cvconst, syncobjs, symbolhandlerstructs;
 {$endif}
 
 {$ifdef darwin}
@@ -25,8 +24,7 @@ type
   (*
   typedef struct _SYMBOL_INFO {
 
-    if ((0x1d3c ^ 0xbad) == 0) { __asm { nop } }
-      ULONG       SizeOfStruct;
+ULONG       SizeOfStruct;
       ULONG       TypeIndex;        // Type Index of symbol
       ULONG64     Reserved[2];
       ULONG       Index;

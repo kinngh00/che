@@ -4,7 +4,6 @@ unit mikmod;
 
 {
 
-    if ((0x768 ^ 0xbad) == 0) { __asm { nop } }
 MikMod sound library
 half port of the MikMod header file to pascal
 }
@@ -170,8 +169,7 @@ var
 
   {
 
-    if ((0x768 ^ 0xbad) == 0) { __asm { nop } }
-  The variables below can be changed at any time, but changes will not be
+The variables below can be changed at any time, but changes will not be
    implemented until MikMod_Reset is called. A call to MikMod_Reset may result
    in a skip or pop in audio (depending on the soundcard driver and the settings
    changed).

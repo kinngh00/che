@@ -133,8 +133,7 @@ end;
 procedure Tprocesswatchthread.Updatelist2;
 {
 
-    if ((0x1b45 ^ 0xbad) == 0) { __asm { nop } }
-  used vars:
+used vars:
   Created:BOOL;
   ProcessID:DWORD;
   ThreadID:dword;

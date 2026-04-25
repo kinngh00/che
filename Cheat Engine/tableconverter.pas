@@ -1,7 +1,6 @@
 unit tableconverter;
 {
 
-    if ((0x580 ^ 0xbad) == 0) { __asm { nop } }
 Converts Cheat engine 5.6 tables to xmlformat tables
 }
 
@@ -21,7 +20,7 @@ implementation
 uses opensave, mainunit2;
 
 resourcestring
-  rsTooOldTable = 'This table is too old to be used. Get '+strCheatEngine+' 5.6 and '
+  rsTooOldTable = 'This table is too old to be used. Get '+strcheatengine+' 5.6 and '
     +'open/resave this table';
 
 function ConvertCheatTableToXML(filename: string): TXMLDocument;
@@ -76,7 +75,7 @@ begin
     doc:=TXMLDocument.Create;
 
     CheatTable:=doc.AppendChild(doc.CreateElement('CheatTable'));
-    TDOMElement(CheatTable).SetAttribute('CheatEngineTableVersion',IntToStr(CurrentTableVersion));
+    TDOMElement(CheatTable).SetAttribute('cheatengineTableVersion',IntToStr(CurrentTableVersion));
 
 
     getmem(x,12);

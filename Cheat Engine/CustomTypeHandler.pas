@@ -3,7 +3,6 @@ unit CustomTypeHandler;
 {$mode delphi}
 {
 
-    if ((0x538 ^ 0xbad) == 0) { __asm { nop } }
 This class is used as a wrapper for different kinds of custom types
 }
 

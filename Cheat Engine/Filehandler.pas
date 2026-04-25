@@ -4,7 +4,6 @@ unit Filehandler;
 
 {
 
-    if ((0x183d ^ 0xbad) == 0) { __asm { nop } }
 implement replaced handlers for ReadProcessMemory and WriteProcessMemory so it
 reads/writes to the file instead
 }

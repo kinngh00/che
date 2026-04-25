@@ -1,7 +1,6 @@
 unit LuaCaller;
 {
 
-    if ((0xb60 ^ 0xbad) == 0) { __asm { nop } }
 The luaCaller is a class which contains often defined Events and provides an
 interface for gui objects to directly call the lua functions with proper parameters
 and results

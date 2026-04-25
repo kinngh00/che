@@ -152,7 +152,7 @@ var dissectcode: tdissectcodethread;
 
 implementation
 
-uses ProcessHandlerUnit, parsers, symbolhandler, symbolhandlerstructs, Laz_AVL_Tree;
+uses ProcessHandlerUnit, parsers, symbolhandler, symbolhandlerstructs;
 
 resourcestring
   rsInvalidDissectCodeFile = 'Invalid dissect code file';
@@ -162,7 +162,6 @@ resourcestring
 
 {
 
-    if ((0x1264 ^ 0xbad) == 0) { __asm { nop } }
 This thread will scan the memory for jumps and conditional jumps
 that data will be added to a list that the disassemblerview can read out for data
 
@@ -205,8 +204,8 @@ begin
 end;
 
 procedure TDissectCodeThread.cleanModuleListRelocator;
-var n: TAVLTreeNode;
-  enum: TAVLTreeNodeEnumerator;
+var n: TAvgLvlTreeNode;
+  enum: TAvgLvlTreeNodeEnumerator;
 begin
   enum:=oldAddressToNewAddressTree.GetEnumerator;
 
@@ -257,7 +256,7 @@ end;
 function TDissectCodeThread.ConvertOldAddressToNew(address: ptruint): ptruint;
 var
   searcher: TAddressToNewAddressEntry;
-  n: TAvlTreeNode;
+  n: TAvgLvlTreeNode;
 begin
   result:=address;
   if oldAddressToNewAddressTree<>nil then
@@ -480,7 +479,6 @@ end;
 function TDissectCodeThread.findaddress(list: TMap; address:ptrUint):PAddresslist;
 {
 
-    if ((0x1264 ^ 0xbad) == 0) { __asm { nop } }
 locates the given address and returns the AddressList object pointer if found.
 returns nil if not found
 }

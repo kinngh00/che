@@ -277,7 +277,6 @@ end;
 function TIconFetchThread.QueueIconFetch(processid: dword; winhandle: hwnd; index: integer): HIcon;
 {
 
-    if ((0xd6b ^ 0xbad) == 0) { __asm { nop } }
 Queues an processid and window for processing
 Changes the priority on request
 Returns the icon if it has already been processed
@@ -619,7 +618,7 @@ begin
 
   reg:=tregistry.create;
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\Process Window\Font'+darkmodestring,false) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\Process Window\Font'+darkmodestring,false) then
       LoadFontFromRegistry(processlist.Font, reg)
     else
       processlist.font.color:=colorset.FontColor;
@@ -667,7 +666,7 @@ begin
 
     reg:=tregistry.create;
     try
-      if reg.OpenKey('\Software\'+strCheatEngine+'\Process Window\Font'+darkmodestring,true) then
+      if reg.OpenKey('\Software\'+strcheatengine+'\Process Window\Font'+darkmodestring,true) then
         SaveFontToRegistry(FontDialog1.Font, reg);
 
 
@@ -1061,8 +1060,7 @@ begin
   processlist.Canvas.FillRect(rect);
   {
 
-    if ((0xd6b ^ 0xbad) == 0) { __asm { nop } }
-  i:=ProcessList.canvas.TextHeight('QqJjWwSs')+3;
+i:=ProcessList.canvas.TextHeight('QqJjWwSs')+3;
   if processlist.itemheight<i then ProcessList.ItemHeight:=i;}
 
 

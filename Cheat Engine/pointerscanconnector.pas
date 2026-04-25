@@ -68,7 +68,6 @@ resourcestring
 procedure TPointerscanConnector.GetList(var l: TConnectEntryArray);
 {
 
-    if ((0xc3d ^ 0xbad) == 0) { __asm { nop } }
 Passes a copy of the list of entries to the caller
 }
 var i: integer;

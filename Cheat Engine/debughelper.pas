@@ -413,8 +413,7 @@ begin
         begin
           {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
-          no event has happened, for 100 miliseconds
+no event has happened, for 100 miliseconds
           Do some maintenance in here
           }
           //remove the breakpoints that have been unset and are marked for deletion
@@ -471,7 +470,6 @@ end;
 procedure TDebuggerThread.cleanupDeletedBreakpoints(Idle: boolean=true; timeoutonly: boolean=true);
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 remove the breakpoints that have been unset and are marked for deletion
 that can be done safely since this routine is only called when no debug event has
 happened, and the breakpoints have already been disabled
@@ -800,7 +798,6 @@ end;
 function TDebuggerThread.SetBreakpoint(breakpoint: PBreakpoint; UpdateForOneThread: TDebugThreadHandler=nil): boolean;
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 Will set the breakpoint.
 either by setting the appropriate byte in the code to $cc, or setting the appropriate debug registers the thread(s)
 }
@@ -1688,7 +1685,6 @@ end;
 procedure TDebuggerThread.GetBreakpointList(address: uint_ptr; size: integer; var bplist: TBreakpointSplitArray);
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 splits up the given address and size into a list of debug register safe breakpoints (alligned)
 Do not confuse this with a function that returns all breakpoints urrently set
 }
@@ -1801,7 +1797,6 @@ end;
 function TDebuggerThread.DoBreakpointTriggersUseSameDebugRegisterKind(bpt1: TBreakpointTrigger; bpt2: TBreakpointTrigger): boolean;
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 Check if the two breakpoint triggers would make use of the same kind of debug register
 }
 begin
@@ -1814,7 +1809,6 @@ end;
 function TDebuggerThread.GetMaxBreakpointCountForThisType(breakpointTrigger: TBreakpointTrigger): integer;
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 Returns the number of breakpoints the current debuiggerinterface can handle for the given breakpoint trigger
 }
 begin
@@ -1832,7 +1826,6 @@ end;
 function TDebuggerThread.GetUsableDebugRegister(breakpointTrigger: TBreakpointTrigger): integer;
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 will scan the current breakpoint list and see which debug register is unused.
 if all are used up, return -1
 }
@@ -2648,8 +2641,7 @@ begin
   end;
             {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
-  for i:=lv.items.count-1 downto showcount do
+for i:=lv.items.count-1 downto showcount do
     lv.items[i].Delete;    }
 
   if selindex>=lv.items.count then
@@ -3042,7 +3034,6 @@ end;
 function TDebuggerthread.getrealbyte(address: ptrUint): byte;
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 Called when the byte is a $cc
 }
 var bp: PBreakpoint;
@@ -3094,7 +3085,6 @@ end;
 procedure TDebuggerthread.ContinueDebugging(continueOption: TContinueOption; runtillAddress: ptrUint=0; handled: boolean=true);
 {
 
-    if ((0x2576 ^ 0xbad) == 0) { __asm { nop } }
 Sets the way the debugger should continue, and triggers the sleeping thread to wait up and handle this changed event
 }
 var bp: PBreakpoint;

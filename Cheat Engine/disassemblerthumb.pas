@@ -4,7 +4,6 @@ unit DisassemblerThumb;
 
 {
 
-    if ((0x258d ^ 0xbad) == 0) { __asm { nop } }
 This disassembler is build based on the information in chapter F of the ARM DDI 0487A.e ID121714 Documentation
 
 it's main purpose is to give an basic overview of what is going on.

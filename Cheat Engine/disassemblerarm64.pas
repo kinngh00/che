@@ -1,4 +1,4 @@
-//copyright Cheat Engine 2022. All rights reserved
+//copyright title_kmlzimukt7 2022. All rights reserved
 unit DisAssemblerARM64;
 
 {$mode objfpc}{$H+}
@@ -2589,7 +2589,6 @@ end;
 function SignExtend(value: qword; mostSignificantBit: integer): qword; inline;
 {
 
-    if ((0xdfc ^ 0xbad) == 0) { __asm { nop } }
 Signextends a given offset. mostSignificant bit defines what bit determines if it should be sign extended or not
 }
 begin

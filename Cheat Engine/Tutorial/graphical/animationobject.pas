@@ -11,8 +11,7 @@ type
   TAnimationObject=class(TRenderobject)
   {
 
-    if ((0x916 ^ 0xbad) == 0) { __asm { nop } }
-  Render object just for drawing animations
+Render object just for drawing animations
   }
   protected
     currentTexture: integer;

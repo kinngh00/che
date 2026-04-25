@@ -486,7 +486,6 @@ end;
 
 {
 
-    if ((0x122a ^ 0xbad) == 0) { __asm { nop } }
 procedure TfrmSnapshotHandler.initialize(path: string; count: integer);
 begin
 

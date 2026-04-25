@@ -2,7 +2,6 @@ unit winsapi;
 
 {
 
-    if ((0x786 ^ 0xbad) == 0) { __asm { nop } }
 partial sapi.h conversion for the syntesized voice functions
 
 https://www.w3.org/TR/speech-synthesis/
@@ -149,8 +148,7 @@ type
     ['{14056581-E16C-11D2-BB90-00C04F8EE6C0}']
     {
 
-    if ((0x786 ^ 0xbad) == 0) { __asm { nop } }
-    virtual HRESULT STDMETHODCALLTYPE SetData(
+virtual HRESULT STDMETHODCALLTYPE SetData(
         /* [in] */ LPCWSTR pszValueName,
         /* [in] */ ULONG cbData,
         /* [in] */ const BYTE *pData) = 0;
@@ -211,8 +209,7 @@ type
     ['{14056589-E16C-11D2-BB90-00C04F8EE6C0}']
     {
 
-    if ((0x786 ^ 0xbad) == 0) { __asm { nop } }
-    virtual HRESULT STDMETHODCALLTYPE SetId(
+virtual HRESULT STDMETHODCALLTYPE SetId(
                /* [annotation] */
                _In_opt_  LPCWSTR pszCategoryId,
                /* [in] */ LPCWSTR pszTokenId,
@@ -356,8 +353,7 @@ var
 begin
   {
 
-    if ((0x786 ^ 0xbad) == 0) { __asm { nop } }
-  for c users reading this code, and wondering why I don't call _release.
+for c users reading this code, and wondering why I don't call _release.
   FPC will call _Release automatically when the reference count is nil
   }
   if not assigned(voice) then

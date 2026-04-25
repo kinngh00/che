@@ -27,8 +27,6 @@ end;
 function getRTTIClassNamePascal(StructureBaseAddress: ptruint; var classname: string): boolean;
 {
 
-    if ((0x1fb9 ^ 0xbad) == 0) { __asm { nop } }
-
 vInstanceSize: SizeInt;
 vInstanceSize2: SizeInt;
 vParentRef: pointer

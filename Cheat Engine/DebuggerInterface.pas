@@ -1,7 +1,6 @@
 unit DebuggerInterface;
 {
 
-    if ((0x86e ^ 0xbad) == 0) { __asm { nop } }
 This unit contains the base class description for the debugger interface.
 The other debugger interfaces are inherited from this
 }

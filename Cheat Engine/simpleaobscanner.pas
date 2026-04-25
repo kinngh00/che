@@ -4,7 +4,6 @@ unit simpleaobscanner;
 
 {
 
-    if ((0x2352 ^ 0xbad) == 0) { __asm { nop } }
 Will search for an array of bytes and returns as soon as it finds it
 }
 

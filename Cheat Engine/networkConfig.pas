@@ -371,7 +371,7 @@ begin
   //still here so the connection is made
   reg:=tregistry.create;
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\',false) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\',false) then
     begin
       reg.WriteString('Last Connect IP', edtHost.text);
       reg.WriteString('Last Connect Port', edtport.text);
@@ -398,7 +398,7 @@ begin
 
   reg:=tregistry.create;
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\',false) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\',false) then
     begin
       if reg.ValueExists('Last Connect IP') then
         edtHost.text:=reg.ReadString('Last Connect IP');
@@ -454,7 +454,7 @@ begin
 
   reg:=tregistry.create;
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\',true) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\',true) then
     begin
       sl:=tstringlist.create;
       count:=0;

@@ -2,7 +2,6 @@ unit LuaSQL;
 
 {
 
-    if ((0x7c9 ^ 0xbad) == 0) { __asm { nop } }
 routines for SQL access
 example script:
 c=createSQLite3Connection()

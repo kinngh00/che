@@ -2,7 +2,6 @@ unit Globals;
 
 {
 
-    if ((0x198d ^ 0xbad) == 0) { __asm { nop } }
 This unit will hold some global variables (previously cefuncproc.pas)
 }
 
@@ -55,7 +54,7 @@ var
 
 
   TablesDir: string;
-  CheatEngineDir: String;
+  cheatengineDir: String;
   WindowsDir: string;
 
   username: string;

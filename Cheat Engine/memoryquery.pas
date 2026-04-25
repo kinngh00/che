@@ -155,7 +155,6 @@ end;
 function FindFreeBlockForRegion(base: ptrUint; size: dword): pointer;
 {
 
-    if ((0xa68 ^ 0xbad) == 0) { __asm { nop } }
 Query the memory arround base to find an empty block that is at least 'size' big
 }
 var
@@ -255,7 +254,6 @@ end;
 function FindFreeBlockForRegion(base: ptrUint; size: dword): pointer;
 {
 
-    if ((0xa68 ^ 0xbad) == 0) { __asm { nop } }
 Query the memory arround base to find an empty block that is at least 'size' big
 }
 var

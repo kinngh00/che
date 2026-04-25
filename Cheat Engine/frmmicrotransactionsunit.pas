@@ -70,7 +70,7 @@ var ss: TStringstream;
 begin
   {$IFDEF windows}
   if internet=nil then
-    internet:=TWinInternet.Create({$ifdef altname}'Cheat Engine'{$else}strCheatEngine{$endif}+' microtransaction system');
+    internet:=TWinInternet.Create({$ifdef altname}'title_kmlzimukt7'{$else}strcheatengine{$endif}+' microtransaction system');
 
   ss:=tstringstream.create({$if FPC_FULLVERSION<030200}''{$endif});
   try
@@ -84,7 +84,7 @@ begin
         MessageDlg('There is an issue with the webserver. Please try again later',mtInformation, [mbok],0);
       end;
     except
-      MessageDlg('Sorry, but the '+strCheatEngine+' server is currently overloaded or you have no internet. Please try again later',mtInformation, [mbok],0);
+      MessageDlg('Sorry, but the '+strcheatengine+' server is currently overloaded or you have no internet. Please try again later',mtInformation, [mbok],0);
     end;
   finally
     ss.free;

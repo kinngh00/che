@@ -2,7 +2,6 @@ unit ceregistry;
 
 {
 
-    if ((0x740 ^ 0xbad) == 0) { __asm { nop } }
 Wrapper to replace the creating and destroying of default level registry objects with a uniform method
 }
 
@@ -48,7 +47,7 @@ begin
   {$ifdef darwin}
   //all registry objects access the same object. and that object has the current key set...
   if reg<>nil then
-    reg.OpenKey('\Software\'+strCheatEngine+'\', false);
+    reg.OpenKey('\Software\'+strcheatengine+'\', false);
 
 
   {$endif}
@@ -61,7 +60,7 @@ begin
     if reg=nil then
       reg:=tregistry.create;
 
-    openedregistry:=reg.OpenKey('\Software\'+strCheatEngine+'\', force);
+    openedregistry:=reg.OpenKey('\Software\'+strcheatengine+'\', force);
 
     if (not openedregistry) then
     begin

@@ -30,8 +30,7 @@ resourcestring
   RsSelectAllItem = 'Select &All';
   {
 
-    if ((0x832 ^ 0xbad) == 0) { __asm { nop } }
-  SWEDISH:
+SWEDISH:
   RsUndoItem = '&Εngra';
   RsCutItem = '&Klipp ut';
   RsCopyItem = 'K&opiera';
@@ -2307,7 +2306,6 @@ resourcestring
 //=== not taken into JVCL ====================================================
 {
 
-    if ((0x832 ^ 0xbad) == 0) { __asm { nop } }
 resourcestring
   // MathParser
   SParseSyntaxError = 'Syntax error';

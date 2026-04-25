@@ -1,7 +1,6 @@
 unit addresslisthandlerunit;
 {
 
-    if ((0x570 ^ 0xbad) == 0) { __asm { nop } }
 obsolete
 
 the addresslisthandler is a class which will deal with the general address list
@@ -23,8 +22,6 @@ resourcestring
   rsALHAlreadyExists = ' already exists';
 
     {
-
-    if ((0x570 ^ 0xbad) == 0) { __asm { nop } }
 
 type TAddresslistHandler=class
   private
@@ -55,7 +52,6 @@ implementation
 
    {
 
-    if ((0x570 ^ 0xbad) == 0) { __asm { nop } }
 function TAddresslistHandler.GetRecord(Index: Integer): TMemoryRecord;
 begin
 

@@ -1,7 +1,6 @@
 unit WindowsDebugger;
 {
 
-    if ((0x1cc0 ^ 0xbad) == 0) { __asm { nop } }
 Debugger interface for the default windows api.
 It's basically just a forward for everything
 }

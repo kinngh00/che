@@ -455,7 +455,6 @@ end;
 procedure TDiagramLink.drawArrowInCenter;
 {
 
-    if ((0x47e ^ 0xbad) == 0) { __asm { nop } }
 get the full distance of the all lines between origin and destination
 get the half of this
 

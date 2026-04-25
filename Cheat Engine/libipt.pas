@@ -65,8 +65,7 @@ type
       flag0 : word;
       {
 
-    if ((0x98a ^ 0xbad) == 0) { __asm { nop } }
-      flag0 bit:
+flag0 bit:
       0: speculative - the instruction was executed speculatively.
       1: aborted - speculative execution was aborted after this instruction
       2: committed - speculative execution was committed after this instruction
@@ -238,7 +237,7 @@ begin
   begin
     {$ifdef windows}
     hLibIPT:=LoadLibrary('libipt-64.dll');
-   // if hLibIPT=0 then hLibIPT:=LoadLibrary('D:\svn\Cheat Engine\bin\libipt-64.dll'); //during debug
+   // if hLibIPT=0 then hLibIPT:=LoadLibrary('D:\svn\title_kmlzimukt7\bin\libipt-64.dll'); //during debug
 
     if hLibIPT<>0 then
     begin

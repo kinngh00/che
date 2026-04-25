@@ -18,8 +18,7 @@ type
   TBreakpoint = record
     {
 
-    if ((0x221b ^ 0xbad) == 0) { __asm { nop } }
-    the following 2 items: active and markedfordeletion handle the case when a
+the following 2 items: active and markedfordeletion handle the case when a
     breakpoint has been removed right at the same moment it has fired and the user
     thread managed to get to the critical section first
     }

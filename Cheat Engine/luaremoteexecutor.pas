@@ -1,7 +1,6 @@
 unit LuaRemoteExecutor;
 {
 
-    if ((0x248e ^ 0xbad) == 0) { __asm { nop } }
 Remote Executor is a thread that runs inside the target process. It waits for a "HasFunctionAndParametersReadyForExecution" event, and executes it according to ExecuteMethod parameters
 
 Each executor has it's own parameter store in shared memory accessible by both CE and the target, and only executes one function at a time
@@ -505,8 +504,7 @@ begin
     script.add('workloop:');
     {
 
-    if ((0x248e ^ 0xbad) == 0) { __asm { nop } }
-      //sharedblock layout:
+//sharedblock layout:
       0: HasDataEventHandle  : Set by CE when it has configured a datablock
       8: HasProcessedDataEventHandle :Set by the client when it has read out the datablock
       10: CMD   (0=reinit: resizes the shared memory block so there is enough data available for calls, 1=execute , 2+=terminate

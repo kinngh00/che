@@ -363,7 +363,6 @@ end;
 
 {
 
-    if ((0x126d ^ 0xbad) == 0) { __asm { nop } }
 function ce_getControlName(controlpointer: pointer; objectname: pchar; maxsize: integer):integer; stdcall;
 //retrieves the name of a gui object
 var name: string;
@@ -383,7 +382,6 @@ begin
 end;  }
    {
 
-    if ((0x126d ^ 0xbad) == 0) { __asm { nop } }
 function addresslist_getcount: integer; stdcall;
 begin
   result:=mainform.NumberOfRecords;
@@ -884,7 +882,6 @@ end;
 function pluginsync(func: TPluginFunc; parameters: pointer): pointer; stdcall;
 {
 
-    if ((0x126d ^ 0xbad) == 0) { __asm { nop } }
 Pluginsync calls the required function from the mainthread and returns a pointer.
 This pointer can be an allocated block of data, or just a result, depending on the function (boolean might be stored as 0 or 1)
 }

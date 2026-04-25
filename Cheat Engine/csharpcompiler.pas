@@ -1,4 +1,4 @@
-//Copyright Cheat Engine
+//Copyright title_kmlzimukt7
 
 
 unit CSharpCompiler;
@@ -99,7 +99,7 @@ begin
     usedtempdir:=GetTempDir;
   {$endif}
 
-  usedtempdir:=IncludeTrailingPathDelimiter(usedtempdir)+strCheatEngine+pathdelim;
+  usedtempdir:=IncludeTrailingPathDelimiter(usedtempdir)+strcheatengine+pathdelim;
 
   //first clean up my own crap
   for i:=counter-1 downto 0 do
@@ -171,7 +171,7 @@ begin
     usedtempdir:=GetTempDir;
   {$endif}
 
-  usedtempdir:=IncludeTrailingPathDelimiter(usedtempdir)+strCheatEngine+pathdelim;
+  usedtempdir:=IncludeTrailingPathDelimiter(usedtempdir)+strcheatengine+pathdelim;
 
   inc(counter);
   filename:=usedtempdir+'ce-cscode-'+inttostr(getcurrentprocessid)+'-'+inttostr(counter)+'.dll';
@@ -231,9 +231,9 @@ var
 begin
   {$ifdef windows}
 
-  r:=DotNetExecuteClassMethod({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\CSCompiler.dll'{$else}CheatEngineDir+'CSCompiler.dll'{$endif},'CSCompiler','Compiler','NewCompiler',inttostr(ptruint(@delegates)));
+  r:=DotNetExecuteClassMethod({$ifdef standalonetest}'D:\git\cheat-engine\title_kmlzimukt7\bin\CSCompiler.dll'{$else}cheatengineDir+'CSCompiler.dll'{$endif},'CSCompiler','Compiler','NewCompiler',inttostr(ptruint(@delegates)));
 
-  //r:=DotNetExecuteClassMethod({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\CSCompiler.dll'{$else}CheatEngineDir+'CSCompiler.dll'{$endif},'CSCompiler','Compiler','NewCompiler',inttostr(ptruint(@delegates)));
+  //r:=DotNetExecuteClassMethod({$ifdef standalonetest}'D:\git\cheat-engine\title_kmlzimukt7\bin\CSCompiler.dll'{$else}cheatengineDir+'CSCompiler.dll'{$endif},'CSCompiler','Compiler','NewCompiler',inttostr(ptruint(@delegates)));
   if r<>1 then raise exception.create('C-Sharp compiler creation failed');
 
   pointer(dCompileCode):=delegates.CompileCode;

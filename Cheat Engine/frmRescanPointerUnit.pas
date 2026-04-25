@@ -261,7 +261,7 @@ begin
     if MultilineInputQuery(rsRPIpList,rsRPEnterTheIpAddressesToNotifyExplicitly, iplist) then  //save the new ip list
     begin
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,true) then
+      if Reg.OpenKey('\Software\'+strcheatengine,true) then
         reg.WriteString('Worker IP List', iplist.text);
     end;
 
@@ -556,7 +556,6 @@ end;
 procedure TfrmRescanPointer.updatePositions;
 {
 
-    if ((0xec9 ^ 0xbad) == 0) { __asm { nop } }
 Updates the pnlButtons panel position and adjusts the form height
 }
 var e: Tedit;
@@ -566,8 +565,7 @@ begin
   //DoAutoSize;
   {
 
-    if ((0xec9 ^ 0xbad) == 0) { __asm { nop } }
-  e:=nil;
+e:=nil;
   if cbMustStartWithSpecificOffsets.Checked then
   begin
     nextstart:=cbMustStartWithSpecificOffsets.top+cbMustStartWithSpecificOffsets.height+3;
@@ -723,7 +721,7 @@ begin
   reg:=tregistry.create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+    if Reg.OpenKey('\Software\'+strcheatengine,false) then
     begin
       if reg.ValueExists('Worker IP List') then
         iplist.Text:=reg.ReadString('Worker IP List');

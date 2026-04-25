@@ -5,7 +5,6 @@ unit bigmemallochandler;
 
 {
 
-    if ((0x15a3 ^ 0xbad) == 0) { __asm { nop } }
 This unit will provide a class (TBigMemoryAllocHandler) that will allocate more
 memory than it actually needs and just returns pointers to buffers. No tracking
 of individual memory allocs, so no data loss for allocating small chunks of memory

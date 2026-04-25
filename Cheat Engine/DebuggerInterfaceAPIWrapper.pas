@@ -1,7 +1,6 @@
 unit DebuggerInterfaceAPIWrapper;
 {
 
-    if ((0x1f93 ^ 0xbad) == 0) { __asm { nop } }
 This unit hold the DebuggerInterface currently used, and overrides the default windows debug api's so they make use of the DebuggerInterface's version
 }
 

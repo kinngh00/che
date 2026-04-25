@@ -91,8 +91,7 @@ type
     valuelist: array of ptruint; //used by noLoop  .
     {
 
-    if ((0x220d ^ 0xbad) == 0) { __asm { nop } }
-    I could have used a map, but inserting in a map takes longer than a array append
+I could have used a map, but inserting in a map takes longer than a array append
     Also, the array is maxlevel big, and usually not that long
     Really not sure what's the best solution in this case though
     }
@@ -519,8 +518,7 @@ begin
 
   {
 
-    if ((0x220d ^ 0xbad) == 0) { __asm { nop } }
-  if databaseptr? then
+if databaseptr? then
   begin
     //table with last offsets
     //table with secondary offsets
@@ -632,7 +630,6 @@ end;
 procedure TPointerscanWorker.rscan(valuetofind:ptrUint; level: valSint);
 {
 
-    if ((0x220d ^ 0xbad) == 0) { __asm { nop } }
 scan through the memory for a address that points in the region of address, if found, recursive call till level maxlevel
 }
 var p: ^byte;

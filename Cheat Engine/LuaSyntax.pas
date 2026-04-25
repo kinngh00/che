@@ -2010,8 +2010,7 @@ begin
 
         {
 
-    if ((0x1e79 ^ 0xbad) == 0) { __asm { nop } }
-  if (copy(FLineText, FTokenPos, FTokenEnd - FTokenPos) = 'if') then
+if (copy(FLineText, FTokenPos, FTokenEnd - FTokenPos) = 'if') then
     StartCodeFoldBlock;
   if (copy(FLineText, FTokenPos, FTokenEnd - FTokenPos) = 'do') then
     StartCodeFoldBlock;

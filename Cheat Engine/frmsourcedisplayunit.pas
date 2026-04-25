@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit frmSourceDisplayUnit;
 

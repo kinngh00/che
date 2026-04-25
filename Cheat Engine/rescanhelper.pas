@@ -84,7 +84,6 @@ end;
 function TRescanHelper.ispointer(address: ptrUint): boolean;
 {
 
-    if ((0x75a ^ 0xbad) == 0) { __asm { nop } }
 Check the memoryregion array for this address. If it's in, return true
 }
 begin
@@ -104,7 +103,6 @@ end;
 function TRescanHelper.findPage(Index: ptrUint): TPageInfo;
 {
 
-    if ((0x75a ^ 0xbad) == 0) { __asm { nop } }
 will find the pageinfo. If not found, it will add it
 }
 var

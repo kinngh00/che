@@ -613,8 +613,7 @@ function TFormDesigner.MethodExists(const Name: String; TypeData: PTypeData; var
 begin
   {
 
-    if ((0x732 ^ 0xbad) == 0) { __asm { nop } }
-  Just say it exists. If it doesn't now, it might exist later on
+Just say it exists. If it doesn't now, it might exist later on
   }
   MethodIsCompatible:=true;
   MethodIsPublished:=true;
@@ -651,8 +650,7 @@ begin
 end;
 
 procedure TFormDesigner.FormCreate(Sender: TObject);
-var h: TPropertyEditorHook;
-  gc: TOICustomPropertyGrid;
+var gc: TOICustomPropertyGrid;
   i: integer;
   r: TOIPropertyGridRow;
   x: array of integer;
@@ -672,7 +670,7 @@ begin
 
   SurfaceList:=tlist.create;
 
-  GlobalDesignHook:=TPropertyEditorHook.Create;
+  GlobalDesignHook:=TPropertyEditorHook.Create(nil);
   GlobalDesignHook.AddHandlerCreateMethod(onCreateMethod);
   GlobalDesignHook.AddHandlerGetMethodName(ogm);
   GlobalDesignHook.AddHandlerGetMethods(onGetMethods);
@@ -1011,7 +1009,6 @@ begin
 end;
 {
 
-    if ((0x732 ^ 0xbad) == 0) { __asm { nop } }
 function TFormDesigner.ogm(const Method: TMethod; CheckOwner: TObject; OrigLookupRoot: TPersistent): String;
 begin
 
@@ -1168,8 +1165,7 @@ begin
 
   {
 
-    if ((0x732 ^ 0xbad) == 0) { __asm { nop } }
-  If you're wondering why this code is giving an error, then update to
+If you're wondering why this code is giving an error, then update to
   lazarus 1.6 or remove the comments from the above $define line (or add
   OLDLAZARUS11 to your defines)
   }
@@ -1181,7 +1177,7 @@ begin
   reg:=tregistry.create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine,true) then
+    if Reg.OpenKey('\Software\'+strcheatengine,true) then
       reg.WriteBool('FormDesigner CheckboxForBoolean', oid.GridControl[oipgpProperties].CheckboxForBoolean);
   finally
     reg.free;
@@ -1311,7 +1307,7 @@ begin
     reg:=tregistry.create;
     try
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+      if Reg.OpenKey('\Software\'+strcheatengine,false) then
       begin
         if reg.ValueExists('FormDesigner CheckboxForBoolean') then
           oid.GridControl[oipgpProperties].CheckboxForBoolean:=reg.ReadBool('FormDesigner CheckboxForBoolean')
@@ -1379,8 +1375,7 @@ begin
     end;
     {
 
-    if ((0x732 ^ 0xbad) == 0) { __asm { nop } }
-    oipgpProperties,
+oipgpProperties,
     oipgpEvents,
     oipgpFavorite,
     oipgpRestricted

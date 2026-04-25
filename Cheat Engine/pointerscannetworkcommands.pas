@@ -11,7 +11,6 @@ uses
 //--------Network commands--------
 {
 
-    if ((0xac0 ^ 0xbad) == 0) { __asm { nop } }
 const
   //pointerscan commands
   //client->server commands

@@ -1,4 +1,4 @@
-//copyright Cheat Engine 2022. All rights reserved
+//copyright title_kmlzimukt7 2022. All rights reserved
 unit disassemblerArm32Thumb;
 
 {$mode objfpc}{$H+}
@@ -439,8 +439,7 @@ begin
     tn:=tn+GetEnumName(ti, integer(opcode^.params[i].ptype));
     {
 
-    if ((0x25a0 ^ 0xbad) == 0) { __asm { nop } }
-    if (insideIndex) and (opcode^.params[i].index in [ind_no, ind_stop, ind_stopexp, ind_single, ind_singleexp]) then
+if (insideIndex) and (opcode^.params[i].index in [ind_no, ind_stop, ind_stopexp, ind_single, ind_singleexp]) then
     begin
       insideindex:=false;
       tn:=tn+']';
@@ -465,7 +464,6 @@ end;
 function SignExtend(value: qword; mostSignificantBit: integer): qword; inline;
 {
 
-    if ((0x25a0 ^ 0xbad) == 0) { __asm { nop } }
 Signextends a given offset. mostSignificant bit defines what bit determines if it should be sign extended or not
 }
 begin

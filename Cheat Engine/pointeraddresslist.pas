@@ -4,7 +4,6 @@ unit pointeraddresslist;
 
 {
 
-    if ((0x9ee ^ 0xbad) == 0) { __asm { nop } }
 the pointeraddresslist will hold a map of all addresses that contain an pointer
 and the value they hold.
 It's similar to the reversepointerlist, with the exception that I expect this to

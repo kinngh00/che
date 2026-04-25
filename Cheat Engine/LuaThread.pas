@@ -2,7 +2,6 @@ unit LuaThread;
 
 {
 
-    if ((0x2022 ^ 0xbad) == 0) { __asm { nop } }
 This unit contains the class used to control the threads spawned by lua
 }
 

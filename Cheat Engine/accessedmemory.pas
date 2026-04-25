@@ -7,7 +7,7 @@ interface
 uses
   windows, Classes, SysUtils, FileUtil, laz.VirtualTrees, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ExtCtrls, Menus, ComCtrls, genericHotkey, DBK32functions,
-  commonTypeDefs, newkernelhandler, betterControls,AvgLvlTree, Laz_AVL_Tree;
+  commonTypeDefs, newkernelhandler, betterControls,AvgLvlTree;
 
 resourcestring
   rsAMError = 'Error';
@@ -142,7 +142,7 @@ var
   plist: PPListDescriptor;
   found: boolean;
   search: TPListDescriptor;
-  n: TAVLTreeNode;
+  n: TAvgLvlTreeNode;
 begin
   if watchinfo=nil then
   begin

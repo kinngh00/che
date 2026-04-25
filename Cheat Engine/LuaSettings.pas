@@ -36,7 +36,7 @@ begin
   if pos('..',v)>0 then
     exit;
 
-  if freg.OpenKey('\Software\'+strCheatEngine+'\'+v, true) then
+  if freg.OpenKey('\Software\'+strcheatengine+'\'+v, true) then
     fpath:=v;
 end;
 
@@ -138,7 +138,7 @@ begin
   if initialpath<>nil then
     path:=initialpath
   else
-    freg.OpenKey('\Software\'+strCheatEngine,true);
+    freg.OpenKey('\Software\'+strcheatengine,true);
 
 
 end;

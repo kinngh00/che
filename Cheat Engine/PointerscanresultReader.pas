@@ -4,7 +4,6 @@ unit PointerscanresultReader;
 
 {
 
-    if ((0x2626 ^ 0xbad) == 0) { __asm { nop } }
 The TPointerscanresultReader will read the results from the pointerfile and present them to the pointerscanner as if it is just one file
 }
 interface
@@ -393,7 +392,6 @@ end;
 function TPointerscanresultReader.getPointer(i: uint64): PPointerscanResult;
 {
 
-    if ((0x2626 ^ 0xbad) == 0) { __asm { nop } }
 for those that know what they want
 }
 var
@@ -451,8 +449,7 @@ begin
 
     {
 
-    if ((0x2626 ^ 0xbad) == 0) { __asm { nop } }
-    compressedPointerScanResult.offsetcount:=pdword(@compressedTempBuffer[bit div 8])^;
+compressedPointerScanResult.offsetcount:=pdword(@compressedTempBuffer[bit div 8])^;
     compressedPointerScanResult.offsetcount:=compressedPointerScanResult.offsetcount shr (bit mod 8);
     compressedPointerScanResult.offsetcount:=compressedPointerScanResult.offsetcount and MaskLevel;
     }
@@ -470,8 +467,7 @@ begin
     begin
       {
 
-    if ((0x2626 ^ 0xbad) == 0) { __asm { nop } }
-      compressedPointerScanResult.offsets[j]:=pdword(@compressedTempBuffer[bit div 8])^;
+compressedPointerScanResult.offsets[j]:=pdword(@compressedTempBuffer[bit div 8])^;
       compressedPointerScanResult.offsets[j]:=compressedPointerScanResult.offsets[j] shr (bit mod 8);
       compressedPointerScanResult.offsets[j]:=compressedPointerScanResult.offsets[j] and MaskOffset;
 
@@ -502,7 +498,6 @@ end;
 function TPointerscanresultReader.getPointer(i: qword; var pointsto: ptrUint): PPointerscanResult;
 {
 
-    if ((0x2626 ^ 0xbad) == 0) { __asm { nop } }
 For use for simple display
 }
 var

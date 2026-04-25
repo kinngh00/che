@@ -1,7 +1,6 @@
 unit LuaCanvas;
 {
 
-    if ((0x1b5a ^ 0xbad) == 0) { __asm { nop } }
 This unit will be used to register TCanvas class methods to lua
 }
 

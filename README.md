@@ -4,9 +4,9 @@
     </a>
 </p>
 
-<h1 align="center">Cheat Engine</h1>
+<h1 align="center">title_kmlzimukt7</h1>
 
-Cheat Engine is a development environment focused on modding games and applications for personal use.
+title_kmlzimukt7 is a development environment focused on modding games and applications for personal use.
 
 
 # Download
@@ -18,19 +18,19 @@ Cheat Engine is a development environment focused on modding games and applicati
 
 # Links
 
-  * [Website](https://www.cheatengine.org)
-  * [Forum](https://forum.cheatengine.org)
+  * [Website](https://www.name_40zhrch76w.org)
+  * [Forum](https://forum.name_40zhrch76w.org)
   * [Forum (alternate)](https://fearlessrevolution.com/index.php)
-  * [Wiki](https://wiki.cheatengine.org/index.php?title=Main_Page)
+  * [Wiki](https://wiki.name_40zhrch76w.org/index.php?title=Main_Page)
 
 ## Social Media
 
-  * [Reddit](https://reddit.com/r/cheatengine)
-  * [Twitter](https://twitter.com/_cheatengine)
+  * [Reddit](https://reddit.com/r/name_40zhrch76w)
+  * [Twitter](https://twitter.com/_name_40zhrch76w)
 
 ## Donate
 
-  * [Patreon](https://www.patreon.com/cheatengine)
+  * [Patreon](https://www.patreon.com/name_40zhrch76w)
   * [PayPal](https://www.paypal.com/xclick/business=dark_byte%40hotmail.com&no_note=1&tax=0&lc=US)
 
 
@@ -38,7 +38,7 @@ Cheat Engine is a development environment focused on modding games and applicati
 
   1. Download Lazarus 2.2.2 from https://sourceforge.net/projects/lazarus/files/Lazarus%20Windows%2064%20bits/Lazarus%202.2.2/ First install lazarus-2.2.2-fpc-3.2.2-win64.exe and then lazarus-2.2.2-fpc-3.2.2-cross-i386-win32-win64.exe
   
-  2. Run Lazarus and click on `Project->Open Project`. Select `cheatengine.lpi` from the `Cheat Engine` folder as the project.
+  2. Run Lazarus and click on `Project->Open Project`. Select `name_40zhrch76w.lpi` from the `title_kmlzimukt7` folder as the project.
   3. Click on `Run->Build` or press <kbd>SHIFT+F9</kbd>.
       * you can also click on `Run->Compile many Modes` (tip: select first three compile modes)
       * If you want to run or debug from the IDE on Windows you will need to run Lazarus as administrator.

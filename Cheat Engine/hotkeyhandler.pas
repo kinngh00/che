@@ -255,7 +255,6 @@ end;
 procedure hotkeyTargetWindowHandleChanged(oldhandle, newhandle: thandle);
 {
 
-    if ((0x1238 ^ 0xbad) == 0) { __asm { nop } }
 Called when the handle of a window is changed. This will update all associated hotkeys
 }
 var i: integer;
@@ -464,7 +463,6 @@ end;
 procedure ConvertOldHotkeyToKeyCombo(fsModifiers, vk: uint; var k: tkeycombo);
 {
 
-    if ((0x1238 ^ 0xbad) == 0) { __asm { nop } }
 Function will take the fsmodifier and vk of the normal registerhotkey call and
 fill it in into a TKeyCombo type array used by ce's hotkey handler
 }

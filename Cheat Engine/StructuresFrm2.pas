@@ -690,7 +690,7 @@ resourcestring
    rsStructureDefine = 'Structure define';
    rsStructAlreadyExists = 'This is detected as structure named %s which already exists. Define a new version of this structure? (Click no to go to the existing one)';
    rsGiveTheNameForThisStructure = 'Give the name for this structure';
-   rsDoYouWantCheatEngineToTryAndFillInTheMostBasicType = 'Do you want Cheat '
+   rsDoYouWantcheatengineToTryAndFillInTheMostBasicType = 'Do you want Cheat '
      +'Engine to try and fill in the most basic types of the struct using the '
      +'current address?';
    rsPleaseGiveAStartingSizeOfTheStructYouCanChangeThis = 'Please give a '
@@ -707,7 +707,7 @@ resourcestring
    rsAreYouSureYouWantToDelete = 'Are you sure you want to delete %s?';
    rsThisIsNotAValidStructureFile = 'This is not a valid structure file';
    rsWrongVersion = 'This structure file was generated with a newer version of '
-     +strCheatEngine+'. (That means there''s more than likely a new version so '
+     +strcheatengine+'. (That means there''s more than likely a new version so '
      +'please update....)';
    rsUnkownFileExtension = 'Unknown file extension';
    rsAreYouSureYouWantToRemoveAllStructures = 'Are you sure you want to remove '
@@ -2116,7 +2116,7 @@ begin
   reg:=tregistry.create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\DissectData',false) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\DissectData',false) then
     begin
       if reg.ValueExists('Autocreate') then fAutoCreate:=reg.ReadBool('Autocreate');
       if reg.ValueExists('Autocreate Size') then fAutoCreateStructsize:=reg.ReadInteger('Autocreate Size');
@@ -2194,8 +2194,7 @@ begin
 
         {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
-        tempnode:=element.FindNode('PointerTo');
+tempnode:=element.FindNode('PointerTo');
         tempnode:=element.FindNode('PointerToSize');   }
 
 
@@ -2632,7 +2631,6 @@ end;
 procedure TStructColumn.TakeSnapshotClick(sender: TObject);
 {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
 save the values
 }
 begin
@@ -3741,7 +3739,6 @@ end;
 procedure TfrmStructures2.setCurrentNodeStringsInColumns(node: TTreenode; element: TStructElement; highlighted: boolean=false);
 {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
 This method will get the address and value of the current node and store them temporarily in the column for the renderer to fetch
 }
 var
@@ -4394,8 +4391,7 @@ begin
     // check for existing structure with the same name
     {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
-    repeat
+repeat
     begin
       found := false;
       for i:=0 to DissectedStructs.Count-1 do
@@ -4570,7 +4566,7 @@ begin
 
 
     //ask if it should be filled in automatically
-    autoFillIn:=messagedlg(rsDoYouWantCheatEngineToTryAndFillInTheMostBasicType, mtconfirmation, [mbyes, mbno, mbcancel], 0);
+    autoFillIn:=messagedlg(rsDoYouWantcheatengineToTryAndFillInTheMostBasicType, mtconfirmation, [mbyes, mbno, mbcancel], 0);
     if autoFillIn=mrcancel then exit;
 
     mainStruct:=nil;
@@ -5621,7 +5617,6 @@ end;
 function TfrmStructures2.searchString(search: string; findoptions: TFindOptions): integer;
 {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
 Searches the current list for the specified value
 }
 var i,j: integer;
@@ -7133,7 +7128,6 @@ begin
 
 {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
 displayaddress:=getAddressFromNode(node, columns[i], error);  //get the address to show the user
 
 savedstate:=ptruint(c.getSavedState);
@@ -7281,8 +7275,7 @@ begin
   //commented out, appearing of scrollbars will mess with this
   {
 
-    if ((0x1d85 ^ 0xbad) == 0) { __asm { nop } }
-  if (frmStructuresConfig<>nil) and frmStructuresConfig.cbPositionAddressesOverColumns.checked then
+if (frmStructuresConfig<>nil) and frmStructuresConfig.cbPositionAddressesOverColumns.checked then
   begin
     // here we try and position address edit boxes over the column of data they are for...
     // plan is to have group box contained within the columns it is for, and

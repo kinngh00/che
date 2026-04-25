@@ -728,7 +728,7 @@ type
       Shift: TShiftState; X, Y: integer);
     procedure Findoutwhataccessesthisaddress1Click(Sender: TObject);
     procedure OpenProcesslist1Click(Sender: TObject);
-    procedure CloseCheatEngine1Click(Sender: TObject);
+    procedure Closecheatengine1Click(Sender: TObject);
     procedure Showashexadecimal1Click(Sender: TObject);
     procedure OpenMemorybrowser1Click(Sender: TObject);
     procedure cbPauseWhileScanningClick(Sender: TObject);
@@ -1165,7 +1165,7 @@ resourcestring
   rsSaveScanResults = 'Save scan results';
   rsWhatNameDoYouWantToGiveToTheseScanresults =
     'What name do you want to give to these scanresults?';
-  strClickToGoHome = 'Click here to go to the '+strCheatEngine+' homepage';
+  strClickToGoHome = 'Click here to go to the '+strcheatengine+' homepage';
   rsLuaScriptCheatTable = 'Lua script: '+strCheatTable;
   strChangeDescription1 = 'Description';
   strChangeDescription2 = 'Change the description to:';
@@ -1198,8 +1198,8 @@ resourcestring
     'Select the saved scan result to delete from the list below';
   rsComparingTo = 'Comparing to %s';
   rsHex = 'Hex';
-  rsDoYouWantToGoToTheCheatEngineWebsite =
-    'Do you want to go to the '+strCheatEngine+' website?';
+  rsDoYouWantToGoToThecheatengineWebsite =
+    'Do you want to go to the '+strcheatengine+' website?';
 
   strdeleteall = 'Are you sure you want to delete all addresses?';
   stralreadyin = 'This address is already in the list';
@@ -1246,15 +1246,15 @@ resourcestring
   strHideAll = 'will hide all windows';
   strUnHideForeground = 'will bring the foreground window back';
   strUnhideAll = 'will bring all windows back';
-  rsBringsCheatEngineToFront = 'brings '+strCheatEngine+' to front';
+  rsBringscheatengineToFront = 'brings '+strcheatengine+' to front';
 
   strhappybirthday = 'Let''s sing Happy Birthday for Dark Byte today!';
   strXMess = 'Merry christmas and happy new year';
   strNewyear = 'And what are your good intentions for this year? ;-)';
-  strfuture = 'Wow,I never imagined people would use '+strCheatEngine+' up to today';
+  strfuture = 'Wow,I never imagined people would use '+strcheatengine+' up to today';
   rsEXPIRED = 'EXPIRED';
   strdontbother =
-    'Don''t even bother. '+strCheatEngine+' uses the main thread to receive messages when the scan is done, freeze it and CE will crash!';
+    'Don''t even bother. '+strcheatengine+' uses the main thread to receive messages when the scan is done, freeze it and CE will crash!';
   rsTheProcessIsnTFullyOpenedIndicatingAInvalidProcess =
     'The process isn''t fully opened. Indicating a invalid ProcessID. You still want to find out the EPROCESS? (BSOD is '
     + 'possible)';
@@ -1310,7 +1310,7 @@ resourcestring
   rsWasClickedAtPositon = ' was clicked at positon ';
   rsWidth = '   -   width=';
   rsHeight = ' , height=';
-  rsUnableToScanFixYourScanSettings = 'Unable to scan. Fix your scan settings and restart '+strCheatEngine;
+  rsUnableToScanFixYourScanSettings = 'Unable to scan. Fix your scan settings and restart '+strcheatengine;
   rsCustomLuaType = 'Custom LUA type';
   rsCustomTypeName = 'Custom Type Name';
   rsLanguage = 'Language';
@@ -2317,7 +2317,6 @@ end;
 procedure TMainForm.disableGui;
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 This procedure will disable the gui. E.g while scanning the memory with no wait
 screen.
 }
@@ -2352,7 +2351,6 @@ end;
 procedure TMainForm.enableGui(isnextscan: boolean);
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 Enables the gui options according to what type of scan is currently used
 no scan, enable everything
 already scanning, disable the group and type
@@ -3760,7 +3758,7 @@ begin
     try
       Reg.RootKey := HKEY_CURRENT_USER;
 
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\FoundList'+darkmodestring, True) then
+      if Reg.OpenKey('\Software\'+strcheatengine+'\FoundList'+darkmodestring, True) then
       begin
         reg.WriteInteger('FoundList.NormalValueColor', foundlistcolors.NormalValueColor);
         reg.WriteInteger('FoundList.ChangedValueColor', foundlistcolors.ChangedValueColor);
@@ -4270,8 +4268,7 @@ begin
     f := LuaForms[i];
     {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
-    //this currently won't work
+//this currently won't work
     if f.icon<>nil then
     begin
       b:=tbitmap.create;
@@ -4565,7 +4562,7 @@ begin
   vartype.OnChange := nil;
   //disable the onchange event so CreateCustomType doesn't keep setting it
   try
-    if reg.OpenKey('\Software\'+strCheatEngine+'\CustomTypes\', False) then
+    if reg.OpenKey('\Software\'+strcheatengine+'\CustomTypes\', False) then
     begin
       CustomTypes := TStringList.Create;
       try
@@ -4573,7 +4570,7 @@ begin
 
         for i := 0 to CustomTypes.Count - 1 do
         begin
-          if reg.OpenKey('\Software\'+strCheatEngine+'\CustomTypes\' + CustomTypes[i], False) then
+          if reg.OpenKey('\Software\'+strcheatengine+'\CustomTypes\' + CustomTypes[i], False) then
           begin
             try
               islua := False;
@@ -4604,7 +4601,6 @@ end;
 procedure TMainForm.RefreshCustomTypes;
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 In short: remove all custom scan types and add them back
 }
 var
@@ -4646,7 +4642,7 @@ begin
       mtConfirmation, [mbNo, mbYes], 0) = mrYes then
     begin
       reg := tregistry.Create;
-      reg.DeleteKey('\Software\'+strCheatEngine+'\CustomTypes\' + ct.Name);
+      reg.DeleteKey('\Software\'+strcheatengine+'\CustomTypes\' + ct.Name);
       ct.remove;
       RefreshCustomTypes;
     end;
@@ -4685,7 +4681,7 @@ begin
       begin
         //delete the old one
         reg := Tregistry.Create;
-        reg.DeleteKey('\Software\'+strCheatEngine+'\CustomTypes\' + oldname);
+        reg.DeleteKey('\Software\'+strcheatengine+'\CustomTypes\' + oldname);
         freeandnil(reg);
       end;
     end;
@@ -4694,7 +4690,7 @@ begin
 
     //Add/change this to the registry
     reg := Tregistry.Create;
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\CustomTypes\' + ct.Name, True) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\CustomTypes\' + ct.Name, True) then
     begin
       reg.WriteString('Script', script);
       if lua then
@@ -4940,7 +4936,7 @@ var
   s: string;
 begin
   s := scantablist.TabText[scantablist.SelectedTab];
-  if InputQuery(rsCheatEngine, rsWhatWillBeTheNewNameForThisTab, s) then
+  if InputQuery(rscheatengine, rsWhatWillBeTheNewNameForThisTab, s) then
     scantablist.TabText[scantablist.SelectedTab] := s;
 end;
 
@@ -5063,8 +5059,7 @@ begin
 
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
-  if foundlist3.TopItem<>nil then
+if foundlist3.TopItem<>nil then
     scanstate.foundlist3.topitemindex:=foundlist3.topitem.Index
   else
     scanstate.foundlist3.topitemindex:=-1;    }
@@ -7120,7 +7115,7 @@ procedure TMainForm.LogoClick(Sender: TObject);
 var s: string;
 begin
   s:=format('http://www.cheatengine.org/?referredby=CE%.2f',[ceversion]);
-  if messagedlg(rsDoYouWantToGoToTheCheatEngineWebsite, mtConfirmation,
+  if messagedlg(rsDoYouWantToGoToThecheatengineWebsite, mtConfirmation,
     [mbYes, mbNo], 0) = mrYes then
     ShellExecute(0, PChar('open'), PChar(s),
       PChar(''), PChar(''), SW_MAXIMIZE);
@@ -7660,7 +7655,7 @@ begin
     reg:=tregistry.Create;
     try
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,true) then
+      if Reg.OpenKey('\Software\'+strcheatengine,true) then
       begin
         reg.WriteInteger('scan CopyOnWrite', integer(cbCopyOnWrite.State));
         reg.WriteInteger('scan Executable', integer(cbExecutable.State));
@@ -7690,7 +7685,6 @@ end;
 procedure TMainForm.paste(simplecopypaste: boolean);
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 this routine will paste a entry from the cplipboard into the addresslist of CE
 If simplecopypaste is false frmPasteTableentry is shown to let the user change
 some stuff before adding the new entry
@@ -8235,7 +8229,7 @@ begin
 
   end
   else
-    fronttext := rsBringsCheatEngineToFront;
+    fronttext := rsBringscheatengineToFront;
 
 
   hotkey:=cereg.readString('BringToFrontHotkey');
@@ -8308,9 +8302,9 @@ begin
   try
     Reg.RootKey := HKEY_CURRENT_USER;
 
-    if not Reg.OpenKey('\Software\'+strCheatEngine, False) then //can't be opened. Clean install
+    if not Reg.OpenKey('\Software\'+strcheatengine, False) then //can't be opened. Clean install
     begin
-      if Reg.OpenKey('\Software\'+strCheatEngine, True) then
+      if Reg.OpenKey('\Software\'+strcheatengine, True) then
       begin
         //write some default data into the registry
         reg.WriteBool('Undo', True);
@@ -8369,7 +8363,7 @@ begin
 
   //  animatewindow(mainform.Handle,10000,AW_CENTER);
   //mainform.repaint;
-  fronttext := rsBringsCheatEngineToFront;
+  fronttext := rsBringscheatengineToFront;
 
   if dontrunshow then
     exit;
@@ -8439,8 +8433,7 @@ begin
 
    {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
-  if aprilfools then
+if aprilfools then
     Caption := cenorm + ' ' + rsEXPIRED + '!';}
 
   if autoattachtimer.Enabled then
@@ -8562,7 +8555,7 @@ begin
   fromaddress.Font.Height:=i;
   toaddress.Font.Height:=i;
 
-  if Reg.OpenKey('\Software\'+strCheatEngine+'\FoundList'+darkmodestring, false) then
+  if Reg.OpenKey('\Software\'+strcheatengine+'\FoundList'+darkmodestring, false) then
   begin
     if reg.ValueExists('FoundList.NormalValueColor') then foundlistcolors.NormalValueColor:=reg.ReadInteger('FoundList.NormalValueColor');
     if reg.ValueExists('FoundList.ChangedValueColor') then foundlistcolors.ChangedValueColor:=reg.ReadInteger('FoundList.ChangedValueColor');
@@ -8989,7 +8982,7 @@ begin
   sbOpenProcess.Click;
 end;
 
-procedure TMainForm.CloseCheatEngine1Click(Sender: TObject);
+procedure TMainForm.Closecheatengine1Click(Sender: TObject);
 begin
   Close;
 end;
@@ -9134,7 +9127,7 @@ begin
   reg := Tregistry.Create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine, True) then
+    if Reg.OpenKey('\Software\'+strcheatengine, True) then
       reg.WriteString('Initial tables dir', dir);
 
   finally
@@ -9254,7 +9247,6 @@ end;
 procedure TMainForm.changeScriptCallback(memrec: TMemoryRecord; script: string; changed: boolean);
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 Gets called when a edit script is done
 }
 begin
@@ -10970,7 +10962,6 @@ end;
 procedure TMainForm.ClearList;
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 Will remove all entries from the cheattable, comments, and advanced options window
 }
 begin
@@ -11069,7 +11060,6 @@ end;
 function TMainForm.GetScanType2: TScanOption;
 {
 
-    if ((0x1de5 ^ 0xbad) == 0) { __asm { nop } }
 not needed anymore
 }
 begin

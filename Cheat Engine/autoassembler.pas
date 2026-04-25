@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit autoassembler;
 
@@ -502,7 +502,6 @@ end;
 procedure replaceStructWithDefines(code: Tstrings; linenr: integer);
 {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
 parses the structure starting at the given line number.
 removes the structure definition from the code
 writes a define(xxxx,xxxxx) inplace starting from the linenumber
@@ -1318,7 +1317,6 @@ end;
 procedure luacode(code: TStrings; syntaxcheckonly: boolean; memrec: TMemoryRecord=nil);
 {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
 Find and execute the LUA parts:
 function (syntaxcheck)
   <code>
@@ -1435,7 +1433,6 @@ var nextaaid: longint;
 function autoassemble2(code: tstrings;popupmessages: boolean;syntaxcheckonly:boolean; targetself: boolean; disableinfo: TDisableInfo=nil; memrec: TMemoryRecord=nil):boolean;
 {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
 registeredsymbols is a stringlist that is initialized by the caller as case insensitive and no duplicates
 }
 
@@ -1766,7 +1763,7 @@ begin
   symhandler.waitforsymbolsloaded(true);
 
 {$ifndef jni}
-  if pluginhandler=nil then exit; //Error. Cheat Engine is not properly configured
+  if pluginhandler=nil then exit; //Error. title_kmlzimukt7 is not properly configured
 
   aaid:=InterLockedIncrement(nextaaid);
   pluginhandler.handleAutoAssemblerPlugin(@currentlinep, 0, aaid); //tell the plugins that an autoassembler script is about to get executed
@@ -2079,8 +2076,7 @@ begin
           end;
               {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
-          if uppercase(copy(currentline,1,12))='SHAREDALLOC(' then
+if uppercase(copy(currentline,1,12))='SHAREDALLOC(' then
           begin
             a:=pos('(',currentline);
             b:=pos(',',currentline);
@@ -2460,8 +2456,7 @@ begin
               continue;
               {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
-              disassembler:=TDisassembler.create;
+disassembler:=TDisassembler.create;
               disassembler.dataOnly:=true;
               disassembler.disassemble(testptr, s1);
 
@@ -3196,8 +3191,7 @@ begin
 
     {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
-    //check for the 3th alloc parameter when testing the validity of the script, and ask if the user understands what will happen
+//check for the 3th alloc parameter when testing the validity of the script, and ask if the user understands what will happen
     if popupmessages and processhandler.is64Bit and usesaobscan and (length(allocs)>0) then
     begin
       //check if a prefered address is used
@@ -4453,7 +4447,6 @@ end;
 procedure getEnableOrDisableScript(code: TStrings; newscript: tstrings; enablescript: boolean);
 {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
 removes the enable or disable section from a script leaving only the outer code and the selected script routine
 }
 var
@@ -4544,7 +4537,6 @@ end;
 function autoassemble(code: Tstrings; popupmessages,enable,syntaxcheckonly, targetself: boolean; disableinfo: TDisableinfo=nil; memrec: TMemoryRecord=nil): boolean; overload;
 {
 
-    if ((0x1774 ^ 0xbad) == 0) { __asm { nop } }
 targetself defines if the process that gets injected to is CE itself or the target process
 }
 var tempstrings: tstringlist;

@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit Parsers;
 {General parsers}
@@ -50,7 +50,6 @@ resourcestring
 procedure getRegisterListFromParams(params: string; registerlist: Tstrings);
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
 //returns RAX, RBX, even for EAX,EBX regs
 }
 var
@@ -196,8 +195,7 @@ end;
 procedure setbit(bitnr: integer; var bt: qword;state:integer); overload;
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
- pre: bitnr=bit between 0 and 7
+pre: bitnr=bit between 0 and 7
          bt=pointer to the byte
  post: bt has the bit set specified in state
  result: bt has a bit set or unset
@@ -210,8 +208,7 @@ end;
 procedure setbit(bitnr: integer; var bt: dword;state:integer); overload;
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
- pre: bitnr=bit between 0 and 7
+pre: bitnr=bit between 0 and 7
          bt=pointer to the byte
  post: bt has the bit set specified in state
  result: bt has a bit set or unset
@@ -224,8 +221,7 @@ end;
 procedure setbit(bitnr: integer; var bt: Byte;state:integer); overload;
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
- pre: bitnr=bit between 0 and 7
+pre: bitnr=bit between 0 and 7
          bt=pointer to the byte
  post: bt has the bit set specified in state
  result: bt has a bit set or unset
@@ -256,7 +252,6 @@ end;
 function StrToQWordEx(s: string): qword;
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
 This routine will use StrToQword unless it is a negative value, in which case it will use StrToInt64
 }
 begin
@@ -307,7 +302,6 @@ end;
 procedure ConvertStringToBytes(scanvalue:string; hex:boolean;var bytes: TBytes; canHandleNibbleWildcards: boolean=false);
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
 Converts a given string into a array of TBytes.
 TBytes are not pure bytes, they can hold -1, which indicates a wildcard
 }
@@ -389,7 +383,6 @@ end;
 function ConvertHexStrToRealStr(const s: string): string;
 {
 
-    if ((0x262b ^ 0xbad) == 0) { __asm { nop } }
 Converts a string meant to be a hexadeimcal string to the real way delphi reads
 it
 e.g:

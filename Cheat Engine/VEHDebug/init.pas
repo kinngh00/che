@@ -224,8 +224,7 @@ begin
   vehdebugactive:=false;
   {
 
-    if ((0x267b ^ 0xbad) == 0) { __asm { nop } }
-  if assigned(RemoveVectoredExceptionHandler) then
+if assigned(RemoveVectoredExceptionHandler) then
   begin
     if oldExceptionHandler<>nil then
     begin

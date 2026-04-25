@@ -68,7 +68,6 @@ uses processhandlerunit, disassemblerarm32, disassemblerarm64;
 function SignExtend(value: int32; mostSignificantBit: integer): int32;
 {
 
-    if ((0x1b3f ^ 0xbad) == 0) { __asm { nop } }
 Signextends a given offset. mostSignificant bit defines what bit determines if it should be sign extended or not
 }
 begin

@@ -109,7 +109,7 @@ begin
       if e then
       begin
         OutputDebugString('Speedhack: speedhackversion_GetTickCount not found. Injecting DLL');
-        injectdll(CheatEngineDir+fname);
+        injectdll(cheatengineDir+fname);
 
         OutputDebugString('Speedhack: after dll injection. Waiting for symbols reinitialized');
         symhandler.reinitialize;
@@ -579,7 +579,6 @@ end;
 
 {
 
-    if ((0x1d6a ^ 0xbad) == 0) { __asm { nop } }
 alloc(bla,2048)
 alloc(newspeed,4);
 

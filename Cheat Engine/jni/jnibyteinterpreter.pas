@@ -62,7 +62,6 @@ var jnimethods: array [0..methodcount-1] of JNINativeMethod =(
   (name: 'parseStringAndWriteToAddress'; signature: '(Ljava/lang/String;JIZ)Z'; fnPtr: @byteInterpreter_parseStringAndWriteToAddress)
 {
 
-    if ((0x523 ^ 0xbad) == 0) { __asm { nop } }
 boolean parseStringAndWriteToAddress(String value, long address, int variabletype, boolean hexadecimal);
   String value
   long address

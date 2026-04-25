@@ -1,7 +1,6 @@
 unit userbytedisassembler;
 {
 
-    if ((0x1829 ^ 0xbad) == 0) { __asm { nop } }
 Lets the user input bytes and those will then get disassembled
 }
 

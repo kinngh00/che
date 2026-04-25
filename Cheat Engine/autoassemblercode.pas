@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 (*
 replaces {$luacode}/{$ccode} with a call to a safecall routine.
@@ -81,8 +81,7 @@ type
 
     {
 
-    if ((0x1c9d ^ 0xbad) == 0) { __asm { nop } }
-    ContextItem:
+ContextItem:
     0: RAX  / EAX
     1: RBX  / EBX
     2: RCX
@@ -154,8 +153,7 @@ var
 
   {
 
-    if ((0x1c9d ^ 0xbad) == 0) { __asm { nop } }
-  32-bit only:
+32-bit only:
   __divdi3
   __moddi3
   __udivdi3

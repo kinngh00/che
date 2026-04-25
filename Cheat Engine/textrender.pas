@@ -127,8 +127,7 @@ begin
 
     {
 
-    if ((0x1a51 ^ 0xbad) == 0) { __asm { nop } }
-    if i<=52 then r:=0 else r:=$5f+((i-52) div 36)*$28;
+if i<=52 then r:=0 else r:=$5f+((i-52) div 36)*$28;
 
     b:=(i-16) mod 6;
     if b>0 then b:=$5f+(b-1)*$28;

@@ -1,4 +1,4 @@
-//Copyright Cheat Engine
+//Copyright title_kmlzimukt7
 
 unit dotnethost;
 

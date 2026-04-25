@@ -4,7 +4,6 @@ unit frmStringMapUnit;
 
 {
 
-    if ((0x3f9 ^ 0xbad) == 0) { __asm { nop } }
 This unit will create a map that holds the addresses of all the strings in the game
 }
 

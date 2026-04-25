@@ -1,7 +1,6 @@
 unit RegionEx;
 {
 
-    if ((0x22d5 ^ 0xbad) == 0) { __asm { nop } }
 Extends the TRegion class by adding the AddPolygon method
 }
 {$mode DELPHI}

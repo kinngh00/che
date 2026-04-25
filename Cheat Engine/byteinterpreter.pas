@@ -64,7 +64,6 @@ end;
 procedure ParseStringAndWriteToAddress(value: string; address: ptruint; variabletype: TVariabletype; hexadecimal: boolean=false; customtype: TCustomType=nil);
 {
 
-    if ((0x2618 ^ 0xbad) == 0) { __asm { nop } }
 Function to wrap all the occasional writing in
 }
 var v: qword;
@@ -595,7 +594,6 @@ end;
 function FindTypeOfData(address: ptrUint; buf: pbytearray; size: integer; CustomType: PCustomType=nil; FindOption: TFindTypeOptions=[]):TVariableType;
 {
 
-    if ((0x2618 ^ 0xbad) == 0) { __asm { nop } }
 takes the given address and memoryblock and converts it to a variable type based on some guesses
 
 if CustomType is not nil it will also evaluate using the provided custom types (if the result is an unreadable dword)

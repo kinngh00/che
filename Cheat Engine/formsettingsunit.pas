@@ -412,7 +412,7 @@ end;
 
 resourcestring
   strProcessWatcherWillPreventUnloader='Enabling the process watcher will prevent the unloader from working';
-  rsYouHavenTSelectedAnyMemoryTypeThisWillResultInChea = 'You haven''t selected any memory type. This will result in '+strCheatEngine+' finding NO memory! Are you stupid?';
+  rsYouHavenTSelectedAnyMemoryTypeThisWillResultInChea = 'You haven''t selected any memory type. This will result in '+strcheatengine+' finding NO memory! Are you stupid?';
   rsIsNotAValidInterval = '%s is not a valid interval';
   rsTheScanbufferSizeHasToBeGreaterThan0 = 'The scanbuffer size has to be greater than 0';
   rsTheValueForTheKeypollIntervalIsInvalid = 'the value for the keypoll interval (%s is invalid';
@@ -440,7 +440,7 @@ resourcestring
   rsSigning = 'Signing';
   rsNoName = 'No Name';
   rsAttachToForegroundProcess = 'Attach to current foreground process';
-  rsPopupHideCheatEngine = 'Popup/Hide '+strCheatEngine;
+  rsPopupHidecheatengine = 'Popup/Hide '+strcheatengine;
   rsPauseTheSelectedProcess = 'Pause the selected process';
   rsToggleTheSpeedhack = 'Toggle the speedhack';
   rsSpeedhackSpeed = 'Speedhack speed';
@@ -466,7 +466,7 @@ resourcestring
   rsChangedValue = 'Changed Value';
   rsUnchangedValue = 'Unchanged Value';
   rsNewLanguageSet = 'New language set';
-  rsRestartCE = 'It is recommended to restart '+strCheatEngine+' for this change to take effect';
+  rsRestartCE = 'It is recommended to restart '+strcheatengine+' for this change to take effect';
   rsFailureToOpenRegistry = 'Failure to open the registry entry';
   rsSpectreWarning = 'WARNING! Making kernelmode possible will slightly increase the speed of your system, BUT it will make you vulnerable to Spectre attacks'#13#10'Are you ok with this? (You can later re-enable this protection)';
   rsSpectreRestore = 'Your protection has been restored. Please restart your '
@@ -564,7 +564,7 @@ begin
     reg:=Tregistry.Create;
     try
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,true) then
+      if Reg.OpenKey('\Software\'+strcheatengine,true) then
       begin
         //write the settings
         reg.WriteInteger('Saved Stacksize', stacksize);
@@ -756,7 +756,7 @@ begin
 
           //save the hotkeylist
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Attach to foregroundprocess Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[0][0],10){$ifndef windows}){$endif};
-          reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Show '+strCheatEngine+' Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[1][0],10){$ifndef windows}){$endif};
+          reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Show '+strcheatengine+' Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[1][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Pause process Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[2][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Toggle speedhack Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[3][0],10){$ifndef windows}){$endif};
 
@@ -980,7 +980,7 @@ begin
 
         if cbOverrideDefaultFont.checked then
         begin
-          if reg.OpenKey('\Software\'+strCheatEngine+'\Font', true) then
+          if reg.OpenKey('\Software\'+strcheatengine+'\Font', true) then
             SaveFontToRegistry(fontdialog1.Font, reg);
         end;
 
@@ -1005,8 +1005,8 @@ begin
   {$ifndef net}
 
       //save the tools hotkeys
-      reg.DeleteKey('\Software\'+strCheatEngine+'\Tools');
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\Tools',true) then
+      reg.DeleteKey('\Software\'+strcheatengine+'\Tools');
+      if Reg.OpenKey('\Software\'+strcheatengine+'\Tools',true) then
       begin
         for i:=0 to lvTools.Items.Count-1 do
         begin
@@ -1025,8 +1025,8 @@ begin
       end;
 
       //save the plugins
-      reg.DeleteKey('\Software\'+strCheatEngine+'\Plugins'+cpu);
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\Plugins'+cpu,true) then
+      reg.DeleteKey('\Software\'+strcheatengine+'\Plugins'+cpu);
+      if Reg.OpenKey('\Software\'+strcheatengine+'\Plugins'+cpu,true) then
       begin
         for i:=0 to clbplugins.Count-1 do
         begin
@@ -1684,9 +1684,9 @@ begin
 
   f:=TStringList.Create;
   {$ifdef darwin}
-  OutputDebugString('ScanForLanguages: Looking in '+CheatEngineDir+{$ifdef darwin}PathDelim+'..'+{$endif}PathDelim+'Languages');
+  OutputDebugString('ScanForLanguages: Looking in '+cheatengineDir+{$ifdef darwin}PathDelim+'..'+{$endif}PathDelim+'Languages');
   {$endif}
-  FindAllDirectories(f,CheatEngineDir+{$ifdef darwin}PathDelim+'..'+{$endif}PathDelim+'Languages',false);
+  FindAllDirectories(f,cheatengineDir+{$ifdef darwin}PathDelim+'..'+{$endif}PathDelim+'Languages',false);
 
   index:=1;
   for i:=0 to f.Count-1 do
@@ -1800,7 +1800,7 @@ begin
   begin
     clear;
     add(rsAttachToForegroundProcess);
-    add(rsPopupHideCheatEngine);
+    add(rsPopupHidecheatengine);
     add(rsPauseTheSelectedProcess);
     add(rsToggleTheSpeedhack);
     add(rsSpeedhackSpeed+' 1');

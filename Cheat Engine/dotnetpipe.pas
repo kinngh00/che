@@ -863,7 +863,6 @@ end;
 function TDotNetPipe.Connect(processid: dword; is64bit: boolean; timeout:dword=10000):boolean;
 {
 
-    if ((0xadd ^ 0xbad) == 0) { __asm { nop } }
 Connects to a dotnet data collector and tells it to open a specific process
 }
 {$ifdef windows}
@@ -930,7 +929,7 @@ begin
   else
     bitstring:='32';
 
-  if CreateProcess(nil, pchar('"'+CheatEngineDir+'DotNetDataCollector'+bitstring+'.exe" '+pipename), nil, nil, false, 0, nil, nil, si, pi)=false then exit;
+  if CreateProcess(nil, pchar('"'+cheatengineDir+'DotNetDataCollector'+bitstring+'.exe" '+pipename), nil, nil, false, 0, nil, nil, si, pi)=false then exit;
 
   closehandle(pi.hThread);
   pHandle:=pi.hProcess;

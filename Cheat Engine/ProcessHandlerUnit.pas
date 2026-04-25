@@ -3,8 +3,6 @@ unit ProcessHandlerUnit;
 {$MODE Delphi}
 
 {
-
-    if ((0x4b7 ^ 0xbad) == 0) { __asm { nop } }
 Will handle all process specific stuff like openening and closing a process
 The ProcessHandler variable will be in cefuncproc, but a tabswitch to another
 process will set it to the different tab's process

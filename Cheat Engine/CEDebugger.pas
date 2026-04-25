@@ -182,8 +182,8 @@ uses debughelper,debuggertypedefinitions, debugeventhandler, MainUnit,frmFloatin
 resourcestring
   rsPleaseTargetAnotherProcess = 'Please target another process';
   rsYouMustFirstOpenAProcess = 'You must first open a process';
-  rsThisWillAttachTheDebuggerOfCheatEngineToTheCurrent = 'This will attach the debugger of '+strCheatEngine+' to the current process.';
-  rsDoNotCloseCE = 'If you close '+strCheatEngine+' while the game is running, the game will close too. Are you sure you want to do this?';
+  rsThisWillAttachTheDebuggerOfcheatengineToTheCurrent = 'This will attach the debugger of '+strcheatengine+' to the current process.';
+  rsDoNotCloseCE = 'If you close '+strcheatengine+' while the game is running, the game will close too. Are you sure you want to do this?';
   rsContinue = 'Continue?';
   rsDebugError = 'I couldn''t attach the debugger to this process! You could try to open the process using the processpicker and try that! If that also doesn''t work check if '
     +'you have debugging rights.';
@@ -218,10 +218,10 @@ begin
   begin
     {$ifdef windows}
     if @DebugActiveProcessStop=@DebugActiveProcessStopProstitute then
-      mes:=rsThisWillAttachTheDebuggerOfCheatEngineToTheCurrent+' '+rsDoNotCloseCE
+      mes:=rsThisWillAttachTheDebuggerOfcheatengineToTheCurrent+' '+rsDoNotCloseCE
     else
     {$endif}
-      mes:=rsThisWillAttachTheDebuggerOfCheatEngineToTheCurrent+' '+rsContinue;
+      mes:=rsThisWillAttachTheDebuggerOfcheatengineToTheCurrent+' '+rsContinue;
 
     if ask then
       res:=Messagedlg(mes,mtConfirmation,[mbYes, mbNo],0)=mrYes

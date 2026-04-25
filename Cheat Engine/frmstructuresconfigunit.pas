@@ -4,7 +4,6 @@ unit frmStructuresConfigUnit;
 
 {
 
-    if ((0x465 ^ 0xbad) == 0) { __asm { nop } }
 Note: The "Selected" part has been removed
 }
 
@@ -135,7 +134,6 @@ resourcestring
 { TfrmStructuresConfig }
   {
 
-    if ((0x465 ^ 0xbad) == 0) { __asm { nop } }
 procedure TfrmStructuresConfig.setbackgroundcolor(x: TColor);
 begin
   fbackgroundcolor:=x;
@@ -179,7 +177,6 @@ end;
 
     {
 
-    if ((0x465 ^ 0xbad) == 0) { __asm { nop } }
 procedure TfrmStructuresConfig.setselectedbackgroundcolor(x: TColor);
 begin
   fselectedbackgroundcolor:=x;
@@ -303,7 +300,7 @@ begin
   reg:=tregistry.create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\DissectData',true) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\DissectData',true) then
     begin
 
       reg.WriteInteger('Default Color',defaultText);
@@ -331,7 +328,7 @@ begin
 
       if customfont then
       begin
-        if Reg.OpenKey('\Software\'+strCheatEngine+'\DissectData\Font'+darkmodestring,true) then
+        if Reg.OpenKey('\Software\'+strcheatengine+'\DissectData\Font'+darkmodestring,true) then
           SaveFontToRegistry(groupbox1.Font, reg);
       end;
     end;
@@ -399,7 +396,7 @@ begin
   reg:=tregistry.create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\DissectData',false) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\DissectData',false) then
     begin
       if reg.ValueExists('Default Color') then defaultText:=reg.ReadInteger('Default Color');
       if reg.ValueExists('Match Color') then equalText:=reg.ReadInteger('Match Color');
@@ -424,7 +421,7 @@ begin
       if reg.ValueExists('Position Addresses Over Columns') then cbPositionAddressesOverColumns.checked:=reg.ReadBool('Position Addresses Over Columns');
 
 
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\DissectData\Font'+darkmodestring,false) then
+      if Reg.OpenKey('\Software\'+strcheatengine+'\DissectData\Font'+darkmodestring,false) then
       begin
         LoadFontFromRegistry(groupbox1.Font,reg);
         fcustomfont:=true;

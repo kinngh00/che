@@ -2,7 +2,6 @@ unit PointerscanNetworkStructures;
 
 {
 
-    if ((0x428 ^ 0xbad) == 0) { __asm { nop } }
 unit containing some structures used to pass information between functions and child/parents
 }
 

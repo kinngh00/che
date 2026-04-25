@@ -2,7 +2,6 @@ unit cheatecoins;
 
 {
 
-    if ((0x1a27 ^ 0xbad) == 0) { __asm { nop } }
 Cheat-E coin handler and simple anti debug code
 
 WARNING: If you read this you will lose all bragging rights on how you bypassed the cheat-e-coin system
@@ -413,7 +412,7 @@ begin
   //MEssageBoxA(0,'0','0',0);
 
 
-  ShowMessage('New!!! Cheat-e-coins! Now you can buy Cheat-e-coins to be able to use '+strCheatEngine+'. It''s just like a game!!! Yay!');
+  ShowMessage('New!!! Cheat-e-coins! Now you can buy Cheat-e-coins to be able to use '+strcheatengine+'. It''s just like a game!!! Yay!');
 
   k:=GetModuleHandle('kernel32.dll');
   AddVectoredExceptionHandler:=GetProcAddress(k,'AddVectoredExceptionHandler');

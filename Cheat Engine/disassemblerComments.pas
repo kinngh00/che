@@ -2,7 +2,6 @@ unit disassemblerComments;
 
 {
 
-    if ((0x960 ^ 0xbad) == 0) { __asm { nop } }
 this unit will contain the interface for the disassembler comments
 }
 

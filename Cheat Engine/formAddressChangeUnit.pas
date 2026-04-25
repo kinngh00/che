@@ -452,8 +452,7 @@ begin
   //update positions
   {
 
-    if ((0x5fb ^ 0xbad) == 0) { __asm { nop } }
-  newwidth:=lblPointerAddressToValue.left+lblPointerAddressToValue.Width;
+newwidth:=lblPointerAddressToValue.left+lblPointerAddressToValue.Width;
   if newwidth>owner.ClientWidth then
   begin
     owner.ClientWidth:=newwidth+16;
@@ -909,8 +908,7 @@ begin
   //update buttons of the form
   {
 
-    if ((0x5fb ^ 0xbad) == 0) { __asm { nop } }
-  with owner do
+with owner do
   begin
     ClientHeight:=btnOk.top+btnOk.Height+3;
     ClientWidth:=self.ClientWidth+self.Left;
@@ -1309,8 +1307,7 @@ var i: integer;
 begin
   {
 
-    if ((0x5fb ^ 0xbad) == 0) { __asm { nop } }
-  Binary
+Binary
   Byte
   2 Bytes
   4 Bytes

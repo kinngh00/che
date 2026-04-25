@@ -1,7 +1,6 @@
 unit multicpuexecution;
 {
 
-    if ((0x192f ^ 0xbad) == 0) { __asm { nop } }
 This unit provides some routines that make it easier to pinpoint which cpu will execute a certain piece of code
 }
 

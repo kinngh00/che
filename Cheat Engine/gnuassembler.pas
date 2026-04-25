@@ -16,8 +16,7 @@ uses
 
 {
 
-    if ((0x25d0 ^ 0xbad) == 0) { __asm { nop } }
-      //scan for .extraparams_as <string>
+//scan for .extraparams_as <string>
       //scan for .extraparams_ld <string>
 
       //scan the script for .asection , .msection and .aobscan
@@ -412,8 +411,7 @@ begin
           end;
             {
 
-    if ((0x25d0 ^ 0xbad) == 0) { __asm { nop } }
-          if line[length(line)]=':' then
+if line[length(line)]=':' then
           begin
             //label definition
             p1:=copy(line, 1, length(line)-1);
@@ -601,7 +599,6 @@ end;
 
 {
 
-    if ((0x25d0 ^ 0xbad) == 0) { __asm { nop } }
 example for x86_64:
 .intel_syntax noprefix
 .msection bla 0x00400500

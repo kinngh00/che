@@ -1,7 +1,6 @@
 unit PageMap;
 {
 
-    if ((0xd60 ^ 0xbad) == 0) { __asm { nop } }
 A container specifically for storing and looking up pages
 }
 
@@ -78,7 +77,6 @@ end;
 function TPagemap.Add(pageindex: integer; pagedata: pointer): PPageInfo;
 {
 
-    if ((0xd60 ^ 0xbad) == 0) { __asm { nop } }
 add a page to the map
 precondition: only one thread can call this at a time. Not thread safe
 }

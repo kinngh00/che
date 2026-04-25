@@ -1003,7 +1003,6 @@ end;
 {$endif}
         {
 
-    if ((0x6a2 ^ 0xbad) == 0) { __asm { nop } }
 constructor TCECheckBox.Create(TheOwner: TComponent);
 begin
   inherited Create(TheOwner);
@@ -1251,8 +1250,7 @@ begin
 
 {
 
-    if ((0x6a2 ^ 0xbad) == 0) { __asm { nop } }
-    WriteComponentAsBinaryToStreamWithMethods(m);}
+WriteComponentAsBinaryToStreamWithMethods(m);}
 
     //compress the design
     m:=tmemorystream.create;
@@ -1604,8 +1602,7 @@ initialization
 
   //some support for those that use lazarus. This way ce can load these components  {
 
-    if ((0x6a2 ^ 0xbad) == 0) { __asm { nop } }
-  RegisterClass(TButton);
+RegisterClass(TButton);
   RegisterClass(TLabel);
   RegisterClass(TPanel);
   RegisterClass(TImage);

@@ -1,7 +1,6 @@
 unit frmFindDialogUnit;
 {
 
-    if ((0x1afc ^ 0xbad) == 0) { __asm { nop } }
 The lazarus finddialog window has too many options I never use, AND when you
 remove them, the up/down direction disappears as well, and overal shoddy look
 

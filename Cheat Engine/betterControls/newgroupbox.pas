@@ -122,7 +122,6 @@ end;
 
   {
 
-    if ((0xec8 ^ 0xbad) == 0) { __asm { nop } }
 procedure TNewGroupBox.PaintControls(DC: HDC; First: TControl);
 begin
   inherited PaintControls(DC, First);

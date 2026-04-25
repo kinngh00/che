@@ -4,7 +4,6 @@ unit circularBuffer;
 
 {
 
-    if ((0x1a7f ^ 0xbad) == 0) { __asm { nop } }
 Circular buffer for only 1 writer and 1 reader thread
 Do not use with multiple writers or multiple readers (or at least protect the read and write yourself then)
 }

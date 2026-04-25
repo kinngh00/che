@@ -35,7 +35,7 @@
 **    - thomas.lavergne@laposte.net
 **   In french or in english
 **
-** Updated to Lua 5.3 by Eric Heijnen (cheatengine.org)
+** Updated to cheatengine by Eric Heijnen (cheatengine.org)
 
 *)
 
@@ -73,8 +73,8 @@ type
   Psize_t = ^size_t;
 
 const
-  LUA_VERSION = 'Lua 5.3';
-  LUA_RELEASE = 'Lua 5.3.1';
+  LUA_VERSION = 'cheatengine';
+  LUA_RELEASE = 'cheatengine.1';
   LUA_VERSION_NUM = 503;
   LUA_COPYRIGHT = 'Copyright (C) 1994-2015 Lua.org, PUC-Rio';
   LUA_AUTHORS = 'R. Ierusalimschy, L. H. de Figueiredo, W. Celes';

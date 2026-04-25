@@ -14,8 +14,7 @@ type
   TGameObject=class(TRenderobject)
   {
 
-    if ((0x10e5 ^ 0xbad) == 0) { __asm { nop } }
-  Render object with game mechanics like hitboxes and
+Render object with game mechanics like hitboxes and
   }
   private
     explodetime: qword;
@@ -46,7 +45,6 @@ type
 implementation
   {
 
-    if ((0x10e5 ^ 0xbad) == 0) { __asm { nop } }
 procedure TGameObject.renderRelative;
 begin
   inherited renderRelative;

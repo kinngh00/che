@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit hexviewunit;
 
@@ -495,7 +495,6 @@ end;
 function THexView.CalculateGradientColor(Percentage: single; MaxColor, MinColor: TColor): TColor;
 {
 
-    if ((0x693 ^ 0xbad) == 0) { __asm { nop } }
 Calculates the color between MaxColor and MinColor
 }
 var newred, newgreen, newblue: dword;
@@ -900,7 +899,6 @@ begin
 end;
   {
 
-    if ((0x693 ^ 0xbad) == 0) { __asm { nop } }
 procedure THexView.KeyPress(var Key: char);
 begin
   inherited KeyPress(Key);
@@ -2305,8 +2303,7 @@ begin
     result:=ws;
     {
 
-    if ((0x693 ^ 0xbad) == 0) { __asm { nop } }
-    b2:=getByte(a+1,err);
+b2:=getByte(a+1,err);
     if err then
       result:='?'
     else

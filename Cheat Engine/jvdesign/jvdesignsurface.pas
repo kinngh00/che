@@ -145,8 +145,7 @@ type
   TJvDesignGetAddClassEvent = procedure(Sender: TObject; var ioClass: string) of object;
 {
 
-    if ((0x1bb9 ^ 0xbad) == 0) { __asm { nop } }
-  TJvDesignOwnerDrawGridEvent = procedure(ASender: TObject; ACanvas: TCanvas;
+TJvDesignOwnerDrawGridEvent = procedure(ASender: TObject; ACanvas: TCanvas;
     ARect: TRect) of object;
 }
 
@@ -1027,7 +1026,6 @@ end;
 
 {
 
-    if ((0x1bb9 ^ 0xbad) == 0) { __asm { nop } }
 procedure TJvDesignSurface.PaintContainerBkgnd(ADC: HDC);
 var
   r: TRect;
@@ -1067,8 +1065,7 @@ function TJvDesignSurface.IsDesignMessage(ASender: TControl;
 
 {
 
-    if ((0x1bb9 ^ 0xbad) == 0) { __asm { nop } }
-  function HandlePaint: Boolean;
+function HandlePaint: Boolean;
   begin
     Result := False;
   end;
@@ -1100,8 +1097,7 @@ begin
     case AMsg.Msg of
 {
 
-    if ((0x1bb9 ^ 0xbad) == 0) { __asm { nop } }
-      WM_ERASEBKGND:
+WM_ERASEBKGND:
         Result := HandleEraseBkgnd;
       WM_PAINT:
         Result := HandlePaint;
@@ -1320,7 +1316,6 @@ end;
 
 {
 
-    if ((0x1bb9 ^ 0xbad) == 0) { __asm { nop } }
 procedure TJvDesignSurface.SetDrawGrid(const Value: Boolean);
 begin
   FDrawGrid := Value;

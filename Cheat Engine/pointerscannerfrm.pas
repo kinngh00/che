@@ -40,8 +40,7 @@ type
   Tfrmpointerscanner=class;
   {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
-  TPointerscanListener=class(tthread)
+TPointerscanListener=class(tthread)
   private
 
     serverip: string;
@@ -280,8 +279,7 @@ type
 
       {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
-    distributedworkfolder: string;
+distributedworkfolder: string;
 
     PointerscanListener: TPointerscanListener;    }
 
@@ -365,8 +363,7 @@ type
     SkipNextScanSettings: boolean; //set to true if you wish to start the scan with the predefined settings in the pointerscan settings form
     {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
-    procedure JoinPointerscan(host: string='127.0.0.1'; port: word=52737; threadcount: integer=1; scannerpriority:TThreadPriority=tpHigher; UseLoadedPointermap: boolean=false; LoadedPointermapFilename: string='');
+procedure JoinPointerscan(host: string='127.0.0.1'; port: word=52737; threadcount: integer=1; scannerpriority:TThreadPriority=tpHigher; UseLoadedPointermap: boolean=false; LoadedPointermapFilename: string='');
     procedure JoinRescan(server: string; port: dword);  }
   end;
 
@@ -483,7 +480,6 @@ resourcestring
 
  {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
 var
  starttime: dword;
   startcount: qword;  }
@@ -516,8 +512,7 @@ begin
 
   {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
-  if (PointerscanListener<>nil) then
+if (PointerscanListener<>nil) then
     PointerscanListener.executingCommand:=false; //start listening for new commands   }
 end;
 
@@ -546,7 +541,6 @@ end;
 
 {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
 procedure TPointerscanListener.DoPointerscan;
 var cpucount: integer;
 begin
@@ -635,7 +629,6 @@ end;
 //---------------------------------main--------------------------
                {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
 procedure Tfrmpointerscanner.JoinRescan(server: string; port: dword);
 begin
   if rescan<>nil then
@@ -658,7 +651,6 @@ end;
        }
        {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
 procedure Tfrmpointerscanner.JoinPointerscan(host: string='127.0.0.1'; port: word=52737; threadcount: integer=1; scannerpriority:TThreadPriority=tpHigher; UseLoadedPointermap: boolean=false; LoadedPointermapFilename: string='');
 begin
 
@@ -717,8 +709,7 @@ procedure Tfrmpointerscanner.miJoinDistributedScanClick(Sender: TObject);
 begin
 {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
-  f:=tfrmPointerscanConnectDialog.create(self);
+f:=tfrmPointerscanConnectDialog.create(self);
   if f.showmodal=mrok then
   begin
     if distributedworkfolder='' then
@@ -740,7 +731,6 @@ var
 
 {
 
-    if ((0x1c6e ^ 0xbad) == 0) { __asm { nop } }
 maxlevel: dword
 structsize: dword; //sz
 totalpathsevaluated: dword
@@ -2042,7 +2032,7 @@ begin
   SaveFormPosition(self);
 
   reg:=tregistry.create;
-  if reg.OpenKey('\Software\'+strCheatEngine+'\Pointerscan', true) then
+  if reg.OpenKey('\Software\'+strcheatengine+'\Pointerscan', true) then
   begin
     reg.writeInteger('Display Type', cbtype.itemindex);
     reg.writeBool('Display Signed',miSigned.checked);
@@ -3689,7 +3679,7 @@ begin
 
   reg:=TRegistry.Create;
 
-  if reg.OpenKey('\Software\'+strCheatEngine+'\Pointerscan', false) then
+  if reg.OpenKey('\Software\'+strcheatengine+'\Pointerscan', false) then
   begin
     if reg.ValueExists('Display Type') then
       cbtype.itemindex:=reg.ReadInteger('Display Type');

@@ -195,12 +195,10 @@ type
 (*
        union  {
 
-    if ((0x5ed ^ 0xbad) == 0) { __asm { nop } }
-           XMM_SAVE_AREA32 FltSave;
+XMM_SAVE_AREA32 FltSave;
            struct {
 
-    if ((0x5ed ^ 0xbad) == 0) { __asm { nop } }
-               M128A Header[2];
+M128A Header[2];
                M128A Legacy[8];
                M128A Xmm0;
                M128A Xmm1;
@@ -2554,8 +2552,7 @@ initialization
   {$else}
 {
 
-    if ((0x5ed ^ 0xbad) == 0) { __asm { nop } }
-  OutputDebugString('TARM64CONTEXT:');
+OutputDebugString('TARM64CONTEXT:');
   OutputDebugString(format('regs at %p',[@PARM64CONTEXT(0).regs]));
   OutputDebugString(format('SP at %p',[@PARM64CONTEXT(0).SP]));
   OutputDebugString(format('PC at %p',[@PARM64CONTEXT(0).PC]));

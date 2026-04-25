@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 
 unit Assemblerunit;
@@ -2850,7 +2850,6 @@ end;
 function GetOpcodesIndex(opcode: string): integer;
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 will return the first entry in the opcodes list for this opcode
 If not found, -1
 }
@@ -3855,8 +3854,7 @@ begin
       //7.5: Removed the "everything is uppercase" assumption.  Start being case sensitive
        {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
-      if (j>0) and (tokens[length(tokens)-1][1]<>'$') and ((j<7) or (pos('KERNEL_',uppercase(tokens[length(tokens)-1]))=0)) then //only uppercase if it's not kernel_
+if (j>0) and (tokens[length(tokens)-1][1]<>'$') and ((j<7) or (pos('KERNEL_',uppercase(tokens[length(tokens)-1]))=0)) then //only uppercase if it's not kernel_
       begin
         //don't uppercase empty strings, kernel_ strings or strings starting with $
 
@@ -4672,7 +4670,6 @@ end;
 procedure TSingleLineAssembler.setRex_W(state: boolean);
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 Set bit 3 to the appropriate state
 }
 begin
@@ -4690,7 +4687,6 @@ end;
 procedure TSingleLineAssembler.setRex_R(state: boolean);
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 Set bit 2 to the appropriate state
 }
 begin
@@ -4709,7 +4705,6 @@ end;
 procedure TSingleLineAssembler.setRex_X(state: boolean);
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 Set bit 2 to the appropriate state
 }
 begin
@@ -4728,7 +4723,6 @@ end;
 procedure TSingleLineAssembler.setRex_B(state: boolean);
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 Set bit 2 to the appropriate state
 }
 begin
@@ -5281,8 +5275,7 @@ begin
 
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
-    if pos('DS:',parameter1)>0 then
+if pos('DS:',parameter1)>0 then
     begin
       //don't set it, unless bp in 16 bit addressing mode is used (0x67 prefix)
       //which is a notation ce does NOT support and will never support, so, bye bye
@@ -5326,8 +5319,7 @@ begin
 
     {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
-    if pos('DS:',parameter2)>0 then
+if pos('DS:',parameter2)>0 then
     begin
       setlength(bytes,length(bytes)+1);
       bytes[length(bytes)-1]:=$3e;
@@ -8475,7 +8467,6 @@ end;
 function TSingleLineAssembler.HandleTooBigAddress(opcode: string; address: ptrUint;var bytes: TAssemblerBytes; actualdisplacement: integer): boolean;
 {
 
-    if ((0xdd5 ^ 0xbad) == 0) { __asm { nop } }
 offset too big
 rewrite this instruction
 jmp +32

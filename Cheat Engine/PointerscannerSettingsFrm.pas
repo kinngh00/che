@@ -1192,7 +1192,7 @@ begin
     reg.RootKey := HKEY_CURRENT_USER;
 
 
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\'+ClassName, true) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\'+ClassName, true) then
     begin
       reg.WriteBool('Advanced', cbShowAdvancedOptions.checked);
       reg.WriteBool('warnedAboutDisablingInstantRescan', warnedAboutDisablingInstantRescan);
@@ -1205,7 +1205,7 @@ begin
 
     end;
 
-    if Reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeList', false) then
+    if Reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeList', false) then
     begin
       oldlist:=tstringlist.create;
       try
@@ -1224,7 +1224,7 @@ begin
     begin
       if iplist[i].host<>'' then
       begin
-        if Reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeList\'+iplist[i].host+':'+iplist[i].port,true) then
+        if Reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeList\'+iplist[i].host+':'+iplist[i].port,true) then
         begin
           reg.WriteString('Password', iplist[i].password);
           reg.WriteBool('StableConnection', iplist[i].stable);
@@ -1391,7 +1391,7 @@ begin
   reg:=tregistry.Create;
   Reg.RootKey := HKEY_CURRENT_USER;
 
-  if Reg.OpenKey('\Software\'+strCheatEngine+'\'+ClassName, false) then
+  if Reg.OpenKey('\Software\'+strcheatengine+'\'+ClassName, false) then
   begin
     if reg.ValueExists('Advanced') then
       cbShowAdvancedOptions.checked:=reg.ReadBool('Advanced');
@@ -1407,7 +1407,7 @@ begin
 
   end;
 
-  if Reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeList', false) then
+  if Reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeList', false) then
   begin
     list:=tstringlist.create;
     try
@@ -1418,7 +1418,7 @@ begin
 
     for i:=0 to list.count-1 do
     begin
-      if reg.OpenKey('\Software\'+strCheatEngine+'\PSNNodeList\'+list[i], false) then
+      if reg.OpenKey('\Software\'+strcheatengine+'\PSNNodeList\'+list[i], false) then
       begin
         while iplist.count<=i do
           iplist.add;

@@ -21,7 +21,7 @@ uses
 
 const ceversion=7.5;
 {$ifdef altname}  //i'd use $MACRO ON but fpc bugs out
-  strCheatEngine='Runtime Modifier'; //if you change this, also change it in first.pas
+  strcheatengine='Runtime Modifier'; //if you change this, also change it in first.pas
   strCheatTable='Code Table';   //because it contains code.... duh.....
   strCheatTableLower='code table';
   strCheat='Modification';
@@ -30,7 +30,7 @@ const ceversion=7.5;
   strMyCheatTables='My Mod Tables';
   strSpeedHack='Speedmodifier';
 {$else}
-  strCheatEngine='Cheat Engine';
+  strcheatengine='title_kmlzimukt7';
   strCheatTable='Cheat Table';
   strCheatTableLower='cheat table';
   strCheat='Cheat';
@@ -41,8 +41,8 @@ const ceversion=7.5;
 {$endif}
 
 resourcestring
-  cename = strCheatEngine+' 7.5';
-  rsCheatEngine = strCheatEngine;
+  cename = strcheatengine+' 7.5';
+  rscheatengine = strcheatengine;
   rsPleaseWait = 'Please Wait!';
 
 procedure UpdateToolsMenu;
@@ -165,7 +165,7 @@ begin
     reg:=Tregistry.Create;
     try
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+      if Reg.OpenKey('\Software\'+strcheatengine,false) then
       begin
 
         with formsettings do
@@ -339,11 +339,11 @@ begin
             {$endif}
 
 
-          if reg.ValueExists('Show '+strCheatEngine+' Hotkey') then
+          if reg.ValueExists('Show '+strcheatengine+' Hotkey') then
             {$ifdef windows}
-            reg.ReadBinaryData('Show '+strCheatEngine+' Hotkey',temphotkeylist[1][0],10);
+            reg.ReadBinaryData('Show '+strcheatengine+' Hotkey',temphotkeylist[1][0],10);
             {$else}
-            HexToBin(pchar(reg.ReadString('Show '+strCheatEngine+' Hotkey')),pchar(@temphotkeylist[1][0]),10);
+            HexToBin(pchar(reg.ReadString('Show '+strcheatengine+' Hotkey')),pchar(@temphotkeylist[1][0]),10);
             {$endif}
 
           if reg.ValueExists('Pause process Hotkey') then
@@ -1088,7 +1088,7 @@ begin
 
       {$ifndef net}
       formsettings.lvtools.Clear;
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\Tools',false) then
+      if Reg.OpenKey('\Software\'+strcheatengine+'\Tools',false) then
       begin
         names:=TStringList.create;
         try
@@ -1126,7 +1126,7 @@ begin
 
 
 
-      if (not skipPlugins) and (Reg.OpenKey('\Software\'+strCheatEngine+'\Plugins'{$ifdef cpu64}+'64'{$else}+'32'{$endif},false)) then
+      if (not skipPlugins) and (Reg.OpenKey('\Software\'+strcheatengine+'\Plugins'{$ifdef cpu64}+'64'{$else}+'32'{$endif},false)) then
       begin
         names:=TStringList.create;
         try

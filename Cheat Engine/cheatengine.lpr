@@ -1,4 +1,4 @@
-program cheatengine;
+program CheatEngine;
 
 {$mode objfpc}{$H+}
 
@@ -289,8 +289,8 @@ var
   noautorun: boolean;
 
 begin
-  Application.Title:='Cheat Engine 7.5';
- //'Cheat Engine 7.3';
+  Application.Title:='title_zdd8b2oxpl';
+ //'title_kmlzimukt7 7.3';
   {$ifdef darwin}
   macPortFixRegPath;
   {$endif}
@@ -339,7 +339,7 @@ begin
 
     r.RootKey := HKEY_CURRENT_USER;
 
-    if r.OpenKey('\Software\'+strCheatEngine,false) then
+    if r.OpenKey('\Software\'+strcheatengine,false) then
     begin
       if r.ValueExists('Override Default Font') then
       begin

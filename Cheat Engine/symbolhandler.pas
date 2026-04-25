@@ -1281,8 +1281,7 @@ begin
   //add an extra symboldataentry
   {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
-  esde:=TExtraSymbolDataEntry.create;
+esde:=TExtraSymbolDataEntry.create;
   esde.name:=pchar(@pSymInfo.Name);
   esde.vtype:=s;
 
@@ -1655,7 +1654,7 @@ begin
     else
       usedtempdir:=GetTempDir;
 
-    symbolpath:=usedtempdir+strCheatEngine+' Symbols'+pathdelim;
+    symbolpath:=usedtempdir+strcheatengine+' Symbols'+pathdelim;
     ForceDirectory(symbolpath);
 
     InitializeSQLite;
@@ -1892,8 +1891,7 @@ begin
   //if highestsymboladdress<address then
   {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
-  if symbolname='_end' then
+if symbolname='_end' then
   begin
     highestsymboladdress:=address;
     highestsymbol:=symbolname;
@@ -3077,7 +3075,6 @@ end;
 procedure TSymhandler.tokenize(s: string; var tokens: TTokens);
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 Just a tokenizer for simple address specifiers
 }
 var
@@ -3359,7 +3356,6 @@ end;
 procedure TSymhandler.EnumDotNetModule(m: TdotNetmodule; symbolhandler: TSymbolListHandler);
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 Enumerates the methods of the given module.
 pre: owner must have already set a valid dotNetDataCollector and not about to get destroyed
 }
@@ -3426,7 +3422,6 @@ end;
 procedure TSymhandler.reinitializeDotNetSymbols(modulename: string='');
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 Called by user. This indicates that the user wants to wait till it's fully loaded
 }
 var
@@ -3652,8 +3647,7 @@ begin
 
     {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
-    while (not symbolloaderthread.Finished) and (symbolloaderthread.isloading) and
+while (not symbolloaderthread.Finished) and (symbolloaderthread.isloading) and
           not
           (
             (apisymbolsonly and symbolloaderthread.apisymbolsloaded) or  //true if all the symbols are loaded
@@ -3725,7 +3719,6 @@ end;
 function TSymhandler.SetUserdefinedSymbolAllocSize(symbolname:string; size: dword; preferedaddress: ptruint=0): boolean;
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 This function will find the userdefined symbol, and when found checks if it already
 allocated memory. If not allocate memory, else check if the size matches
 }
@@ -3889,7 +3882,6 @@ end;
 procedure TSymhandler.AddUserdefinedSymbol(addressstring: string; symbolname: string; DoNotSave: Boolean=false);
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 This routine will add the symbolname+address combination to the symbollist
 }
 var
@@ -3938,7 +3930,6 @@ end;
 procedure TSymhandler.EnumerateUserdefinedSymbols(list:tstrings);
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 Enumerates all userdefined symbols and stores them in a list
 NOTE: The caller must free the object info added
 }
@@ -3965,7 +3956,6 @@ end;
 procedure TSymhandler.fillMemoryRegionsWithModuleData(var mr: TMemoryregions; startaddress: ptruint; size: dword);
 {
 
-    if ((0xc42 ^ 0xbad) == 0) { __asm { nop } }
 This routine will fill in a TMemoryRegions array with the base and startaddress of the modules it found
 }
 var currentaddress: ptruint;
@@ -6417,17 +6407,17 @@ begin
 {$ifdef windows}
   //first load the latest version
   {$ifdef cpu32}
-  dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win32\dbghelp.dll'));
+  dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win32\dbghelp.dll'));
   {$else}
-  dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win64\dbghelp.dll'));
+  dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win64\dbghelp.dll'));
   {$endif}
 
   if dbghlp=0 then //if that fails, try the old one with the same searchpath
   begin
     {$ifdef cpu32}
-    dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win32\old\dbghelp.dll'));
+    dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win32\old\dbghelp.dll'));
     {$else}
-    dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win64\old\dbghelp.dll'));
+    dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win64\old\dbghelp.dll'));
     {$endif}
   end;
 
@@ -6444,16 +6434,16 @@ begin
     end;
 
     {$ifdef cpu32}
-    p:=CheatEngineDir+'\win32\old';
+    p:=cheatengineDir+'\win32\old';
     {$else}
-    p:=CheatEngineDir+'\win64\old';
+    p:=cheatengineDir+'\win64\old';
     {$endif}
     DLLDirectoryCookie:=AddDllDirectory(@p[1]);  //external dll's now use the old path
 
     {$ifdef cpu32}
-    dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win32\old\dbghelp.dll'));
+    dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win32\old\dbghelp.dll'));
     {$else}
-    dbghlp:=LoadLibrary(pchar(CheatEngineDir+'\win64\old\dbghelp.dll'));
+    dbghlp:=LoadLibrary(pchar(cheatengineDir+'\win64\old\dbghelp.dll'));
     {$endif}
 
     if dbghlp=0 then
@@ -6538,7 +6528,7 @@ begin
   reg:=Tregistry.Create; //do this as the settings may not have been loaded yet
   try
     Reg.RootKey := HKEY_CURRENT_USER;
-    if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+    if Reg.OpenKey('\Software\'+strcheatengine,false) then
     begin
       if reg.ValueExists('Don''t use tempdir') then
         dontusetempdir:=reg.ReadBool('Don''t use tempdir');
@@ -6584,7 +6574,7 @@ begin
   if usedtempdir[length(usedtempdir)]<>PathDelim then
     usedtempdir:=usedtempdir+PathDelim;
 
-  databasepath:=usedtempdir+strCheatEngine+' Symbols'+pathdelim+'structures.sqlite';
+  databasepath:=usedtempdir+strcheatengine+' Symbols'+pathdelim+'structures.sqlite';
 end;
 
 initialization

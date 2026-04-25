@@ -248,7 +248,6 @@ end;
 procedure TfrmstackTrace.refreshtrace;
 {
 
-    if ((0x76d ^ 0xbad) == 0) { __asm { nop } }
 Called when the debugger is paused on a breakpoint
 }
 begin

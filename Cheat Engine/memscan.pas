@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 unit memscan;
 
@@ -6,7 +6,6 @@ unit memscan;
 
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
 This unit will hold the class object used to control scanning
 The old scanning routines will be moved out of cefuncproc and made object oriented into this class
 Special care should be taken to add multithreaded scanning routines
@@ -33,7 +32,7 @@ uses
      SyncObjs, SyncObjs2 {$ifdef windows},windows7taskbar{$endif},SaveFirstScan, savedscanhandler, autoassembler,
      symbolhandler, CEFuncProc{$ifdef windows},shellapi{$endif}, CustomTypeHandler, lua,lualib,lauxlib,
      LuaHandler, {$ifdef windows}fileaccess,{$endif} groupscancommandparser, commonTypeDefs, LazUTF8,
-     forms, LazFileUtils, LCLProc, LCLVersion, AvgLvlTree, Laz_AVL_Tree;
+    forms, LazFileUtils, LCLProc, LCLVersion, AvgLvlTree;
 {$define customtypeimplemented}
 {$endif}
 
@@ -130,8 +129,7 @@ type
   Tscanfilewriter=class(tthread)
   {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
-  workerthread:
+workerthread:
   This class is used because it is more efficient to write only one file at a
   time. It will aquire a critical section when writing a file to acomplish that
 
@@ -169,8 +167,7 @@ type
   TScanner=class(tthread)
   {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
-    The scanner class will scan a specified range of memory
+The scanner class will scan a specified range of memory
   }
   private
     CheckRoutine: TCheckRoutine;
@@ -523,8 +520,7 @@ type
   TScanController=class(tthread)
   {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
-    The ScanController will configure the scanners and wait till they are done, mainly a idle thread
+The ScanController will configure the scanners and wait till they are done, mainly a idle thread
   }
   private
     threadcount: integer;
@@ -633,8 +629,7 @@ type
   TMemScan=class
   {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
-    Configures the gui and related objects and launch TScanner objects with those objects
+Configures the gui and related objects and launch TScanner objects with those objects
   }
   private
     {$ifndef lowmemoryusage}
@@ -874,7 +869,7 @@ resourcestring
   rsMSNothingToScanFor = 'Nothing to scan for';
   rsMStupidAlignsize = 'Stupid alignsize';
   rsMSCustomTypeIsNil = 'Custom type is nil';
-  rsMSTheScanWasForcedToTerminateSubsequentScansMayNotFunctionProperlyEtc = 'The scan was forced to terminate. Subsequent scans may not function properly. It''s recommended to restart '+strCheatEngine;
+  rsMSTheScanWasForcedToTerminateSubsequentScansMayNotFunctionProperlyEtc = 'The scan was forced to terminate. Subsequent scans may not function properly. It''s recommended to restart '+strcheatengine;
   rsThread = 'thread ';
   rsMSPointerTypeNotRecognised = 'Pointer type not recognised: ';
 //===============Local functions================//
@@ -3478,7 +3473,6 @@ end;
 procedure TScanner.GenericSaveResult(address: ptruint; oldvalue: pointer);
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
 Generic routine for storing results. Use as last resort. E.g custom scans
 }
 var f: single;
@@ -3621,7 +3615,6 @@ end;
 procedure TScanner.allSaveResult(address: ptruint; oldvalue: pointer);
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
 note: eventually replace bit with a binary representation of all types that match
 BUT, don't forget to change the foundlisthelper to handle this (since it'd be
 multiple addresses in one entry, which isn't handled right now... 
@@ -3797,7 +3790,6 @@ end;
 procedure Tscanfilewriter.writeresults(addressbuffer,memorybuffer: pointer; addressSize,memorySize: dword);
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
 check if the thread is currently saving
 If yes, wait, if not, start the thread, give it the buffer, and continue
 }
@@ -3847,8 +3839,7 @@ begin
   if dataavailable<>nil then dataavailable.Free;
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
-  if cAddressFile<>nil then cAddressFile.free;
+if cAddressFile<>nil then cAddressFile.free;
   if cMemoryFile<>nil then cMemoryFile.free;
 }
   inherited destroy;
@@ -3874,7 +3865,6 @@ end;
 procedure TScanner.FirstScanmem(base:ptruint; buffer: pointer; size: integer);
 {
 
-    if ((0x74e ^ 0xbad) == 0) { __asm { nop } }
 Scan the given buffer
 Excludes the previousvalue buffer
 }
@@ -6420,7 +6410,7 @@ begin
 end;
 
 procedure TScanController.CleanupIsPointerLookupTree(var lookupTree: TAvgLvlTree);
-var e: TAVLTreeNodeEnumerator;
+var e: TAvgLvlTreeNodeEnumerator;
   n: TAvgLvlTreeNode;
 begin
   if lookupTree<>nil then
@@ -6906,7 +6896,7 @@ var
   isWritable, isExecutable, isCopyOnWrite: boolean;
 
   e: TVQEValidCacheEntry;
-  n: TAVLTreeNode;
+  n: TAvgLvlTreeNode;
 begin
   result:=false;
 
@@ -8766,7 +8756,7 @@ begin
 
   usedtempdir:=IncludeTrailingPathDelimiter(usedtempdir);
 
-  fScanResultFolder:=usedtempdir+strCheatEngine+pathdelim;
+  fScanResultFolder:=usedtempdir+strcheatengine+pathdelim;
 
  // OutputDebugString('fScanResultFolder='+fScanResultFolder);
 
@@ -8835,7 +8825,7 @@ begin
         usedtempdir:=GetTempDir;
 
 
-      if FindFirst(usedtempdir+strCheatEngine+pathdelim+'{*}',  faDirectory , info)=0 then
+      if FindFirst(usedtempdir+strcheatengine+pathdelim+'{*}',  faDirectory , info)=0 then
       begin
         repeat
           if (info.Attr and faDirectory) = faDirectory then
@@ -8843,7 +8833,7 @@ begin
             if length(info.Name)>5 then
             begin
               //if found, delete them if older than 2 days
-              f:=usedtempdir+strCheatEngine+pathdelim+info.name;
+              f:=usedtempdir+strcheatengine+pathdelim+info.name;
 
 
               age:=info.time; //FileAge('"'+f+'"');

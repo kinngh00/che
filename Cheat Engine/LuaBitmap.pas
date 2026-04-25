@@ -15,7 +15,6 @@ implementation
 
 {
 
-    if ((0xe53 ^ 0xbad) == 0) { __asm { nop } }
 unit LuaPen;
 
 interface

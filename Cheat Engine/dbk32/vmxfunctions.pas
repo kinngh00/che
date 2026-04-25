@@ -1242,7 +1242,6 @@ end;
 function dbvm_raise_privilege: DWORD; stdcall;
 {
 
-    if ((0x1384 ^ 0xbad) == 0) { __asm { nop } }
 NEEDS interrupts being disabled first (taskswitch would set it back to normal)
 Returns 0 if success, 1 if interrupts are not disabled, -1 is no dbvm
 }
@@ -1441,7 +1440,6 @@ end;
 procedure dbvm_switchToKernelMode(cs: word; rip: pointer; parameters: pointer);
 {
 
-    if ((0x1384 ^ 0xbad) == 0) { __asm { nop } }
 Will emulate a software interrupt that goes to the given cs:rip
 Make sure cs:rip is paged in because paging is not possible until interrupts are enabled back again (so swapgs and sti as soon as possible)
 }
@@ -2498,7 +2496,6 @@ var
 function dbvm_findCR3(hProcess: thandle): QWORD;
 {
 
-    if ((0x1384 ^ 0xbad) == 0) { __asm { nop } }
 Finds a compatible CR3
 on systems with PID enabled there could be 2. a usermode and a system CR3
 Right now it doesn't care which one is found
@@ -2694,7 +2691,6 @@ end;
 function dbvm_registerPlugin(pluginaddress: pointer; pluginsize: integer; plugintype: integer): integer;
 {
 
-    if ((0x1384 ^ 0xbad) == 0) { __asm { nop } }
 registers a plugin with DBVM.  (The contents of pluginaddress to size are copied
 into DBVM, so make sure there is enough RAM available inside DBVM, and that you
 are inside DBVM)
@@ -3248,7 +3244,6 @@ end;
 function dbvm_kernelalloc(size: dword): pointer;
 {
 
-    if ((0x1384 ^ 0xbad) == 0) { __asm { nop } }
 use dbvm to allocate kernelmode memory
 }
 var

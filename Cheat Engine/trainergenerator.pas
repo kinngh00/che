@@ -44,7 +44,7 @@ type
     cbPopupOnKeypress: TCheckBox;
     cbProtect: TCheckBox;
     cbStopPlaying: TCheckBox;
-    cbSupportCheatEngine: TCheckBox;
+    cbSupportcheatengine: TCheckBox;
     cbUseD3DHook: TCheckBox;
     comboProcesslist: TComboBox;
     CTSaveDialog: TSaveDialog;
@@ -108,7 +108,7 @@ type
     procedure cbOutputSelect(Sender: TObject);
     procedure cbPlayXMChange(Sender: TObject);
     procedure cbStopPlayingChange(Sender: TObject);
-    procedure cbSupportCheatEngineChange(Sender: TObject);
+    procedure cbSupportcheatengineChange(Sender: TObject);
     procedure cbUseD3DHookChange(Sender: TObject);
     procedure edtCaptionChange(Sender: TObject);
     procedure edtPopupHotkeyKeyDown(Sender: TObject; var Key: Word;
@@ -187,7 +187,7 @@ resourcestring
   rsButAllowDecrease = 'but allow decrease';
   rsTo = 'to';
   rsBy = 'by';
-  rsOnCloseWarning = 'This form had an onClose event. Good thing this was only a stub, else '+strCheatEngine+' would have terminated';
+  rsOnCloseWarning = 'This form had an onClose event. Good thing this was only a stub, else '+strcheatengine+' would have terminated';
   rsAlreadyATrainerFormDefined =
       'There is already a trainer form defined. '
     +'Continuing will erase the current trainerscript and cheats in the '
@@ -212,7 +212,7 @@ resourcestring
     +'want to set the hotkey for';
   rsYouNeedACheatTableWithCheatEntries = 'You need a cheat table with cheat '
     +'entries';
-  rsDonTSupportCheatEngineOrYourself = 'Don''t support '+strCheatEngine+' (or '
+  rsDonTSupportcheatengineOrYourself = 'Don''t support '+strcheatengine+' (or '
     +'yourself)';
   rsThankYou = 'Thank you! :)';
   rsAaaaw = 'aaaaw :(';
@@ -750,8 +750,8 @@ begin
     //deal with it by ignoring it
   end;
 
-  if not cbSupportCheatEngine.checked then
-    cbSupportCheatEngine.checked:=true;
+  if not cbSupportcheatengine.checked then
+    cbSupportcheatengine.checked:=true;
 
   cleanProcessList(comboProcesslist.items);
 
@@ -1002,7 +1002,7 @@ begin
   l.add('');
   l.add('RequiredCEVersion='+floattostr(ceversion));
   l.add('if (getCEVersion==nil) or (getCEVersion()<RequiredCEVersion) then');
-  l.add('  messageDialog(''Please install '+strCheatEngine+' ''..RequiredCEVersion, mtError, mbOK)');
+  l.add('  messageDialog(''Please install '+strcheatengine+' ''..RequiredCEVersion, mtError, mbOK)');
   l.add('  closeCE()');
   l.add('end');
 
@@ -1291,12 +1291,12 @@ begin
 
     end;
 
-    if not cbSupportCheatEngine.checked then
+    if not cbSupportcheatengine.checked then
     begin
       if adconfig<>nil then
       begin
 
-        l.add('supportCheatEngine('+trainerform.name+', '+BoolToStr(adconfig.cbCanClose.checked,'true','false')+', '+adconfig.edtWidth.text+', '+adconfig.edtHeight.text+', '+inttostr(adconfig.adposition)+', '+QuotedStr(adconfig.ownurl)+', '+QuotedStr(adconfig.extraparam)+', '+inttostr(adconfig.percentage)+')');
+        l.add('supportcheatengine('+trainerform.name+', '+BoolToStr(adconfig.cbCanClose.checked,'true','false')+', '+adconfig.edtWidth.text+', '+adconfig.edtHeight.text+', '+inttostr(adconfig.adposition)+', '+QuotedStr(adconfig.ownurl)+', '+QuotedStr(adconfig.extraparam)+', '+inttostr(adconfig.percentage)+')');
         l.add('--Thank you from Dark Byte--');
       end;
     end;
@@ -1860,17 +1860,17 @@ end;
 
 procedure TfrmTrainerGenerator.RestoreSupportCE(sender: tobject);
 begin
-  cbSupportCheatEngine.caption:=rsDonTSupportCheatEngineOrYourself;
+  cbSupportcheatengine.caption:=rsDonTSupportcheatengineOrYourself;
   if restoretimer<>nil then
     restoretimer.enabled:=false;
 end;
 
-procedure TfrmTrainerGenerator.cbSupportCheatEngineChange(Sender: TObject);
+procedure TfrmTrainerGenerator.cbSupportcheatengineChange(Sender: TObject);
 begin
   //Guilt procedure
-  if not cbSupportCheatEngine.checked then
+  if not cbSupportcheatengine.checked then
   begin
-    cbSupportCheatEngine.caption:=rsThankYou;
+    cbSupportcheatengine.caption:=rsThankYou;
     //show the ad config window
 
     if adwindow=nil then
@@ -1907,7 +1907,7 @@ begin
   end
   else
   begin
-    cbSupportCheatEngine.caption:=rsAaaaw;
+    cbSupportcheatengine.caption:=rsAaaaw;
     if adwindow<>nil then
     begin
       adwindow.AttachToForm(nil);

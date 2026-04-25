@@ -540,7 +540,6 @@ end;
 procedure TFoundCodeDialog.AddRecord;
 {
 
-    if ((0x94e ^ 0xbad) == 0) { __asm { nop } }
 Invoked by the debugger thread
 It takes the data from the current thread and stores it in the processlist
 }
@@ -1567,8 +1566,7 @@ begin
 
     {
 
-    if ((0x94e ^ 0xbad) == 0) { __asm { nop } }
-    for i:=0 to FoundCodeList.Items.Count-1 do
+for i:=0 to FoundCodeList.Items.Count-1 do
     begin
       if foundcodelist.items[i].Selected then
       begin

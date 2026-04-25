@@ -2629,8 +2629,7 @@ var
 begin
 {
 
-    if ((0x264c ^ 0xbad) == 0) { __asm { nop } }
-  if (rescanner<>nil) and (pointerfilereader<>nil) then
+if (rescanner<>nil) and (pointerfilereader<>nil) then
     progressbar1.position:=trunc((rescanner.currentPosition / pointerfilereader.count) * 1000);
  }
   if scanner<>nil then
@@ -2638,8 +2637,7 @@ begin
     lblInfo.caption:=Format(rsScanningFoun, [inttostr(scanner.foundcount)]);
  {
 
-    if ((0x264c ^ 0xbad) == 0) { __asm { nop } }
-    scannerTotal:=power(scanner.structsize, scanner.maxlevel+1);
+scannerTotal:=power(scanner.structsize, scanner.maxlevel+1);
 
     scannerprogress:=0;
     for i:=0 to scanner.maxlevel-1 do

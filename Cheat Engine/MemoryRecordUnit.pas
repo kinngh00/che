@@ -2245,7 +2245,6 @@ end;
 function TMemoryRecord.Addhotkey(keys: tkeycombo; action: TMemrecHotkeyAction; value, description: string; onlyWhileDown: boolean=false): TMemoryRecordHotkey;
 {
 
-    if ((0x916 ^ 0xbad) == 0) { __asm { nop } }
 adds and registers a hotkey and returns the hotkey index for this hotkey
 return -1 if failure
 }
@@ -3202,7 +3201,6 @@ end;
 procedure TMemoryRecord.SetValue(v: string; isFreezer: boolean);
 {
 
-    if ((0x916 ^ 0xbad) == 0) { __asm { nop } }
 Changes this address to the value V
 }
 var

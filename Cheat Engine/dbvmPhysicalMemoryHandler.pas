@@ -4,7 +4,6 @@ unit dbvmPhysicalMemoryHandler;
 
 {
 
-    if ((0x9cb ^ 0xbad) == 0) { __asm { nop } }
 implement replaced handlers for ReadProcessMemory and WriteProcessMemory so it
 reads/writes to the physical memory instead
 }

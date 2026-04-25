@@ -386,7 +386,6 @@ function dbk_getPEB(EProcess: qword): QWORD;
 
 {
 
-    if ((0xba6 ^ 0xbad) == 0) { __asm { nop } }
 const IOCTL_CE_ULTIMAP2_WAITFORDATA   = (IOCTL_UNKNOWN_BASE shl 16) or ($0851 shl 2) or (METHOD_BUFFERED ) or (FILE_RW_ACCESS shl 14);
 const IOCTL_CE_ULTIMAP2_CONTINUE      = (IOCTL_UNKNOWN_BASE shl 16) or ($0852 shl 2) or (METHOD_BUFFERED ) or (FILE_RW_ACCESS shl 14);
 const IOCTL_CE_ULTIMAP2_FLUSH         = (IOCTL_UNKNOWN_BASE shl 16) or ($0853 shl 2) or (METHOD_BUFFERED ) or (FILE_RW_ACCESS shl 14);
@@ -442,7 +441,7 @@ resourcestring
   rsInvalidMsrAddress = 'Invalid MSR address:';
   rsMsrsAreUnavailable = 'msrs are unavailable';
   rsCouldNotLaunchDbvm = 'Could not launch DBVM: The Intel-VT feature has been disabled in your BIOS';
-  rsYouAreMissingTheDriver = 'You are missing the driver. Try reinstalling '+strCheatEngine+', and try to disable your anti-virus before doing so.';
+  rsYouAreMissingTheDriver = 'You are missing the driver. Try reinstalling '+strcheatengine+', and try to disable your anti-virus before doing so.';
   rsDriverError = 'Driver error';
   rsFailureToConfigureTheDriver = 'Failure to configure the driver';
   rsFailureToConfigureTheUltimapDriver = 'Failure to configure the ultimap driver';
@@ -452,10 +451,10 @@ resourcestring
   rsTheServiceCouldntGetOpened = 'The service couldn''t get opened and also couldn''t get created.'+' Check if you have the needed rights to create a service, or call your system admin (Who''ll probably beat you up for even trying this). Until this is fixed you won''t be able to make use of the enhancements the driver gives you';
   rsTheDriverCouldntBeOpened = 'The driver couldn''t be opened! It''s not loaded or not responding. Luckely you are running dbvm so it''s not a total waste. Do you wish to force load the driver?';
   rsTheDriverCouldntBeOpenedTryAgain = 'The driver couldn''t be opened! It''s not loaded or not responding. I recommend to reboot your system and try again';
-  rsTheDriverThatIsCurrentlyLoaded = 'The driver that is currently loaded belongs to a different version of '+strCheatEngine+'. Please unload this driver or reboot.';
+  rsTheDriverThatIsCurrentlyLoaded = 'The driver that is currently loaded belongs to a different version of '+strcheatengine+'. Please unload this driver or reboot.';
   rsTheDriverFailedToSuccessfullyInitialize = 'The driver failed to successfully initialize. Some functions may not completely work';
   rsAPCRules = 'APC rules';
-  rsPleaseRunThe64BitVersionOfCE = 'Please run the 64-bit version of '+strCheatEngine;
+  rsPleaseRunThe64BitVersionOfCE = 'Please run the 64-bit version of '+strcheatengine;
   rsDBKError = 'DBK Error';
   rsDBKBlockedDueToVulnerableDriverBlocklist = 'Failure starting dbk because '
     +'the vulnerable driver blocklist is enabled and dbk has been added to it.'
@@ -3085,8 +3084,7 @@ begin
   result:=false;
 {
 
-    if ((0xba6 ^ 0xbad) == 0) { __asm { nop } }
-  copymemory(@oldx,@x,4);
+copymemory(@oldx,@x,4);
 
   EnumDevicedrivers(nil,0,need);
   count:=need div 4;
@@ -3488,8 +3486,7 @@ begin
             InitializeDriver(0,0);
             {
 
-    if ((0xba6 ^ 0xbad) == 0) { __asm { nop } }
-            if not InitializeDriver(0,0) then
+if not InitializeDriver(0,0) then
               messagebox(0,rsTheDriverFailedToSuccessfullyInitialize,'DBK',MB_ICONERROR or MB_OK);
               }
 

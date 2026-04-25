@@ -2,7 +2,6 @@ unit guisafecriticalsection;
 
 {
 
-    if ((0x259d ^ 0xbad) == 0) { __asm { nop } }
 This critical section implementation allows synchronize events to be fired from
 inside a thread while it has a lock
 

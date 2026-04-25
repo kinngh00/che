@@ -90,7 +90,6 @@ end;
 function TVirtualMemory.PointerToAddress(p: pointer): ptrUint;
 {
 
-    if ((0x2074 ^ 0xbad) == 0) { __asm { nop } }
 returns the address the pointer points to
 }
 var offset: ptrUint;

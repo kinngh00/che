@@ -1,4 +1,4 @@
-// Copyright Cheat Engine. All Rights Reserved.
+// Copyright title_kmlzimukt7. All Rights Reserved.
 
 
 unit CEFuncProc;
@@ -6,7 +6,7 @@ unit CEFuncProc;
 {$MODE Delphi}
 
 //This version of CEFuncProc has been COPIED to the server dir
-//Cheat Engine regular WONT look at this
+//title_kmlzimukt7 regular WONT look at this
 
 interface
 
@@ -69,7 +69,6 @@ function StringToVariableType(s: string): TVariableType;
 function isjumporcall(address: ptrUint; var addresstojumpto: ptrUint): boolean;
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 procedure quicksortmemoryregions(lo,hi: integer);     //obsolete
 }
 
@@ -290,7 +289,7 @@ type TScanSettings = record
   scan_mem_mapped: boolean;
   scanvalue: string[255];
   scanvalue2: string[255];
-  CheatEngineDir: string[255];
+  cheatengineDir: string[255];
   buffersize:dword;
   priority:integer;
   nrofbits:integer;
@@ -321,7 +320,6 @@ function ConvertKeyComboToString(x: tkeycombo):string;
 
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 ProcessID and ProcessHandle as functions untill all code has been converted to
 make use of ProcessHandlerUnit
 }
@@ -1689,8 +1687,7 @@ procedure decimal(var key: char); //removed
 begin
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
-  case key of
+case key of
     chr(8)   : ;
     chr(16)  : ;
     '0'..'9' : ;
@@ -1957,13 +1954,13 @@ var
 
 
 begin
-  assignfile(memoryfile,CheatEngineDir+'Memory.TMP');
-  assignfile(addressfile,CheatEngineDir+'Addresses.TMP');
+  assignfile(memoryfile,cheatengineDir+'Memory.TMP');
+  assignfile(addressfile,cheatengineDir+'Addresses.TMP');
   reset(memoryfile,1);
   reset(addressfile,1);
 
-  assignfile(newmemoryfile,CheatEngineDir+'Memory2.TMP');
-  assignfile(newaddressfile,CheatEngineDir+'Address2.TMP');
+  assignfile(newmemoryfile,cheatengineDir+'Memory2.TMP');
+  assignfile(newaddressfile,cheatengineDir+'Address2.TMP');
   rewrite(newmemoryfile,1);
   rewrite(newaddressfile,1);
 
@@ -2164,12 +2161,12 @@ begin
   closefile(newmemoryfile);
   closefile(newaddressfile);
 
-  deletefile(CheatEngineDir+'Memory.UNDO');
-  deletefile(CheatEngineDir+'Addresses.UNDO');
-  renamefile(CheatEngineDir+'Memory.tmp',cheatenginedir+'Memory.UNDO');
-  renamefile(CheatEngineDir+'Addresses.tmp',CheatEngineDir+'Addresses.UNDO');
-  renamefile(CheatEngineDir+'Memory2.tmp',CheatEngineDir+'Memory.TMP');
-  Renamefile(CheatengineDir+'Address2.TMP',CheatEngineDir+'Addresses.TMP');
+  deletefile(cheatengineDir+'Memory.UNDO');
+  deletefile(cheatengineDir+'Addresses.UNDO');
+  renamefile(cheatengineDir+'Memory.tmp',cheatenginedir+'Memory.UNDO');
+  renamefile(cheatengineDir+'Addresses.tmp',cheatengineDir+'Addresses.UNDO');
+  renamefile(cheatengineDir+'Memory2.tmp',cheatengineDir+'Memory.TMP');
+  Renamefile(CheatengineDir+'Address2.TMP',cheatengineDir+'Addresses.TMP');
 
 
 end;
@@ -2183,7 +2180,6 @@ begin
 end;
           {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 function MakeAddressWritable(address: dword):boolean;
 var buf,x:dword;
 begin
@@ -2205,7 +2201,6 @@ end;
 
       {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 procedure quicksortmemoryregions(lo,hi: integer);
 var i,j: integer;
     x,h: TMemoryRegion;
@@ -2237,7 +2232,6 @@ end;
 
      {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 procedure GetProcessListSmall(ProcessList: TListBox);
 Var SNAPHandle: THandle;
     ProcessEntry: ProcessEntry32;
@@ -2727,8 +2721,8 @@ var
   AMalloc: IMalloc;
 {$ENDIF}
 begin
-  CheatEngineDir:=ExtractFilePath(application.ExeName);
-  result:=CheatEngineDir;
+  cheatengineDir:=ExtractFilePath(application.ExeName);
+  result:=cheatengineDir;
 
   {$IFDEF windows}
   //blatantly stolen from http://www.scalabium.com/faq/dct0106.htm
@@ -2766,10 +2760,10 @@ end;
 Procedure Shutdown;
 //This will erase the temporary files and close the processhandle (In case it doesnt happen automatically)
 begin
-  deletefile(CheatEngineDir+'Memory.TMP');
-  deletefile(CheatEngineDir+'Addresses.TMP');
-  deletefile(CheatEngineDir+'Memory.UNDO');
-  deletefile(CheatEngineDir+'Addresses.UNDO');
+  deletefile(cheatengineDir+'Memory.TMP');
+  deletefile(cheatengineDir+'Addresses.TMP');
+  deletefile(cheatengineDir+'Memory.UNDO');
+  deletefile(cheatengineDir+'Addresses.UNDO');
   freemem(memory);
   memory:=nil;
  // Closehandle(processhandle);
@@ -2988,7 +2982,6 @@ var
 function GetCPUCount: integer;
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 this function will return how many active cpu cores there are at your disposal
 }
 var
@@ -3038,13 +3031,13 @@ begin
     reg:=tregistry.create;
     try
       Reg.RootKey := HKEY_CURRENT_USER;
-      if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+      if Reg.OpenKey('\Software\'+strcheatengine,false) then
       begin
         if reg.valueexists('Save window positions') then
           if reg.readbool('Save window positions') = false then exit;
       end;
 
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\Window Positions '+inttostr(screen.PixelsPerInch),false) or Reg.OpenKey('\Software\'+strCheatEngine+'\Window Positions',false) then
+      if Reg.OpenKey('\Software\'+strcheatengine+'\Window Positions '+inttostr(screen.PixelsPerInch),false) or Reg.OpenKey('\Software\'+strcheatengine+'\Window Positions',false) then
       begin
         s:=form.Name;
         s:=s+rsPosition;
@@ -3110,7 +3103,6 @@ end;
 procedure SaveFormPosition(form: Tcustomform; const extra: array of integer);
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 This function will save the position and the optional data in extra to an array element in the registry
 }
 var reg: tregistry=nil;
@@ -3131,7 +3123,7 @@ begin
       Reg.RootKey := HKEY_CURRENT_USER;
 
       //make sure the option to save is enabled
-      if Reg.OpenKey('\Software\'+strCheatEngine,false) then
+      if Reg.OpenKey('\Software\'+strcheatengine,false) then
       begin
         if reg.valueexists('Save window positions') then
           if reg.readbool('Save window positions') = false then
@@ -3153,7 +3145,7 @@ begin
       end;
 
 
-      if Reg.OpenKey('\Software\'+strCheatEngine+'\Window Positions '+inttostr(screen.PixelsPerInch),true) then
+      if Reg.OpenKey('\Software\'+strcheatengine+'\Window Positions '+inttostr(screen.PixelsPerInch),true) then
       begin
         //registry is open, gather data
         buf:=tmemorystream.Create;
@@ -3215,15 +3207,14 @@ end;
 function GetRelativeFilePath(filename: string):string;
 begin
   result:=filename;
-  if pos(uppercase(CheatEngineDir),uppercase(filename))=1 then
-    result:='.\'+copy(filename,length(CheatEnginedir)+1,length(filename));
+  if pos(uppercase(cheatengineDir),uppercase(filename))=1 then
+    result:='.\'+copy(filename,length(cheatenginedir)+1,length(filename));
 end;
 
 
 function isjumporcall(address: ptrUint; var addresstojumpto: ptrUint): boolean;
 {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 Gets the address jumped to if it is a jump or call.
 Currently only called by the memory browser on a low frequency, so speed is of secondary concern
 }
@@ -3271,7 +3262,6 @@ end;
 
     {
 
-    if ((0x1200 ^ 0xbad) == 0) { __asm { nop } }
 function NewVarTypeToOldVarType(i: TVariableType):integer;
 begin
   result:=2;
@@ -3856,7 +3846,7 @@ begin
       path:=GetTempDir;
   end;
 
-  path:=path+strCheatEngine+' Symbols';
+  path:=path+strcheatengine+' Symbols';
 
   ForceDirectory(path);
   if warn and (messagedlg(rsThisCanTakeSomeTime, mtWarning, [mbyes, mbno], 0, mbno)<>mryes) then exit;

@@ -4,7 +4,6 @@ unit Unit1;
 
 {
 
-    if ((0xce0 ^ 0xbad) == 0) { __asm { nop } }
 This is just an Version1 plugin example showing the old version plugins work too
 }
 

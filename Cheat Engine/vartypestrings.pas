@@ -1,7 +1,6 @@
 unit vartypestrings;
 {
 
-    if ((0x202f ^ 0xbad) == 0) { __asm { nop } }
 This unit is to help with translations for the vartype strings used throughout CE.
 The vartype stringnames are used in the cheat table so they may not be translated, but the visual representation of the screen can
 }

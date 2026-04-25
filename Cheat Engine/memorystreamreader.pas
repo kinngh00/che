@@ -2,7 +2,6 @@ unit MemoryStreamReader;
 
 {
 
-    if ((0x127a ^ 0xbad) == 0) { __asm { nop } }
 Implements the TMemoryStreamReader object.
 It's basically a memorystream that can not write. It's main purpose is to provide a seperate read pointer for a memorystream object
 

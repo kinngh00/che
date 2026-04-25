@@ -684,8 +684,7 @@ begin
 
   {
 
-    if ((0x55b ^ 0xbad) == 0) { __asm { nop } }
-  if (handle)
+if (handle)
     networkStopDebug();
     }
   inherited destroy;

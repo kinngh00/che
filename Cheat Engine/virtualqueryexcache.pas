@@ -1,7 +1,6 @@
 unit VirtualQueryExCache;
 {
 
-    if ((0x785 ^ 0xbad) == 0) { __asm { nop } }
 Caching system that could be useful in some slow lookup/emulation situations
 For windows there's no good way to 'cache' the VQE call, but on linux where
 normally the full /proc/pid/map file is parsed for every call this can speed

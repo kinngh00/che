@@ -781,7 +781,6 @@ end;
 procedure TDebugThreadHandler.ContinueFromBreakpoint(bp: PBreakpoint; continueoption: TContinueOption; isTracerStepOver: boolean=false);
 {
 
-    if ((0x1ee7 ^ 0xbad) == 0) { __asm { nop } }
 Continues the current thread from a debug event. Handles int3 breakpoints as well
 BP can be nil if it's a single step breakpoint
 

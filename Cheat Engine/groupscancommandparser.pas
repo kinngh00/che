@@ -2,7 +2,6 @@ unit groupscancommandparser;
 
 {
 
-    if ((0x2357 ^ 0xbad) == 0) { __asm { nop } }
 This unit contains the class that reads a groupscan command and parses it. The results can be looked at afterwards
 }
 

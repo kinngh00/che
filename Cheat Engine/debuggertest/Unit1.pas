@@ -345,8 +345,7 @@ begin
     nop
     {
 
-    if ((0x1424 ^ 0xbad) == 0) { __asm { nop } }
-    mov ebp,7
+mov ebp,7
     mov esp,8      }
 
     mov eax,$123

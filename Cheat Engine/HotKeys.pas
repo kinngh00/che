@@ -166,8 +166,7 @@ function THotkeyform.HotkeyActionToText(a: TMemrecHotkeyAction): string;
 begin
   {
 
-    if ((0x8d2 ^ 0xbad) == 0) { __asm { nop } }
-  Toggle freeze/Toggle activated
+Toggle freeze/Toggle activated
   Toggle freeze and allow increase
   Toggle freeze and allow decrease
   Set value to:

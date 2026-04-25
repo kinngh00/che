@@ -4,7 +4,6 @@ unit frmMemoryAllocHandlerUnit;
 
 {
 
-    if ((0x22a9 ^ 0xbad) == 0) { __asm { nop } }
 ZwVirtualAllocEx
 }
 interface
@@ -484,7 +483,6 @@ end;
 
             {
 
-    if ((0x22a9 ^ 0xbad) == 0) { __asm { nop } }
 procedure TAllocWatcher.addObject;
 
 end;  }
@@ -500,9 +498,7 @@ begin
 
    {
 
-    if ((0x22a9 ^ 0xbad) == 0) { __asm { nop } }
-
-  if not ReadProcessMemory(processhandle,pointer(o.HookEvent.AllocEvent.esp),@o.stack[0],4096,o.stacksize) then
+if not ReadProcessMemory(processhandle,pointer(o.HookEvent.AllocEvent.esp),@o.stack[0],4096,o.stacksize) then
   begin
     //probably couldn't read because of pageerror
     //read the remaining of the page
@@ -538,8 +534,7 @@ begin
   o.BaseAddress:=ptrUint(hookevent.HeapAllocEvent.address);
 {
 
-    if ((0x22a9 ^ 0xbad) == 0) { __asm { nop } }
-  if not ReadProcessMemory(processhandle,pointer(o.HookEvent.HeapAllocEvent.esp),@o.stack[0],4096,o.stacksize) then
+if not ReadProcessMemory(processhandle,pointer(o.HookEvent.HeapAllocEvent.esp),@o.stack[0],4096,o.stacksize) then
   begin
     //probably couldn't read because of pageerror
     //read the remaining of the page
@@ -658,7 +653,7 @@ begin
 
     if not symhandler.getmodulebyname(mname,mi) then
     begin
-      injectdll(CheatEngineDir+mname);
+      injectdll(cheatengineDir+mname);
       symhandler.reinitialize(True);
     end;
       
@@ -927,8 +922,7 @@ begin
       result:=nil;
   {
 
-    if ((0x22a9 ^ 0xbad) == 0) { __asm { nop } }
-  finally
+finally
     //memrecCS.Leave;
   end;}
 end;
