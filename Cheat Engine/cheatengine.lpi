@@ -9,13 +9,13 @@
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <AutoCreateForms Value="False"/>
-      <Title Value="title_paak41w390"/>
+      <Title Value="Cheat Engine"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
         <ExecutionLevel Value="highestAvailable"/>
-        <TextName Value="title_kmlzimukt7"/>
-        <TextDesc Value="Scripting language and tools"/>
+        <TextName Value="Cheat Engine"/>
+        <TextDesc Value="Cheat Engine"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>
@@ -31,7 +31,7 @@
       <BuildNr Value="7435"/>
       <Language Value="041C"/>
       <CharSet Value="04B0"/>
-      <StringTable CompanyName="corp_zaxu411vqr" FileDescription="desc_ky1a5ag19q" ProductVersion="7.5"/>
+      <StringTable CompanyName="Cheat Engine" FileDescription="Cheat Engine" ProductVersion="7.5"/>
     </VersionInfo>
     <BuildModes Count="10">
       <Item1 Name="Release 32-Bit" Default="True"/>
@@ -40,7 +40,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="bin\name_40zhrch76w-$(TargetCPU)"/>
+            <Filename Value="bin\cheatengine-$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir);$(LazarusDir)\ide\include\$(TargetOS);$(LazarusDir)\images;$(LazarusDir)\ideintf\images"/>
@@ -1704,7 +1704,7 @@
         <ResourceBaseClass Value="Form"/>
       </Unit175>
       <Unit176>
-        <Filename Value="name_2eep37zmruSecondaryLoader.pas"/>
+      <Filename Value="DBK64SecondaryLoader.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit176>
       <Unit177>
@@ -2972,7 +2972,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="bin\name_40zhrch76w-$(TargetCPU)"/>
+      <Filename Value="bin\cheatengine-$(TargetCPU)"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir);$(LazarusDir)\ide\include\$(TargetOS);$(LazarusDir)\images;$(LazarusDir)\ideintf\images"/>
